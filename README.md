@@ -1,4 +1,37 @@
-# Zip Game
+## Installation
+
+```bash
+git clone https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
+cd zip-game
+
+# Install dependencies
+pip install -r requirements.txt
+
+
+### LLM API Setup
+
+1. Sign up for an LLM provider (e.g., OpenAI, Anthropic, Google Gemini)
+2. Generate your API key
+3. Set up environment variable:
+
+```bash
+export LLM_API_KEY="your_api_key_here"
+# or on Windows:
+set LLM_API_KEY=your_api_key_here
+```
+
+4. Alternatively, create a `.env` file in the project root:
+
+```
+LLM_API_KEY=your_api_key_here
+LLM_PROVIDER=openai  # or claude, gemini, etc.
+LLM_MODEL=gpt-4      # or your preferred model
+```## Requirements
+
+- [List your dependencies here - e.g., Python 3.8+, Node.js 14+, etc.]
+- LLM API integration (e.g., OpenAI, Anthropic Claude, Google Gemini, etc.)
+- API key credentials for the selected LLM provider
+- [Any other libraries or frameworks]# Zip Game
 
 A puzzle game inspired by LinkedIn's Zip game where players must create a continuous path through a grid, connecting numbers in sequential order while filling every cell.
 
@@ -9,38 +42,13 @@ A puzzle game inspired by LinkedIn's Zip game where players must create a contin
 - **Movement**: Move horizontally or vertically between adjacent cells
 - **Challenge**: Navigate around barriers and obstacles while maintaining the sequence
 
-## Features
-
-- Daily puzzle challenges
-- Progressive difficulty levels
-- Interactive grid-based gameplay
-- Score tracking and leaderboards
-- Hint system for challenging puzzles
-- Multiple grid sizes and complexities
-
-## Installation
-
-```bash
-git clone https://github.com/yourusername/zip-game.git
-cd zip-game
-```
 
 ## Requirements
 
-- [List your dependencies here - e.g., Python 3.8+, Node.js 14+, etc.]
-- [Any other libraries or frameworks]
+- Python 3.12+
+- API Key to LLM
 
-## Usage
 
-```bash
-# Start the game
-[Your command here]
-
-# Example:
-# python main.py
-# npm start
-# java -jar ZipGame.jar
-```
 
 ## How to Play
 
@@ -107,9 +115,11 @@ We welcome contributions! To contribute:
 
 ## Performance
 
-- Solver algorithm: [Describe your algorithm - e.g., backtracking, A*, etc.]
-- Average solving time: [e.g., <100ms for 5x5 grids]
-- Supports grid sizes: [e.g., 3x3 to 10x10]
+- **Solver algorithm**: LLM-based reasoning engine with structured prompting
+- **Average solving time**: Depends on LLM API response time (typically 1-5 seconds)
+- **Supports grid sizes**: 3x3 to 10x10+
+- **LLM Provider Support**: OpenAI GPT-4, Anthropic Claude, Google Gemini, and more
+- **Optimization**: Caching of solutions for identical puzzle configurations
 
 ## Known Issues
 
