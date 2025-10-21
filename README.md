@@ -92,21 +92,6 @@ zip-game/
 
 Connect: 1 → 2 → 3 → 4 while filling all cells.
 
-## Development
-
-### Running Tests
-
-```bash
-# Run test suite
-[Your test command here]
-```
-
-### Building
-
-```bash
-# Build instructions
-[Your build command here]
-```
 
 ## Contributing
 
