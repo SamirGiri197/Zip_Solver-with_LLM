@@ -115,13 +115,6 @@ We welcome contributions! To contribute:
 
 - [List any known issues or limitations]
 
-## Roadmap
-
-- [ ] Mobile app version
-- [ ] Multiplayer mode
-- [ ] Custom puzzle creator
-- [ ] AI difficulty adjustment
-- [ ] Online leaderboards
 
 ## License
 
