@@ -1,7 +1,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/zip-game.git
+git clone https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
 cd zip-game
 
 # Install dependencies
@@ -44,40 +44,16 @@ A puzzle game inspired by LinkedIn's Zip game where players must create a contin
 - **Movement**: Move horizontally or vertically between adjacent cells
 - **Challenge**: Navigate around barriers and obstacles while maintaining the sequence
 
-## Features
-
-- Daily puzzle challenges
-- Progressive difficulty levels
-- Interactive grid-based gameplay
-- Score tracking and leaderboards
-- **AI-Powered Solver** - Uses LLM API to intelligently solve puzzles
-- Hint system for challenging puzzles
-- Multiple grid sizes and complexities
-- Real-time puzzle analysis and suggestions
-
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/zip-game.git
+git clone https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
 cd zip-game
 ```
 
 ## Requirements
 
-- [List your dependencies here - e.g., Python 3.8+, Node.js 14+, etc.]
-- [Any other libraries or frameworks]
-
-## Usage
-
-```bash
-# Start the game
-[Your command here]
-
-# Example:
-# python main.py
-# npm start
-# java -jar ZipGame.jar
-```
+- Python 3.11+
 
 ## How to Play
 
@@ -150,17 +126,6 @@ We welcome contributions! To contribute:
 - **LLM Provider Support**: OpenAI GPT-4, Anthropic Claude, Google Gemini, and more
 - **Optimization**: Caching of solutions for identical puzzle configurations
 
-## Known Issues
-
-- [List any known issues or limitations]
-
-## Roadmap
-
-- [ ] Mobile app version
-- [ ] Multiplayer mode
-- [ ] Custom puzzle creator
-- [ ] AI difficulty adjustment
-- [ ] Online leaderboards
 
 ## License
 
