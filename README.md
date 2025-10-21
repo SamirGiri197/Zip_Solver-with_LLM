@@ -24,33 +24,6 @@ set LLM_API_KEY=your_api_key_here
 
 4. Alternatively, create a `.env` file in the project root:
 
-```
-LLM_API_KEY=your_api_key_here
-LLM_PROVIDER=openai  # or claude, gemini, etc.
-LLM_MODEL=gpt-4      # or your preferred model
-```## Requirements
-
-- [List your dependencies here - e.g., Python 3.8+, Node.js 14+, etc.]
-- LLM API integration (e.g., OpenAI, Anthropic Claude, Google Gemini, etc.)
-- API key credentials for the selected LLM provider
-- [Any other libraries or frameworks]# Zip Game
-
-A puzzle game inspired by LinkedIn's Zip game where players must create a continuous path through a grid, connecting numbers in sequential order while filling every cell.
-
-## Game Rules
-
-- **Objective**: Create a single continuous path that passes through each number in order (1 → 2 → 3 → ... → N)
-- **Constraint**: Your path must fill every cell in the grid exactly once
-- **Movement**: Move horizontally or vertically between adjacent cells
-- **Challenge**: Navigate around barriers and obstacles while maintaining the sequence
-
-## Installation
-
-```bash
-git clone https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
-cd zip-game
-```
-
 ## Requirements
 
 - Python 3.11+
