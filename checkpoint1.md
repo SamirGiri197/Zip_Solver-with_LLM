@@ -51,4 +51,7 @@ This move takes us directly to the cell adjacent to our current position, fulfil
 
 ## Screenshots
 
-![Screenshot](SS/ollama.png) | ![Screenshot](SS/gemini.png)
+<p float="left">
+  <img src="SS/ollama.png" width="300" />
+  <img src="SS/gemini.png" width="300" />
+</p>
