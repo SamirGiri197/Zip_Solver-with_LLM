@@ -59,6 +59,31 @@ python main.py
 1. Goto src/llm_configuration/llm_manager.py
 2. Find Prompt = """ ............ """ and make changes as required.
 
+# Example Promompt
+prompt = f"""ZIP PUZZLE RULES:
+                1. Fill ALL {board.k} cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                {grid_array_str}
+
+                VISUAL BOARD:
+                {grid_str}
+
+                CLUES TO VISIT IN ORDER:
+                {clues_str}
+
+                CURRENT POSITION: ({current_pos[0]}, {current_pos[1]})
+                CELLS FILLED: {len(path)}/{board.k}
+                AVAILABLE NEXT MOVES: {neighbors_str}
+
+                What is your next move and why?"""
+                
+  It passes the rules of the game, board state and asks for what is the next move and why?
+
+  Both the ollama and gemini been able connect some numbers but failed to solve the puzzle correctly.
 
 ## How to Play
 
