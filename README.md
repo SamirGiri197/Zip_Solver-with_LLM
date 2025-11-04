@@ -63,7 +63,7 @@ python main.py
 3. Click or drag to create a path starting from 1
 4. Continue connecting each number in sequence
 5. Ensure your path fills every cell in the grid
-6. Complete the puzzle before time runs out (if applicable)
+6. If you want to solve autonomously using LLM, click on LLM button then select the model you want to use.
 
 ## Project Structure
 
