@@ -83,7 +83,7 @@ prompt = f"""ZIP PUZZLE RULES: <br>
                 
   It passes the rules of the game, board state and asks for what is the next move and why?
 
-  Both the ollama and gemini been able connect some numbers but failed to solve the puzzle correctly.
+  Both the ollama and gemini been able to connect some numbers but failed to solve the puzzle correctly.
 
 ## How to Play
 
