@@ -52,6 +52,6 @@ This move takes us directly to the cell adjacent to our current position, fulfil
 ## Screenshots
 
 <p float="left">
-  <img src="SS/ollama.png" width="300" />
-  <img src="SS/gemini.png" width="300" />
+  <img src="SS/ollama.png" width="48%%" />
+  <img src="SS/gemini.png" width="49%" />
 </p>
