@@ -64,7 +64,7 @@ This move takes us directly to the cell adjacent to our current position, fulfil
 </tr>
 </table>
 
-## Acceptance Critteria
+## Acceptance Criteria
 1. Returns valid move complying rules of the game.
 2. Reasoning explains why this move is chosen.
 3. Suggested coordinates are adjacent to current path's last cell.
