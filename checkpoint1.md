@@ -48,3 +48,7 @@ To reach Clue 2 at (0, 1), we need to move from our current position (1, 3) to (
 **Reasoning:**
 
 This move takes us directly to the cell adjacent to our current position, fulfilling the requirements of the puzzle. We must visit the clues in order, so reaching the next clue is the priority
+
+## Screenshots
+
+![Screenshot](SS/ollama.png) | ![Screenshot](SS/gemini.png)
