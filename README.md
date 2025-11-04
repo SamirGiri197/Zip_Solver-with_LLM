@@ -59,7 +59,7 @@ python main.py
 1. Goto src/llm_configuration/llm_manager.py
 2. Find Prompt = """ ............ """ and make changes as required.
 
-# Example Promompt
+### Example Promompt
 prompt = f"""ZIP PUZZLE RULES:
                 1. Fill ALL {board.k} cells in a continuous path
                 2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
