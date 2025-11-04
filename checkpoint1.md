@@ -1,37 +1,37 @@
 ## Prompt
-prompt = f"""ZIP PUZZLE RULES:
-                1. Fill ALL {board.k} cells in a continuous path
-                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
-                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
-                4. Cannot revisit cells
-                5. Between clues, fill any empty cells
+prompt = f"""ZIP PUZZLE RULES: <br>
+                1. Fill ALL {board.k} cells in a continuous path<br>
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue<br>
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed<br>
+                4. Cannot revisit cells<br>
+                5. Between clues, fill any empty cells<br>
                 
-                GRID ARRAY (P=path, .=empty, #=clue):
-                 .  3  2  .
-                 .  .  .  P
-                 .  .  5  6
-                 .  4  .  .
+  GRID ARRAY (P=path, .=empty, #=clue):
+   .  3  2  .
+   .  .  .  P
+   .  .  5  6
+   .  4  .  .
 
 
-                VISUAL BOARD:
-                [ ][ 3][ 2][ ]
-                [ ][ ][ ][P]
-                [ ][ ][ 5][ 6]
-                [ ][ 4][ ][ ]
+  VISUAL BOARD:
+  [ ][ 3][ 2][ ]
+  [ ][ ][ ][P]
+  [ ][ ][ 5][ 6]
+  [ ][ 4][ ][ ]
 
-                CLUES TO VISIT IN ORDER:
-                ✓ Clue 1: (1, 3)
-                Clue 2: (0, 1)
-                Clue 3: (2, 3)
+  CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  Clue 2: (0, 1)
+  Clue 3: (2, 3)
 
 
-                CURRENT POSITION: (1, 3)
-                CELLS FILLED: 1/16
-                AVAILABLE NEXT MOVES:   (0, 3)
-                                        (2, 3)
-                                        (1, 2)
+  CURRENT POSITION: (1, 3)
+  CELLS FILLED: 1/16
+  AVAILABLE NEXT MOVES:   (0, 3)
+                          (2, 3)
+                          (1, 2)
 
-                What is your next move and why?"""
+  What is your next move and why?"""
                 
 ## Response from LLM
 
