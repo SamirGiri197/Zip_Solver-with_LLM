@@ -1,8 +1,29 @@
+# 🧩 ZIP Puzzle Solver with LLM Integration
+
+An interactive **ZIP Puzzle game** built with **Python + PyGame**, powered by **Large Language Models (LLMs)** such as **Google Gemini** and **Ollama (Local Models)** for intelligent puzzle-solving.  
+The game combines visual playability, AI reasoning, and analytics through **Weights & Biases (WandB)** logging.
+
+---
+
+## 🚀 Features
+
+- 🎮 **Interactive PyGame GUI** with real-time grid drawing
+- 🧠 **AI-assisted solving** using LLMs (Gemini / Ollama)
+- 🧩 **Backtracking solver** for fallback and hints
+- 📈 **Game analytics** via [Weights & Biases (wandb.ai)](https://wandb.ai/)
+- 🧰 Adjustable board sizes (3x3 – 10x10+)
+- ⚙️ Configurable LLM providers and models
+- 💾 Local leaderboard tracking
+- 🎨 Gradient visuals, animations, and hints
+## Requirements
+
+- Python 3.12+
+- Pygame
+
 ## Installation
 
 ```bash
 git clone https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
-cd zip-game
 
 # Install dependencies
 pip install -r requirements.txt
@@ -24,9 +45,16 @@ set LLM_API_KEY=your_api_key_here
 
 4. Alternatively, create a `.env` file in the project root:
 
-## Requirements
+## How to Run Program
+```bash 
+cd/src
+python main.py
+```
 
-- Python 3.11+
+## How to change LLM configurations
+1. Go to config/llm_config.py
+2. update LLM_PROVIDERS
+
 
 ## How to Play
 
@@ -42,9 +70,9 @@ set LLM_API_KEY=your_api_key_here
 ```
 zip-game/
 ├── src/
-│   ├── game/
+│   ├── config/
 │   ├── ui/
-│   └── solver/
+│   └── core/
 ├── tests/
 ├── assets/
 ├── README.md
@@ -66,22 +94,13 @@ zip-game/
 Connect: 1 → 2 → 3 → 4 while filling all cells.
 
 
-## Contributing
-
-We welcome contributions! To contribute:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## Performance
 
 - **Solver algorithm**: LLM-based reasoning engine with structured prompting
 - **Average solving time**: Depends on LLM API response time (typically 1-5 seconds)
 - **Supports grid sizes**: 3x3 to 10x10+
-- **LLM Provider Support**: OpenAI GPT-4, Anthropic Claude, Google Gemini, and more
+- **LLM Provider Support**: Google Gemini, ollama
 - **Optimization**: Caching of solutions for identical puzzle configurations
 
 
