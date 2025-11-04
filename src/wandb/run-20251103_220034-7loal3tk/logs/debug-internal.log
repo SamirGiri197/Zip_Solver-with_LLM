@@ -1,0 +1,11 @@
+{"time":"2025-11-03T22:00:36.595046-05:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2025-11-03T22:00:36.9196086-05:00","level":"INFO","msg":"stream: created new stream","id":"7loal3tk"}
+{"time":"2025-11-03T22:00:36.9196086-05:00","level":"INFO","msg":"handler: started","stream_id":"7loal3tk"}
+{"time":"2025-11-03T22:00:36.9229659-05:00","level":"INFO","msg":"stream: started","id":"7loal3tk"}
+{"time":"2025-11-03T22:00:36.9235245-05:00","level":"INFO","msg":"sender: started","stream_id":"7loal3tk"}
+{"time":"2025-11-03T22:00:36.9235245-05:00","level":"INFO","msg":"writer: started","stream_id":"7loal3tk"}
+{"time":"2025-11-03T22:01:56.8138172-05:00","level":"INFO","msg":"stream: closing","id":"7loal3tk"}
+{"time":"2025-11-03T22:01:57.1812735-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-11-03T22:01:57.4746961-05:00","level":"INFO","msg":"handler: closed","stream_id":"7loal3tk"}
+{"time":"2025-11-03T22:01:57.4753059-05:00","level":"INFO","msg":"sender: closed","stream_id":"7loal3tk"}
+{"time":"2025-11-03T22:01:57.4753059-05:00","level":"INFO","msg":"stream: closed","id":"7loal3tk"}

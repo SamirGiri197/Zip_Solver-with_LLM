@@ -1,0 +1,1 @@
+{"grid_size":5,"_step":2,"provider":"ollama","_wandb":{"runtime":37},"response_length":310,"_timestamp":1.762223291612837e+09,"path_length":3,"_runtime":37,"model":"gpt-oss:120b-cloud"}

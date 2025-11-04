@@ -1,0 +1,44 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            ujytrn3zi6xnah81s2surhaly43ixdbh:
+                codePath: main.py
+                codePathLocal: main.py
+                cpu_count: 24
+                cpu_count_logical: 32
+                cudaVersion: "12.6"
+                disk:
+                    /:
+                        total: "1021821579264"
+                        used: "796885409792"
+                email: thameshgiri197@gmail.com
+                executable: C:\Users\thame\miniconda3\envs\zip\python.exe
+                gpu: NVIDIA GeForce RTX 4070 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 4608
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4070 Laptop GPU
+                      uuid: GPU-9e7ed845-7e8b-4f44-3156-c71d31e22d7a
+                host: Samir-PC
+                memory:
+                    total: "34070192128"
+                os: Windows-11-10.0.26200-SP0
+                program: C:\Users\thame\Desktop\CS5900\Zip-game\main.py
+                python: CPython 3.12.12
+                root: C:\Users\thame\Desktop\CS5900\Zip-game
+                startedAt: "2025-11-04T02:23:47.834590Z"
+                writerId: ujytrn3zi6xnah81s2surhaly43ixdbh
+        m: []
+        python_version: 3.12.12
+        t:
+            "3":
+                - 13
+            "4": 3.12.12
+            "5": 0.22.3
+            "8":
+                - 3
+            "12": 0.22.3
+            "13": windows-amd64

@@ -1,0 +1,182 @@
+2025-11-03 21:38:23,004 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 21:38:23,006 - metrics - INFO - Game metrics started for 5x5 board
+2025-11-03 21:38:23,007 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:38:23,007 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:38:23,007 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:38:39,800 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:38:39,801 - llm_manager - INFO - ================================================================================
+2025-11-03 21:38:39,802 - llm_manager - INFO - LLM RESPONSE (Move 2):
+2025-11-03 21:38:39,803 - llm_manager - INFO - ================================================================================
+2025-11-03 21:38:39,803 - llm_manager - INFO - **Next move:** **(3, 0)**
+
+**Why this is the best choice**
+
+1. **Gets us toward the next clue** – The next clue we have to reach is at (1, 1). Moving up to (3, 0) puts us on the same column as the clue and one step closer in Manhattan distance (2 → 1 → 0) than moving right would.
+
+2. **Keeps the board “snake‑friendly”** – By heading up the left‑most column first we can later sweep right across the upper rows, then snake down the right side, and finally come back across the bottom. This pattern prevents us from boxing ourselves into a corner or leaving isolated empty cells that could never be visited later.
+
+3. **No cell is wasted or blocked** – The two cells that are currently available from the start are (3, 0) and (4, 1).
+   *Choosing (3, 0) leaves the whole bottom row (4, 1 – 4, 4) untouched, so we can still fill it later without crossing our own path.*
+   *Choosing (4, 1) would force us to travel right across the bottom row first and then later have to climb back up the left side, which makes it harder to reach (1, 1) without creating a dead‑end.*
+
+4. **Adheres to all Zip‑Puzzle rules** – The move is to an orthogonal neighbour (allowed), we do not revisit any cell, and we stay on a continuous path.
+
+So the optimal next step is to move **up** from the start at (4, 0) to the cell **(3, 0)**.
+2025-11-03 21:38:39,804 - llm_manager - INFO - ================================================================================
+2025-11-03 21:38:39,805 - metrics - INFO - Move 1: (3, 0) - Valid: True, Latency: 16798ms, Confidence: 0.90
+2025-11-03 21:38:39,806 - GUI - INFO - Move 1: (3, 0) - Valid
+2025-11-03 21:38:40,802 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:38:40,803 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:38:40,804 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:38:59,371 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:38:59,372 - llm_manager - INFO - ================================================================================
+2025-11-03 21:38:59,373 - llm_manager - INFO - LLM RESPONSE (Move 3):
+2025-11-03 21:38:59,373 - llm_manager - INFO - ================================================================================
+2025-11-03 21:38:59,373 - llm_manager - INFO - **Next move:** (2, 0)
+
+**Why this is the best choice**
+
+1. **Keep the path heading toward clue 2** – Clue 2 is at (0, 2). The most straightforward way to reach it is to travel left along the top row, then turn down the left‑hand side. Moving to (2, 0) continues that left‑to‑right sweep.
+
+2. **Avoid dead‑ends** – The two “P” cells at (0, 0) and (0, 1) are impassable (they are already part of the fixed path). If we dropped down now to (3, 1), we would be forced to wind back rightwards later and risk surrounding the “P” cells, making it impossible to reach (0, 2) without crossing our own trail.
+
+3. **Preserve space for the later “snaking” fill** – By staying on the top row we leave the lower rows free for the usual snake‑like coverage that will let us fill all 25 cells before we reach the final clue (6).
+
+So the optimal next step is to move left to the empty cell **(2, 0)**, keeping the path open, continuous, and directed toward the next required clue.
+2025-11-03 21:38:59,374 - llm_manager - INFO - ================================================================================
+2025-11-03 21:38:59,375 - metrics - INFO - Move 2: (2, 0) - Valid: True, Latency: 18572ms, Confidence: 0.90
+2025-11-03 21:38:59,375 - GUI - INFO - Move 2: (2, 0) - Valid
+2025-11-03 21:39:00,373 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:39:00,375 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:39:00,376 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:39:21,094 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:39:21,094 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:21,095 - llm_manager - INFO - LLM RESPONSE (Move 4):
+2025-11-03 21:39:21,096 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:21,097 - llm_manager - INFO - **Next move: Go to cell ( 1, 0 ).**
+
+**Why this is the correct move**
+
+| Reason | Explanation |
+|--------|-------------|
+| **It keeps the path “open”** – We have already travelled straight up the left‑most column from the start (clue 1) at (4,0) → (3,0) → (2,0). The safest way to continue a Hamiltonian (25‑cell) path is to keep climbing that column: (1,0) → (0,0). By moving to (1,0) we preserve a clear corridor along the left side that can later be used to fill the rest of the grid without forcing an early dead‑end. |
+| **It lets us reach clue 2 on the very next step** – From (1,0) the cell (1,1) – the location of clue 2 – is an adjacent diagonal. So after stepping to (1,0) we can immediately step onto clue 2, satisfying the “visit clues in order” rule. |
+| **Choosing (2,1) would create a premature branch** – If we go right to (2,1) we would leave the left‑most column half‑filled (cells (0,0) and (1,0) would still be empty). Later we would have to come back down to those squares, which would force the path to double back on itself and very quickly lead to a situation where the remaining empty cells are isolated, making a complete 25‑cell tour impossible. |
+| **No other move is available** – The only empty orthogonal/diagonal neighbours of the current position (2,0) are (1,0) and (2,1). (1,0) is the move that best respects the continuation‑and‑clue order strategy described above. |
+
+Therefore, the optimal next step is to move **up** from (2,0) to **(1,0)**, after which we can step onto clue 2 at (1,1) on the following move and continue filling the board.
+2025-11-03 21:39:21,099 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:21,100 - metrics - INFO - Move 3: (4, 0) - Valid: False, Latency: 20725ms, Confidence: 0.90
+2025-11-03 21:39:21,100 - GUI - WARNING - Invalid move: (4, 0) (stuck: 1/3)
+2025-11-03 21:39:22,096 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:39:22,097 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:39:22,098 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:39:37,717 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:39:37,718 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:37,720 - llm_manager - INFO - LLM RESPONSE (Move 4):
+2025-11-03 21:39:37,720 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:37,721 - llm_manager - INFO - **Next move:** Go to the cell **(2, 1)**.
+
+**Why this is the right choice**
+
+1. **It is a legal move** – (2, 1) is one of the two empty cells that the rules list as “available next moves” from the current position (2, 0).
+
+2. **It puts us next to the next clue** – Clue 2 is located at (1, 1). From (2, 1) we can reach (1, 1) in a single vertical step (up), which is allowed because diagonal, orthogonal and vertical moves are all permitted.
+
+3. **Shortest possible route** – Moving to (2, 1) lets us land on Clue 2 on the very next turn, keeping the path as short and direct as possible and leaving the other empty cell (1, 0) for later use if needed.
+
+4. **No rule violations** – The move does not revisit any previously‑filled cell, stays within the board bounds, and maintains a continuous path.
+
+So the optimal next step is to fill the cell at **(2, 1)** and continue toward Clue 2 on the following move.
+2025-11-03 21:39:37,722 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:37,724 - metrics - INFO - Move 4: (2, 1) - Valid: True, Latency: 15627ms, Confidence: 0.90
+2025-11-03 21:39:37,724 - GUI - INFO - Move 4: (2, 1) - Valid
+2025-11-03 21:39:38,731 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:39:38,731 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:39:38,732 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:39:43,289 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:39:43,292 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:43,293 - llm_manager - INFO - LLM RESPONSE (Move 5):
+2025-11-03 21:39:43,294 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:43,294 - llm_manager - INFO - **Next move:** go to cell **(1, 1)**.
+
+**Why?**
+- According to the rules we must visit the clues in numeric order. The next clue after the current position is Clue 2, which is located at (1, 1).
+- (1, 1) is one of the three allowed adjacent squares listed, so it is reachable in a single step.
+- Moving there satisfies Rule 2 (visit clues in order) and Rule 3 (move only to an adjacent cell), and it does not revisit any already‑filled (P) cell.
+
+So the correct continuation of the path is to move from (2, 1) to (1, 1).
+2025-11-03 21:39:43,294 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:43,295 - metrics - INFO - Move 5: (1, 1) - Valid: True, Latency: 4564ms, Confidence: 0.90
+2025-11-03 21:39:43,296 - GUI - INFO - Move 5: (1, 1) - Valid
+2025-11-03 21:39:44,290 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:39:44,291 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:39:44,292 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:39:57,633 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:39:57,635 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:57,635 - llm_manager - INFO - LLM RESPONSE (Move 6):
+2025-11-03 21:39:57,636 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:57,637 - llm_manager - INFO - **Next move: (0, 1)**
+
+**Why this is the best choice**
+
+1. **Adjacency & availability** – (0, 1) is one of the three empty cells directly adjacent to the current position (1, 1), so it satisfies the movement rule.
+
+2. **Progress toward the next clue** – The next numbered clue on the board is 4 at (0, 2). From (0, 1) we can reach (0, 2) in a single step, keeping the required order …→2→3→4. (We will still need to place clue 3 somewhere before hitting 4, but moving to (0, 1) leaves plenty of empty cells on the top row and the rest of the grid to insert clue 3 without back‑tracking.)
+
+3. **Avoiding dead‑ends** – Heading up into the top row opens up the largest open area of the board (the whole first row and the area below it) for the rest of the path. Moving left to (1, 0) or right to (1, 2) would trap us in the lower‑left corner or force an early turn that could create a dead‑end later, making it harder to fill all 25 cells.
+
+4. **Future filling strategy** – After moving to (0, 1) we can continue east across the top row (0, 2 → 4), then snake down the board, filling every remaining empty cell while respecting the clue order (placing clue 3 somewhere before we hit clue 4).
+
+Hence, the optimal next move is **(0, 1)**.
+2025-11-03 21:39:57,637 - llm_manager - INFO - ================================================================================
+2025-11-03 21:39:57,639 - metrics - INFO - Move 6: (0, 1) - Valid: True, Latency: 13347ms, Confidence: 0.90
+2025-11-03 21:39:57,639 - GUI - INFO - Move 6: (0, 1) - Valid
+2025-11-03 21:39:58,645 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:39:58,645 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:39:58,646 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:40:08,869 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:40:08,873 - llm_manager - INFO - ================================================================================
+2025-11-03 21:40:08,874 - llm_manager - INFO - LLM RESPONSE (Move 7):
+2025-11-03 21:40:08,875 - llm_manager - INFO - ================================================================================
+2025-11-03 21:40:08,875 - llm_manager - INFO - **Move:** Go to cell **(0, 0)**.
+
+**Why this is the only legal choice**
+
+| Reason | Explanation |
+|--------|-------------|
+| **Must follow clue order** | The next numbered clue on the board is **4** at (0, 2). We have not yet visited clue 3, whose location is still unknown, so we cannot jump to clue 4. |
+| **Only empty adjacent squares** | From the current head of the path at (0, 1) the adjacent squares (including diagonals) are: <br>• (0, 0) – empty<br>• (0, 2) – contains clue 4<br>• (1, 0) – already part of the path (P)<br>• (1, 1) – already part of the path (P)<br>• (1, 2) – empty but not directly adjacent (needs a diagonal step through (0, 2) or (1, 1), both occupied).<br>Thus the only *empty* cell we can step into without breaking the adjacency rule is (0, 0). |
+| **Path continuity** | Moving to (0, 0) extends the existing continuous line without revisiting any filled cell, keeping the path valid. |
+| **Future possibilities** | From (0, 0) we will have new adjacent squares (including (0, 2) via a diagonal) that keep the options open for eventually reaching clue 3 and then clue 4. |
+
+Therefore the correct next move is **(0, 0)**.
+2025-11-03 21:40:08,875 - llm_manager - INFO - ================================================================================
+2025-11-03 21:40:08,876 - metrics - INFO - Move 7: (0, 0) - Valid: True, Latency: 10230ms, Confidence: 0.90
+2025-11-03 21:40:08,876 - GUI - INFO - Move 7: (0, 0) - Valid
+2025-11-03 21:40:09,870 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:40:09,870 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:40:09,871 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:40:22,627 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:40:22,629 - llm_manager - INFO - ================================================================================
+2025-11-03 21:40:22,629 - llm_manager - INFO - LLM RESPONSE (Move 8):
+2025-11-03 21:40:22,631 - llm_manager - INFO - ================================================================================
+2025-11-03 21:40:22,632 - llm_manager - INFO - **Next move: (1, 0)**
+
+**Why this is the only legal move**
+
+| Reason | Explanation |
+|--------|-------------|
+| **Adjacency** | From the current cell (0, 0) the only orthogonal/diagonal neighbour that is still empty is (1, 0). All other neighbours are either already part of the path (the **P** cells) or lie outside the 5 × 5 board. |
+| **Continuity** | The path must be a single, unbroken chain. Stepping to (1, 0) continues that chain directly from (0, 0) without breaking it. |
+| **No revisits** | (1, 0) has not been visited yet (it is blank on the board), so moving there obeys the “cannot revisit cells” rule. |
+| **Future‑clue order** | We have already started at clue 1 (4, 0) and visited clue 2 (1, 1) – both are marked **P**. The next clue we must reach is clue 3, whose position is still unfilled. By moving to (1, 0) we stay on the left‑most column, keeping as much open space as possible for the remaining 20‑cell portion of the path and for the eventual connection to clue 3. |
+| **Filling the board** | The goal is to fill all 25 cells. Moving down to (1, 0) adds the eighth filled cell, bringing us closer to the required 25‑cell coverage while preserving flexibility for later moves. |
+
+Therefore, the only move that satisfies all Zip‑Puzzle rules at this moment is **downwards to cell (1, 0)**.
+2025-11-03 21:40:22,632 - llm_manager - INFO - ================================================================================
+2025-11-03 21:40:22,634 - metrics - INFO - Move 8: (1, 0) - Valid: True, Latency: 12763ms, Confidence: 0.90
+2025-11-03 21:40:22,634 - GUI - INFO - Move 8: (1, 0) - Valid
+2025-11-03 21:40:23,641 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:40:23,641 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:40:23,642 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud

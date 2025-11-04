@@ -1,0 +1,23 @@
+2025-11-04 09:31:44,009 INFO    Thread-1 (solve_with_llm):35076 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2025-11-04 09:31:44,010 INFO    Thread-1 (solve_with_llm):35076 [wandb_setup.py:_flush():81] Configure stats pid to 35076
+2025-11-04 09:31:44,010 INFO    Thread-1 (solve_with_llm):35076 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\.config\wandb\settings
+2025-11-04 09:31:44,010 INFO    Thread-1 (solve_with_llm):35076 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\Desktop\Zip-solver\Zip_Solver-with_LLM\src\wandb\settings
+2025-11-04 09:31:44,010 INFO    Thread-1 (solve_with_llm):35076 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-11-04 09:31:44,010 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:setup_run_log_directory():706] Logging user logs to C:\Users\thame\Desktop\Zip-solver\Zip_Solver-with_LLM\src\wandb\run-20251104_093144-iuog19j0\logs\debug.log
+2025-11-04 09:31:44,012 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to C:\Users\thame\Desktop\Zip-solver\Zip_Solver-with_LLM\src\wandb\run-20251104_093144-iuog19j0\logs\debug-internal.log
+2025-11-04 09:31:44,012 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():833] calling init triggers
+2025-11-04 09:31:44,012 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-11-04 09:31:44,012 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():881] starting backend
+2025-11-04 09:31:46,272 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():884] sending inform_init request
+2025-11-04 09:31:46,318 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():892] backend started and connected
+2025-11-04 09:31:46,318 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():962] updated telemetry
+2025-11-04 09:31:46,344 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2025-11-04 09:31:48,274 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():1033] starting run threads in backend
+2025-11-04 09:31:48,367 INFO    Thread-1 (solve_with_llm):35076 [wandb_run.py:_console_start():2506] atexit reg
+2025-11-04 09:31:48,367 INFO    Thread-1 (solve_with_llm):35076 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-11-04 09:31:48,367 INFO    Thread-1 (solve_with_llm):35076 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-11-04 09:31:48,367 INFO    Thread-1 (solve_with_llm):35076 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-11-04 09:31:48,370 INFO    Thread-1 (solve_with_llm):35076 [wandb_init.py:init():1073] run started, returning control to user process
+2025-11-04 09:32:26,438 INFO    wandb-AsyncioManager-main:35076 [service_client.py:_forward_responses():80] Reached EOF.
+2025-11-04 09:32:26,438 INFO    wandb-AsyncioManager-main:35076 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

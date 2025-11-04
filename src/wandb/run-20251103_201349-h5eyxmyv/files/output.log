@@ -1,0 +1,262 @@
+2025-11-03 20:13:53,814 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 20:13:53,825 - metrics - INFO - Game metrics started for 8x8 board
+2025-11-03 20:13:53,826 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:13:53,827 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:13:53,827 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:14:15,577 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:14:15,579 - llm_manager - INFO - Ollama response: {
+    "next_move": {"row": 7, "col": 4},
+    "reasoning": "The next required number is 2. In the grid the cell at (7,4) already contains the fixed number 2, and it is diagonally adjacent to the current position of 1 at (6,5) (row +1, column -1). Since moves may be made in any of the eight directions, moving to (7,4) satisfies the adjacency rule and places the next sequential number correctly.",
+    "suggested_sequence": [
+        {"row": 7, "col": 4}  // place 2
+        // Further moves would continue with 3 at (5,5), 4 at (7,6), etc., following the same adjacency logic.
+    ],
+    "confidence": 0.96
+}
+2025-11-03 20:14:15,581 - llm_manager - INFO - Parsed LLM response: {'next_move': {'row': 7, 'col': 4}, 'reasoning': 'The next required number is 2. In the grid the cell at (7,4) already contains the fixed number 2, and it is diagonally adjacent to the current position of 1 at (6,5) (row +1, column -1). Since moves may be made in any of the eight directions, moving to (7,4) satisfies the adjacency rule and places the next sequential number correctly.', 'suggested_sequence': [{'row': 7, 'col': 4}], 'confidence': 0.96}
+2025-11-03 20:14:15,584 - metrics - INFO - Move 1: (7, 4) - Valid: False, Latency: 21756ms, Confidence: 0.96
+2025-11-03 20:14:15,585 - GUI - WARNING - Invalid LLM move: (7, 4)
+2025-11-03 20:14:16,083 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:14:16,084 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:14:16,085 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:14:47,473 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u202f' in position 199: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 217, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 183, in solve_with_ollama
+    logger.info(f"Ollama response: {response_text}")
+Message: 'Ollama response: {\n    "next_move": {"row": 4, "col": 4},\n    "reasoning": "The CLUES list the locations for the early numbers of the Zip path. Number\u202f1 is already placed at (6,5). The next required number is 2, whose clue is (5,5) using 0‑based indexing. Converting (5,5) to the row‑column format used in the request gives (row\u202f4, col\u202f4) because the clue coordinates are 1‑based while the grid display is 0‑based. This cell is empty, adjacent (diagonally up‑left) to the current cell (6,5), and therefore the only valid location for the next step.",\n    "suggested_sequence": [\n        {"row": 4, "col": 4},\n        {"row": 2, "col": 6},\n        {"row": 3, "col": 4},\n        {"row": 1, "col": 0}\n    ],\n    "confidence": 0.62\n}'
+Arguments: ()
+2025-11-03 20:14:47,474 - llm_manager - INFO - Ollama response: {
+    "next_move": {"row": 4, "col": 4},
+    "reasoning": "The CLUES list the locations for the early numbers of the Zip path. Number 1 is already placed at (6,5). The next required number is 2, whose clue is (5,5) using 0‑based indexing. Converting (5,5) to the row‑column format used in the request gives (row 4, col 4) because the clue coordinates are 1‑based while the grid display is 0‑based. This cell is empty, adjacent (diagonally up‑left) to the current cell (6,5), and therefore the only valid location for the next step.",
+    "suggested_sequence": [
+        {"row": 4, "col": 4},
+        {"row": 2, "col": 6},
+        {"row": 3, "col": 4},
+        {"row": 1, "col": 0}
+    ],
+    "confidence": 0.62
+}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2011' in position 286: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 217, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 205, in solve_with_ollama
+    logger.info(f"Parsed LLM response: {result}")
+Message: "Parsed LLM response: {'next_move': {'row': 4, 'col': 4}, 'reasoning': 'The CLUES list the locations for the early numbers of the Zip path. Number\\u202f1 is already placed at (6,5). The next required number is 2, whose clue is (5,5) using 0‑based indexing. Converting (5,5) to the row‑column format used in the request gives (row\\u202f4, col\\u202f4) because the clue coordinates are 1‑based while the grid display is 0‑based. This cell is empty, adjacent (diagonally up‑left) to the current cell (6,5), and therefore the only valid location for the next step.', 'suggested_sequence': [{'row': 4, 'col': 4}, {'row': 2, 'col': 6}, {'row': 3, 'col': 4}, {'row': 1, 'col': 0}], 'confidence': 0.62}"
+Arguments: ()
+2025-11-03 20:14:47,483 - llm_manager - INFO - Parsed LLM response: {'next_move': {'row': 4, 'col': 4}, 'reasoning': 'The CLUES list the locations for the early numbers of the Zip path. Number\u202f1 is already placed at (6,5). The next required number is 2, whose clue is (5,5) using 0‑based indexing. Converting (5,5) to the row‑column format used in the request gives (row\u202f4, col\u202f4) because the clue coordinates are 1‑based while the grid display is 0‑based. This cell is empty, adjacent (diagonally up‑left) to the current cell (6,5), and therefore the only valid location for the next step.', 'suggested_sequence': [{'row': 4, 'col': 4}, {'row': 2, 'col': 6}, {'row': 3, 'col': 4}, {'row': 1, 'col': 0}], 'confidence': 0.62}
+2025-11-03 20:14:47,487 - metrics - INFO - Move 2: (4, 4) - Valid: False, Latency: 31403ms, Confidence: 0.62
+2025-11-03 20:14:47,488 - GUI - WARNING - Invalid LLM move: (4, 4)
+2025-11-03 20:14:47,988 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:14:47,989 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:14:47,991 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:15:21,768 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u202f' in position 131: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 217, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 183, in solve_with_ollama
+    logger.info(f"Ollama response: {response_text}")
+Message: 'Ollama response: {\n    "next_move": {"row": 5, "col": 4},\n    "reasoning": "Number\u202f2 must be placed in a cell that is orthogonally/diagonally adjacent to the current end of the path (1 at (6,5)). All eight neighboring cells are examined. The cell (5,5) already contains the fixed number\u202f3, so it cannot hold 2. The remaining free adjacent cells are (5,4), (5,6), (6,4) and (6,6). Since 3 is already fixed at (5,5), 2 also needs to be adjacent to 3, which all four candidates satisfy. Choosing (5,4) moves the path north‑westward toward the cluster of higher numbers (13‑16) and avoids isolating any empty region, making it a safe early step. Hence (5,4) is the most natural next move.",\n    "suggested_sequence": [\n        {"row": 5, "col": 4},\n        {"row": 4, "col": 3},\n        {"row": 3, "col": 2}\n    ],\n    "confidence": 0.62\n}'
+Arguments: ()
+2025-11-03 20:15:21,770 - llm_manager - INFO - Ollama response: {
+    "next_move": {"row": 5, "col": 4},
+    "reasoning": "Number 2 must be placed in a cell that is orthogonally/diagonally adjacent to the current end of the path (1 at (6,5)). All eight neighboring cells are examined. The cell (5,5) already contains the fixed number 3, so it cannot hold 2. The remaining free adjacent cells are (5,4), (5,6), (6,4) and (6,6). Since 3 is already fixed at (5,5), 2 also needs to be adjacent to 3, which all four candidates satisfy. Choosing (5,4) moves the path north‑westward toward the cluster of higher numbers (13‑16) and avoids isolating any empty region, making it a safe early step. Hence (5,4) is the most natural next move.",
+    "suggested_sequence": [
+        {"row": 5, "col": 4},
+        {"row": 4, "col": 3},
+        {"row": 3, "col": 2}
+    ],
+    "confidence": 0.62
+}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2011' in position 571: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 217, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 205, in solve_with_ollama
+    logger.info(f"Parsed LLM response: {result}")
+Message: "Parsed LLM response: {'next_move': {'row': 5, 'col': 4}, 'reasoning': 'Number\\u202f2 must be placed in a cell that is orthogonally/diagonally adjacent to the current end of the path (1 at (6,5)). All eight neighboring cells are examined. The cell (5,5) already contains the fixed number\\u202f3, so it cannot hold 2. The remaining free adjacent cells are (5,4), (5,6), (6,4) and (6,6). Since 3 is already fixed at (5,5), 2 also needs to be adjacent to 3, which all four candidates satisfy. Choosing (5,4) moves the path north‑westward toward the cluster of higher numbers (13‑16) and avoids isolating any empty region, making it a safe early step. Hence (5,4) is the most natural next move.', 'suggested_sequence': [{'row': 5, 'col': 4}, {'row': 4, 'col': 3}, {'row': 3, 'col': 2}], 'confidence': 0.62}"
+Arguments: ()
+2025-11-03 20:15:21,782 - llm_manager - INFO - Parsed LLM response: {'next_move': {'row': 5, 'col': 4}, 'reasoning': 'Number\u202f2 must be placed in a cell that is orthogonally/diagonally adjacent to the current end of the path (1 at (6,5)). All eight neighboring cells are examined. The cell (5,5) already contains the fixed number\u202f3, so it cannot hold 2. The remaining free adjacent cells are (5,4), (5,6), (6,4) and (6,6). Since 3 is already fixed at (5,5), 2 also needs to be adjacent to 3, which all four candidates satisfy. Choosing (5,4) moves the path north‑westward toward the cluster of higher numbers (13‑16) and avoids isolating any empty region, making it a safe early step. Hence (5,4) is the most natural next move.', 'suggested_sequence': [{'row': 5, 'col': 4}, {'row': 4, 'col': 3}, {'row': 3, 'col': 2}], 'confidence': 0.62}
+2025-11-03 20:15:21,787 - metrics - INFO - Move 3: (5, 4) - Valid: False, Latency: 33798ms, Confidence: 0.62
+2025-11-03 20:15:21,787 - GUI - WARNING - Invalid LLM move: (5, 4)
+2025-11-03 20:15:22,275 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:15:22,276 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:15:22,277 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:15:44,484 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u202f' in position 131: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 217, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 183, in solve_with_ollama
+    logger.info(f"Ollama response: {response_text}")
+Message: 'Ollama response: {\n    "next_move": {"row": 5, "col": 4},\n    "reasoning": "Number\u202f2 must be placed in a cell adjacent to the starting cell (1) at (6,5). All adjacent cells are examined. The only adjacent cells that are not already occupied by fixed numbers are (5,4), (5,6), (6,4), (6,6), (7,4), and (7,6). Choosing (5,4) is advantageous because it sits directly next to the already‑filled number\u202f3 at (5,5), allowing the sequence 2 → 3 to be satisfied immediately and keeping the path directed toward the rest of the grid. This also respects the given clue sequence, which lists step\u202f2 at (5,5) (the location of 3), implying that step\u202f1’s successor (the 2) should be just before it.",\n    "suggested_sequence": [\n        {"row": 5, "col": 4},   // place 2 here (adjacent to 1)\n        {"row": 5, "col": 5},   // 3 is already fixed at this location\n        {"row": 4, "col": 6},   // possible location for 4 (continue path)\n        {"row": 3, "col": 5},   // 5 could move toward the existing 7/9 cluster\n        {"row": 3, "col": 4}    // reaches the given 9 later in the sequence\n    ],\n    "confidence": 0.71\n}'
+Arguments: ()
+2025-11-03 20:15:44,485 - llm_manager - INFO - Ollama response: {
+    "next_move": {"row": 5, "col": 4},
+    "reasoning": "Number 2 must be placed in a cell adjacent to the starting cell (1) at (6,5). All adjacent cells are examined. The only adjacent cells that are not already occupied by fixed numbers are (5,4), (5,6), (6,4), (6,6), (7,4), and (7,6). Choosing (5,4) is advantageous because it sits directly next to the already‑filled number 3 at (5,5), allowing the sequence 2 → 3 to be satisfied immediately and keeping the path directed toward the rest of the grid. This also respects the given clue sequence, which lists step 2 at (5,5) (the location of 3), implying that step 1’s successor (the 2) should be just before it.",
+    "suggested_sequence": [
+        {"row": 5, "col": 4},   // place 2 here (adjacent to 1)
+        {"row": 5, "col": 5},   // 3 is already fixed at this location
+        {"row": 4, "col": 6},   // possible location for 4 (continue path)
+        {"row": 3, "col": 5},   // 5 could move toward the existing 7/9 cluster
+        {"row": 3, "col": 4}    // reaches the given 9 later in the sequence
+    ],
+    "confidence": 0.71
+}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2011' in position 430: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 217, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 205, in solve_with_ollama
+    logger.info(f"Parsed LLM response: {result}")
+Message: "Parsed LLM response: {'next_move': {'row': 5, 'col': 4}, 'reasoning': 'Number\\u202f2 must be placed in a cell adjacent to the starting cell (1) at (6,5). All adjacent cells are examined. The only adjacent cells that are not already occupied by fixed numbers are (5,4), (5,6), (6,4), (6,6), (7,4), and (7,6). Choosing (5,4) is advantageous because it sits directly next to the already‑filled number\\u202f3 at (5,5), allowing the sequence 2 → 3 to be satisfied immediately and keeping the path directed toward the rest of the grid. This also respects the given clue sequence, which lists step\\u202f2 at (5,5) (the location of 3), implying that step\\u202f1’s successor (the 2) should be just before it.', 'suggested_sequence': [{'row': 5, 'col': 4}, {'row': 5, 'col': 5}, {'row': 4, 'col': 6}, {'row': 3, 'col': 5}, {'row': 3, 'col': 4}], 'confidence': 0.71}"
+Arguments: ()
+2025-11-03 20:15:44,492 - llm_manager - INFO - Parsed LLM response: {'next_move': {'row': 5, 'col': 4}, 'reasoning': 'Number\u202f2 must be placed in a cell adjacent to the starting cell (1) at (6,5). All adjacent cells are examined. The only adjacent cells that are not already occupied by fixed numbers are (5,4), (5,6), (6,4), (6,6), (7,4), and (7,6). Choosing (5,4) is advantageous because it sits directly next to the already‑filled number\u202f3 at (5,5), allowing the sequence 2 → 3 to be satisfied immediately and keeping the path directed toward the rest of the grid. This also respects the given clue sequence, which lists step\u202f2 at (5,5) (the location of 3), implying that step\u202f1’s successor (the 2) should be just before it.', 'suggested_sequence': [{'row': 5, 'col': 4}, {'row': 5, 'col': 5}, {'row': 4, 'col': 6}, {'row': 3, 'col': 5}, {'row': 3, 'col': 4}], 'confidence': 0.71}
+2025-11-03 20:15:44,496 - metrics - INFO - Move 4: (5, 4) - Valid: False, Latency: 22221ms, Confidence: 0.71
+2025-11-03 20:15:44,496 - GUI - WARNING - Invalid LLM move: (5, 4)
+2025-11-03 20:15:44,497 - GUI - ERROR - LLM auto-solve error: video system not initialized
+2025-11-03 20:15:44,497 - metrics - INFO - Game ended - Success: False, Time: 110.7s
+2025-11-03 20:15:44,498 - metrics - INFO - Metrics logged to wandb successfully
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 115: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 273, in solve_with_llm
+    logger.info(summary)
+Message: '\n=== GAME SUMMARY ===\nBoard Size: 8x8\nTotal Moves: 4\nCompletion: FAILED ✗\nTime: 110.7s\n\n=== METRICS ===\nValid Moves: 0/4\nBad Moves: 4\nClue Hits: 1\nMove Efficiency: 0.0%\nClue Accuracy: 20.0%\nAvg Latency: 27295ms\nSuccess Ratio: 0.0%\n'
+Arguments: ()
+2025-11-03 20:15:44,498 - GUI - INFO -
+=== GAME SUMMARY ===
+Board Size: 8x8
+Total Moves: 4
+Completion: FAILED ✗
+Time: 110.7s
+
+=== METRICS ===
+Valid Moves: 0/4
+Bad Moves: 4
+Clue Hits: 1
+Move Efficiency: 0.0%
+Clue Accuracy: 20.0%
+Avg Latency: 27295ms
+Success Ratio: 0.0%
+
+=== GAME SUMMARY ===
+Board Size: 8x8
+Total Moves: 4
+Completion: FAILED ✗
+Time: 110.7s
+
+=== METRICS ===
+Valid Moves: 0/4
+Bad Moves: 4
+Clue Hits: 1
+Move Efficiency: 0.0%
+Clue Accuracy: 20.0%
+Avg Latency: 27295ms
+Success Ratio: 0.0%

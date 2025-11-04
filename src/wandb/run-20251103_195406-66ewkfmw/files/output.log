@@ -1,0 +1,15 @@
+2025-11-03 19:54:11,135 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 19:54:11,136 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 19:54:11,137 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 19:54:11,137 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 19:54:22,926 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 19:54:22,927 - llm_manager - INFO - Ollama response: {
+    "next_move": {"row": 5, "col": 2},
+    "reasoning": "The current path ends at the starting cell (5,1). The next required number is 2, which is located at (5,3). To reach it while obeying the adjacency rule, the most direct route is to move one step to the right into an empty cell (5,2) and then another step right to (5,3). This keeps the path continuous, uses only orthogonal moves (which are always allowed), and does not revisit any cell.",
+    "suggested_sequence": [
+        {"row": 5, "col": 2},
+        {"row": 5, "col": 3}  // reaches number 2
+    ],
+    "confidence": 0.97
+}
+2025-11-03 19:54:22,929 - llm_manager - WARNING - Failed to parse JSON from Ollama response: Expecting ',' delimiter: line 6 column 31 (char 539)

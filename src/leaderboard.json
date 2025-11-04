@@ -1,0 +1,16 @@
+[
+  {
+    "player_name": "Player",
+    "board_size": 5,
+    "time_seconds": 46,
+    "timestamp": "2025-11-04T09:41:50.954751",
+    "score": 21.27659574468085
+  },
+  {
+    "player_name": "Player",
+    "board_size": 4,
+    "time_seconds": 39,
+    "timestamp": "2025-11-03T22:12:21.212263",
+    "score": 20.0
+  }
+]

@@ -1,0 +1,146 @@
+2025-11-03 19:56:41,033 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 19:56:41,034 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 19:56:41,034 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 19:56:41,035 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 19:56:57,209 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2011' in position 251: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 178, in <module>
+    main()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 175, in main
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 399, in run
+    if self.handle_button_click(e.pos):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 124, in handle_button_click
+    self.show_llm_provider_menu()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 182, in show_llm_provider_menu
+    self.solve_with_llm(selected_provider)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 198, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 183, in solve_with_ollama
+    logger.info(f"Ollama response: {response_text}")
+Message: 'Ollama response: {\n    "next_move": {"row": 1, "col": 3},\n    "reasoning": "From the starting cell (0,3) the only adjacent empty squares are (0,2), (0,4), (1,2), (1,3) and (1,4). (1,4) contains the high‑value clue 13, so stepping there would violate the rule of not visiting larger numbers before their turn. The other empty squares are viable, but (1,3) heads the path toward the location of the next required number (2) at (5,6) while staying clear of all known higher numbers (6,7,8,9,10,12,13). Choosing (1,3) begins a monotonic down‑and‑right progression that can later snake through the remaining empty cells without creating dead‑ends. \\n\\nA possible short‑term route to reach the 2 after this first step is:\\n(0,3) → (1,3) → (2,2) → (3,1) → (4,2) → (5,3) → (5,4) → (5,5) → (5,6)[2].\\nAll squares in this suggested sequence are currently empty and avoid stepping on any numbered clue that has not yet been visited.",\n    "suggested_sequence": [\n        {"row": 2, "col": 2},\n        {"row": 3, "col": 1},\n        {"row": 4, "col": 2},\n        {"row": 5, "col": 3},\n        {"row": 5, "col": 4},\n        {"row": 5, "col": 5},\n        {"row": 5, "col": 6}\n    ],\n    "confidence": 0.78\n}'
+Arguments: ()
+2025-11-03 19:56:57,211 - llm_manager - INFO - Ollama response: {
+    "next_move": {"row": 1, "col": 3},
+    "reasoning": "From the starting cell (0,3) the only adjacent empty squares are (0,2), (0,4), (1,2), (1,3) and (1,4). (1,4) contains the high‑value clue 13, so stepping there would violate the rule of not visiting larger numbers before their turn. The other empty squares are viable, but (1,3) heads the path toward the location of the next required number (2) at (5,6) while staying clear of all known higher numbers (6,7,8,9,10,12,13). Choosing (1,3) begins a monotonic down‑and‑right progression that can later snake through the remaining empty cells without creating dead‑ends. \n\nA possible short‑term route to reach the 2 after this first step is:\n(0,3) → (1,3) → (2,2) → (3,1) → (4,2) → (5,3) → (5,4) → (5,5) → (5,6)[2].\nAll squares in this suggested sequence are currently empty and avoid stepping on any numbered clue that has not yet been visited.",
+    "suggested_sequence": [
+        {"row": 2, "col": 2},
+        {"row": 3, "col": 1},
+        {"row": 4, "col": 2},
+        {"row": 5, "col": 3},
+        {"row": 5, "col": 4},
+        {"row": 5, "col": 5},
+        {"row": 5, "col": 6}
+    ],
+    "confidence": 0.78
+}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2011' in position 244: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 178, in <module>
+    main()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 175, in main
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 399, in run
+    if self.handle_button_click(e.pos):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 124, in handle_button_click
+    self.show_llm_provider_menu()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 182, in show_llm_provider_menu
+    self.solve_with_llm(selected_provider)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 198, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 205, in solve_with_ollama
+    logger.info(f"Parsed LLM response: {result}")
+Message: "Parsed LLM response: {'next_move': {'row': 1, 'col': 3}, 'reasoning': 'From the starting cell (0,3) the only adjacent empty squares are (0,2), (0,4), (1,2), (1,3) and (1,4). (1,4) contains the high‑value clue 13, so stepping there would violate the rule of not visiting larger numbers before their turn. The other empty squares are viable, but (1,3) heads the path toward the location of the next required number (2) at (5,6) while staying clear of all known higher numbers (6,7,8,9,10,12,13). Choosing (1,3) begins a monotonic down‑and‑right progression that can later snake through the remaining empty cells without creating dead‑ends. \\n\\nA possible short‑term route to reach the 2 after this first step is:\\n(0,3) → (1,3) → (2,2) → (3,1) → (4,2) → (5,3) → (5,4) → (5,5) → (5,6)[2].\\nAll squares in this suggested sequence are currently empty and avoid stepping on any numbered clue that has not yet been visited.', 'suggested_sequence': [{'row': 2, 'col': 2}, {'row': 3, 'col': 1}, {'row': 4, 'col': 2}, {'row': 5, 'col': 3}, {'row': 5, 'col': 4}, {'row': 5, 'col': 5}, {'row': 5, 'col': 6}], 'confidence': 0.78}"
+Arguments: ()
+2025-11-03 19:56:57,231 - llm_manager - INFO - Parsed LLM response: {'next_move': {'row': 1, 'col': 3}, 'reasoning': 'From the starting cell (0,3) the only adjacent empty squares are (0,2), (0,4), (1,2), (1,3) and (1,4). (1,4) contains the high‑value clue 13, so stepping there would violate the rule of not visiting larger numbers before their turn. The other empty squares are viable, but (1,3) heads the path toward the location of the next required number (2) at (5,6) while staying clear of all known higher numbers (6,7,8,9,10,12,13). Choosing (1,3) begins a monotonic down‑and‑right progression that can later snake through the remaining empty cells without creating dead‑ends. \n\nA possible short‑term route to reach the 2 after this first step is:\n(0,3) → (1,3) → (2,2) → (3,1) → (4,2) → (5,3) → (5,4) → (5,5) → (5,6)[2].\nAll squares in this suggested sequence are currently empty and avoid stepping on any numbered clue that has not yet been visited.', 'suggested_sequence': [{'row': 2, 'col': 2}, {'row': 3, 'col': 1}, {'row': 4, 'col': 2}, {'row': 5, 'col': 3}, {'row': 5, 'col': 4}, {'row': 5, 'col': 5}, {'row': 5, 'col': 6}], 'confidence': 0.78}
+2025-11-03 19:56:57,239 - GUI - INFO - LLM move applied: (1, 3)
+2025-11-03 19:58:01,102 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 19:58:01,103 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 19:58:01,104 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 19:58:24,278 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u202f' in position 174: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 178, in <module>
+    main()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 175, in main
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 399, in run
+    if self.handle_button_click(e.pos):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 124, in handle_button_click
+    self.show_llm_provider_menu()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 182, in show_llm_provider_menu
+    self.solve_with_llm(selected_provider)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 198, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 183, in solve_with_ollama
+    logger.info(f"Ollama response: {response_text}")
+Message: 'Ollama response: {\n    "next_move": {"row": 0, "col": 4},\n    "reasoning": "From the current end of the path at (1,3) (number\u202f2) the eight neighboring cells are (0,2), (0,3), (0,4), (1,2), (1,4), (2,2), (2,3) and (2,4).  (0,3) is already occupied by 1 and (2,4) already holds the fixed number 12, so they cannot host 3.  The remaining cells are all empty, but we must avoid placing 3 in a location that would block the later forced numbers (especially 8 at (3,2) and 7 at (0,0)).  Choosing the diagonal up‑right cell (0,4) keeps the top‑right region open for the early part of the snake‑like path, stays away from column\u202f2 (where the fixed 8 resides), and does not create a dead‑end that would isolate the cluster of low numbers (4‑6‑7) on the left side of the grid.  Therefore the most logical next step for number\u202f3 is to move to (0,4).",\n    "suggested_sequence": [\n        {"row": 0, "col": 4},   // place 3\n        {"row": 0, "col": 5},   // possible placement for 4 (continue exploring top row)\n        {"row": 0, "col": 6},   // possible placement for 5\n        {"row": 1, "col": 6}    // continue towards the centre before heading down to the fixed numbers\n    ],\n    "confidence": 0.62\n}'
+Arguments: ()
+2025-11-03 19:58:24,279 - llm_manager - INFO - Ollama response: {
+    "next_move": {"row": 0, "col": 4},
+    "reasoning": "From the current end of the path at (1,3) (number 2) the eight neighboring cells are (0,2), (0,3), (0,4), (1,2), (1,4), (2,2), (2,3) and (2,4).  (0,3) is already occupied by 1 and (2,4) already holds the fixed number 12, so they cannot host 3.  The remaining cells are all empty, but we must avoid placing 3 in a location that would block the later forced numbers (especially 8 at (3,2) and 7 at (0,0)).  Choosing the diagonal up‑right cell (0,4) keeps the top‑right region open for the early part of the snake‑like path, stays away from column 2 (where the fixed 8 resides), and does not create a dead‑end that would isolate the cluster of low numbers (4‑6‑7) on the left side of the grid.  Therefore the most logical next step for number 3 is to move to (0,4).",
+    "suggested_sequence": [
+        {"row": 0, "col": 4},   // place 3
+        {"row": 0, "col": 5},   // possible placement for 4 (continue exploring top row)
+        {"row": 0, "col": 6},   // possible placement for 5
+        {"row": 1, "col": 6}    // continue towards the centre before heading down to the fixed numbers
+    ],
+    "confidence": 0.62
+}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2011' in position 552: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 178, in <module>
+    main()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\main.py", line 175, in main
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 399, in run
+    if self.handle_button_click(e.pos):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 124, in handle_button_click
+    self.show_llm_provider_menu()
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 182, in show_llm_provider_menu
+    self.solve_with_llm(selected_provider)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\GUI.py", line 198, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 230, in solve
+    return self.solve_with_ollama(board, path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 205, in solve_with_ollama
+    logger.info(f"Parsed LLM response: {result}")
+Message: "Parsed LLM response: {'next_move': {'row': 0, 'col': 4}, 'reasoning': 'From the current end of the path at (1,3) (number\\u202f2) the eight neighboring cells are (0,2), (0,3), (0,4), (1,2), (1,4), (2,2), (2,3) and (2,4).  (0,3) is already occupied by 1 and (2,4) already holds the fixed number 12, so they cannot host 3.  The remaining cells are all empty, but we must avoid placing 3 in a location that would block the later forced numbers (especially 8 at (3,2) and 7 at (0,0)).  Choosing the diagonal up‑right cell (0,4) keeps the top‑right region open for the early part of the snake‑like path, stays away from column\\u202f2 (where the fixed 8 resides), and does not create a dead‑end that would isolate the cluster of low numbers (4‑6‑7) on the left side of the grid.  Therefore the most logical next step for number\\u202f3 is to move to (0,4).', 'suggested_sequence': [{'row': 0, 'col': 4}, {'row': 0, 'col': 5}, {'row': 0, 'col': 6}, {'row': 1, 'col': 6}], 'confidence': 0.62}"
+Arguments: ()
+2025-11-03 19:58:24,295 - llm_manager - INFO - Parsed LLM response: {'next_move': {'row': 0, 'col': 4}, 'reasoning': 'From the current end of the path at (1,3) (number\u202f2) the eight neighboring cells are (0,2), (0,3), (0,4), (1,2), (1,4), (2,2), (2,3) and (2,4).  (0,3) is already occupied by 1 and (2,4) already holds the fixed number 12, so they cannot host 3.  The remaining cells are all empty, but we must avoid placing 3 in a location that would block the later forced numbers (especially 8 at (3,2) and 7 at (0,0)).  Choosing the diagonal up‑right cell (0,4) keeps the top‑right region open for the early part of the snake‑like path, stays away from column\u202f2 (where the fixed 8 resides), and does not create a dead‑end that would isolate the cluster of low numbers (4‑6‑7) on the left side of the grid.  Therefore the most logical next step for number\u202f3 is to move to (0,4).', 'suggested_sequence': [{'row': 0, 'col': 4}, {'row': 0, 'col': 5}, {'row': 0, 'col': 6}, {'row': 1, 'col': 6}], 'confidence': 0.62}
+2025-11-03 19:58:24,301 - GUI - WARNING - Invalid LLM move: (0, 4)

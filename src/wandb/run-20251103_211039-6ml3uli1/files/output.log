@@ -1,0 +1,1341 @@
+2025-11-03 21:10:44,273 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 21:10:44,275 - metrics - INFO - Game metrics started for 8x8 board
+2025-11-03 21:10:44,276 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:10:44,276 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:10:44,276 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:10:44,277 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][ 9][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+[ 2][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (4, 1)
+Path Length: 1 / 64
+Cells Filled: 1 / 64
+Cells Remaining: 63
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (3, 1)
+  (5, 1)
+  (4, 0)
+  (4, 2)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:10:50,017 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:10:50,020 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:10:50,021 - llm_manager - INFO - {"next_move": {"row": 4, "col": 0}, "reason": "Moving directly to clue 2, which is adjacent left from the current position, keeps the path on track and avoids creating dead ends."}
+2025-11-03 21:10:50,021 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:10:50,023 - llm_manager - INFO - Ollama response length: 180 chars
+2025-11-03 21:10:50,025 - llm_manager - INFO - Parsed move: (4, 0)
+2025-11-03 21:10:50,025 - metrics - INFO - Move 1: (4, 0) - Valid: True, Latency: 5749ms, Confidence: 0.90
+2025-11-03 21:10:50,026 - GUI - INFO - Move 1: (4, 0) - Valid
+2025-11-03 21:10:51,017 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:10:51,019 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:10:51,020 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:10:51,021 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][ 9][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+[P][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (4, 0)
+Path Length: 2 / 64
+Cells Filled: 2 / 64
+Cells Remaining: 62
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (3, 0)
+  (5, 0)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:10:59,738 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:10:59,740 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:10:59,740 - llm_manager - INFO - {"next_move": {"row": 3, "col": 0}, "reason": "Moving upward to (3,0) brings us directly toward the next required clue at (2,1) and keeps the surrounding cells open for later exploration, avoiding a dead‑end that could arise by heading downwards."}
+2025-11-03 21:10:59,740 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:10:59,741 - llm_manager - INFO - Ollama response length: 248 chars
+2025-11-03 21:10:59,742 - llm_manager - INFO - Parsed move: (3, 0)
+2025-11-03 21:10:59,743 - metrics - INFO - Move 2: (3, 0) - Valid: True, Latency: 8724ms, Confidence: 0.90
+2025-11-03 21:10:59,743 - GUI - INFO - Move 2: (3, 0) - Valid
+2025-11-03 21:11:00,732 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:11:00,732 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:11:00,733 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:11:00,734 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][ 9][ ][ ][ ][ ][ ][ ]
+[P][ ][ ][ ][ ][ ][ ][ ]
+[P][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (3, 0)
+Path Length: 3 / 64
+Cells Filled: 3 / 64
+Cells Remaining: 61
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (2, 0)
+  (3, 1)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:11:10,240 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:11:10,241 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:11:10,242 - llm_manager - INFO - {"next_move": {"row": 3, "col": 1}, "reason": "Moving right to (3,1) positions us one step away from clue 3 at (2,1) while keeping the leftmost column (including (2,0)) open for later filling, reducing risk of creating isolated cells."}
+2025-11-03 21:11:10,244 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:11:10,245 - llm_manager - INFO - Ollama response length: 236 chars
+2025-11-03 21:11:10,247 - llm_manager - INFO - Parsed move: (3, 1)
+2025-11-03 21:11:10,251 - metrics - INFO - Move 3: (3, 1) - Valid: True, Latency: 9520ms, Confidence: 0.90
+2025-11-03 21:11:10,254 - GUI - INFO - Move 3: (3, 1) - Valid
+2025-11-03 21:11:11,249 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:11:11,249 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:11:11,250 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:11:11,251 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][ 9][ ][ ][ ][ ][ ][ ]
+[P][P][ ][ ][ ][ ][ ][ ]
+[P][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (3, 1)
+Path Length: 4 / 64
+Cells Filled: 4 / 64
+Cells Remaining: 60
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (2, 1)
+  (3, 2)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:11:37,788 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:11:37,790 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:11:37,798 - llm_manager - INFO - {"next_move": {"row": 2, "col": 1}, "reason": "Moving to (2,1) follows the required order by visiting clue 3, which is one of the only adjacent cells available."}
+2025-11-03 21:11:37,799 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:11:37,800 - llm_manager - INFO - Ollama response length: 162 chars
+2025-11-03 21:11:37,801 - llm_manager - INFO - Parsed move: (2, 1)
+2025-11-03 21:11:37,801 - metrics - INFO - Move 4: (2, 1) - Valid: True, Latency: 26553ms, Confidence: 0.90
+2025-11-03 21:11:37,802 - GUI - INFO - Move 4: (2, 1) - Valid
+2025-11-03 21:11:38,809 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:11:38,809 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:11:38,810 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:11:38,810 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][ ][ ][ ][ ][ ][ ]
+[P][P][ ][ ][ ][ ][ ][ ]
+[P][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (2, 1)
+Path Length: 5 / 64
+Cells Filled: 5 / 64
+Cells Remaining: 59
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (1, 1)
+  (2, 0)
+  (2, 2)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:11:54,298 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:11:54,300 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:11:54,301 - llm_manager - INFO - {"next_move": {"row": 2, "col": 2}, "reason": "Moving east toward the next clue at (4,4) while keeping many open neighboring cells for future routing, and avoiding early confinement on the left edge."}
+2025-11-03 21:11:54,302 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:11:54,304 - llm_manager - INFO - Ollama response length: 201 chars
+2025-11-03 21:11:54,306 - llm_manager - INFO - Parsed move: (2, 2)
+2025-11-03 21:11:54,306 - metrics - INFO - Move 5: (2, 2) - Valid: True, Latency: 15498ms, Confidence: 0.90
+2025-11-03 21:11:54,307 - GUI - INFO - Move 5: (2, 2) - Valid
+2025-11-03 21:11:55,309 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:11:55,310 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:11:55,311 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:11:55,312 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][ ][ ][ ][ ][ ][ ]
+[P][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (2, 2)
+Path Length: 6 / 64
+Cells Filled: 6 / 64
+Cells Remaining: 58
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (1, 2)
+  (3, 2)
+  (2, 3)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:12:05,918 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:12:05,920 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:12:05,921 - llm_manager - INFO - {"next_move": {"row": 3, "col": 2}, "reason": "Moving down to (3,2) brings the path closer to the next required clue at (4,4) while staying in an open area, preserving options for later navigation."}
+2025-11-03 21:12:05,923 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:12:05,925 - llm_manager - INFO - Ollama response length: 199 chars
+2025-11-03 21:12:05,927 - llm_manager - INFO - Parsed move: (3, 2)
+2025-11-03 21:12:05,929 - metrics - INFO - Move 6: (3, 2) - Valid: True, Latency: 10618ms, Confidence: 0.90
+2025-11-03 21:12:05,929 - GUI - INFO - Move 6: (3, 2) - Valid
+2025-11-03 21:12:05,930 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:12:05,930 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:12:05,931 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:12:05,931 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:12:05,932 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][ ][ ][ ][ ][ ]
+[P][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (3, 2)
+Path Length: 7 / 64
+Cells Filled: 7 / 64
+Cells Remaining: 57
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (4, 2)
+  (3, 3)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:12:19,514 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:12:19,515 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:12:19,517 - llm_manager - INFO - {"next_move": {"row": 3, "col": 3}, "reason": "The only adjacent safe cell is (3,3). Moving down to (4,2) would land on clue 10, which is out of order. Heading right to (3,3) keeps the path continuous and positions us to approach clue 4 (4,4) later without violating any rules."}
+2025-11-03 21:12:19,518 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:12:19,520 - llm_manager - INFO - Ollama response length: 279 chars
+2025-11-03 21:12:19,525 - llm_manager - INFO - Parsed move: (3, 3)
+2025-11-03 21:12:19,527 - metrics - INFO - Move 7: (3, 3) - Valid: True, Latency: 13596ms, Confidence: 0.90
+2025-11-03 21:12:19,528 - GUI - INFO - Move 7: (3, 3) - Valid
+2025-11-03 21:12:19,530 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:12:19,533 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:12:19,535 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:12:19,537 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:12:19,538 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][ ][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (3, 3)
+Path Length: 8 / 64
+Cells Filled: 8 / 64
+Cells Remaining: 56
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (2, 3)
+  (4, 3)
+  (3, 4)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:12:40,546 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:12:40,547 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:12:40,549 - llm_manager - INFO - {"next_move": {"row": 4, "col": 3}, "reason": "Moving down to (4,3) brings us directly adjacent to the next required clue at (4,4). It keeps the path expanding toward the remaining clues (5 at (5,7) and 6 at (6,4)) without creating isolated sections, ensuring we can continue filling the grid smoothly."}
+2025-11-03 21:12:40,550 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:12:40,552 - llm_manager - INFO - Ollama response length: 304 chars
+2025-11-03 21:12:40,554 - llm_manager - INFO - Parsed move: (4, 3)
+2025-11-03 21:12:40,555 - metrics - INFO - Move 8: (4, 3) - Valid: True, Latency: 21019ms, Confidence: 0.90
+2025-11-03 21:12:40,556 - GUI - INFO - Move 8: (4, 3) - Valid
+2025-11-03 21:12:40,557 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:12:40,558 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:12:40,558 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:12:40,559 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:12:40,560 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][12][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (4, 3)
+Path Length: 9 / 64
+Cells Filled: 9 / 64
+Cells Remaining: 55
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (5, 3)
+  (4, 2)
+  (4, 4)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:12:51,257 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:12:51,257 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:12:51,258 - llm_manager - INFO - {"next_move": {"row": 5, "col": 3}, "reason": "The only adjacent cell that is not a future numbered clue (10 or 12) is (5,3). Moving there avoids hitting a higher‑order clue and keeps the path open to eventually reach clue 4 at (4,4)."}
+2025-11-03 21:12:51,258 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:12:51,260 - llm_manager - INFO - Ollama response length: 236 chars
+2025-11-03 21:12:51,260 - llm_manager - INFO - Parsed move: (5, 3)
+2025-11-03 21:12:51,260 - metrics - INFO - Move 9: (5, 3) - Valid: True, Latency: 10702ms, Confidence: 0.90
+2025-11-03 21:12:51,261 - GUI - INFO - Move 9: (5, 3) - Valid
+2025-11-03 21:12:51,261 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:12:51,261 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:12:51,262 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:12:51,263 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:12:51,263 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][12][ ][ ][ ]
+[ ][ ][ ][P][ ][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (5, 3)
+Path Length: 10 / 64
+Cells Filled: 10 / 64
+Cells Remaining: 54
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (6, 3)
+  (5, 2)
+  (5, 4)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:12:59,243 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:12:59,243 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:12:59,244 - llm_manager - INFO - {"next_move": {"row": 5, "col": 4}, "reason": "Moving right to (5,4) puts us adjacent to the next required clue at (4,4). This keeps the path progressing toward clue 4 while staying on an empty cell, avoiding any dead‑ends."}
+2025-11-03 21:12:59,245 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:12:59,245 - llm_manager - INFO - Ollama response length: 225 chars
+2025-11-03 21:12:59,247 - llm_manager - INFO - Parsed move: (5, 4)
+2025-11-03 21:12:59,247 - metrics - INFO - Move 10: (5, 4) - Valid: True, Latency: 7985ms, Confidence: 0.90
+2025-11-03 21:12:59,247 - GUI - INFO - Move 10: (5, 4) - Valid
+2025-11-03 21:12:59,248 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:12:59,248 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:12:59,248 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:12:59,248 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:12:59,249 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][12][ ][ ][ ]
+[ ][ ][ ][P][P][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (5, 4)
+Path Length: 11 / 64
+Cells Filled: 11 / 64
+Cells Remaining: 53
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (4, 4)
+  (6, 4)
+  (5, 5)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:13:06,845 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:13:06,847 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:13:06,849 - llm_manager - INFO - {"next_move": {"row": 4, "col": 4}, "reason": "The next required clue to visit in sequence is clue 4 at (4,4). Moving there satisfies the ordered clue rule and keeps the path valid."}
+2025-11-03 21:13:06,849 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:13:06,852 - llm_manager - INFO - Ollama response length: 183 chars
+2025-11-03 21:13:06,853 - llm_manager - INFO - Parsed move: (4, 4)
+2025-11-03 21:13:06,854 - metrics - INFO - Move 11: (4, 4) - Valid: True, Latency: 7605ms, Confidence: 0.90
+2025-11-03 21:13:06,854 - GUI - INFO - Move 11: (4, 4) - Valid
+2025-11-03 21:13:06,855 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:13:06,856 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:13:06,857 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:13:06,858 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:13:06,858 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][ ][ ][ ]
+[ ][ ][ ][P][P][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (4, 4)
+Path Length: 12 / 64
+Cells Filled: 12 / 64
+Cells Remaining: 52
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (3, 4)
+  (4, 5)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:13:23,031 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:13:23,033 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:13:23,033 - llm_manager - INFO - {
+  "next_move": {"row": 4, "col": 5},
+  "reason": "Moving right to (4,5) keeps the path heading toward the next required clue at (5,7) while staying on the open side of the board. It avoids closing off the still‑unvisited cells on the left half and gives flexible diagonal options (e.g., to (5,6) then (5,7)) to reach clue 5 without creating dead ends."
+}
+2025-11-03 21:13:23,035 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:13:23,036 - llm_manager - INFO - Ollama response length: 356 chars
+2025-11-03 21:13:23,037 - llm_manager - INFO - Parsed move: (4, 5)
+2025-11-03 21:13:23,038 - metrics - INFO - Move 12: (4, 5) - Valid: True, Latency: 16181ms, Confidence: 0.90
+2025-11-03 21:13:23,039 - GUI - INFO - Move 12: (4, 5) - Valid
+2025-11-03 21:13:23,040 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:13:23,041 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:13:23,043 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:13:23,045 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:13:23,046 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][P][ ][ ]
+[ ][ ][ ][P][P][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (4, 5)
+Path Length: 13 / 64
+Cells Filled: 13 / 64
+Cells Remaining: 51
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (3, 5)
+  (5, 5)
+  (4, 6)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:13:41,566 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:13:41,569 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:13:41,569 - llm_manager - INFO - {"next_move": {"row": 4, "col": 6}, "reason": "This move heads right toward clue 5 at (5,7) while keeping many unvisited cells reachable. From (4,6) we can step diagonally to (5,7) to visit clue 5, then continue down and left toward clue 6 and the rest of the board without creating isolated regions."}
+2025-11-03 21:13:41,572 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:13:41,573 - llm_manager - INFO - Ollama response length: 302 chars
+2025-11-03 21:13:41,576 - llm_manager - INFO - Parsed move: (4, 6)
+2025-11-03 21:13:41,579 - metrics - INFO - Move 13: (4, 6) - Valid: True, Latency: 18537ms, Confidence: 0.90
+2025-11-03 21:13:41,580 - GUI - INFO - Move 13: (4, 6) - Valid
+2025-11-03 21:13:41,581 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:13:41,582 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:13:41,582 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:13:41,583 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:13:41,583 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][P][P][ ]
+[ ][ ][ ][P][P][ ][ ][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (4, 6)
+Path Length: 14 / 64
+Cells Filled: 14 / 64
+Cells Remaining: 50
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (3, 6)
+  (5, 6)
+  (4, 7)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:13:59,672 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:13:59,673 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:13:59,673 - llm_manager - INFO - {
+  "next_move": {"row": 5, "col": 6},
+  "reason": "Moving down to (5,6) brings us closer to the next required clue at (5,7). It uses a fresh cell, keeps the right‑most column (4,7) available for later traversal, and maintains a clear path to continue toward clue 5 and then clue 6 without creating dead‑ends."
+}
+2025-11-03 21:13:59,674 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:13:59,675 - llm_manager - INFO - Ollama response length: 312 chars
+2025-11-03 21:13:59,675 - llm_manager - INFO - Parsed move: (5, 6)
+2025-11-03 21:13:59,676 - metrics - INFO - Move 14: (5, 6) - Valid: True, Latency: 18093ms, Confidence: 0.90
+2025-11-03 21:13:59,676 - GUI - INFO - Move 14: (5, 6) - Valid
+2025-11-03 21:13:59,677 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:13:59,677 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:13:59,677 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:13:59,677 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:13:59,678 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][P][P][ ]
+[ ][ ][ ][P][P][ ][P][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (5, 6)
+Path Length: 15 / 64
+Cells Filled: 15 / 64
+Cells Remaining: 49
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (6, 6)
+  (5, 5)
+  (5, 7)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:14:09,861 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:14:09,861 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:14:09,864 - llm_manager - INFO - {
+  "next_move": {"row": 5, "col": 5},
+  "reason": "Moving left to (5,5) keeps us on empty cells, avoids entering a later numbered clue (13 at (5,7)), and heads toward the next required clue at (4,1) without risking a dead‑end."
+}
+2025-11-03 21:14:09,865 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:14:09,867 - llm_manager - INFO - Ollama response length: 230 chars
+2025-11-03 21:14:09,869 - llm_manager - INFO - Parsed move: (5, 5)
+2025-11-03 21:14:09,870 - metrics - INFO - Move 15: (5, 5) - Valid: True, Latency: 10193ms, Confidence: 0.90
+2025-11-03 21:14:09,871 - GUI - INFO - Move 15: (5, 5) - Valid
+2025-11-03 21:14:09,872 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:14:09,872 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:14:09,874 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:14:09,875 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:14:09,876 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][P][P][ ]
+[ ][ ][ ][P][P][P][P][13]
+[ ][ ][11][ ][14][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (5, 5)
+Path Length: 16 / 64
+Cells Filled: 16 / 64
+Cells Remaining: 48
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (6, 5)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:14:16,296 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:14:16,297 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:14:16,299 - llm_manager - INFO - {"next_move": {"row": 6, "col": 5}, "reason": "The only allowed adjacent cell is (6,5); moving there continues the path toward the next clues while keeping the path continuous and avoiding revisiting cells."}
+2025-11-03 21:14:16,299 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:14:16,301 - llm_manager - INFO - Ollama response length: 208 chars
+2025-11-03 21:14:16,304 - llm_manager - INFO - Parsed move: (6, 5)
+2025-11-03 21:14:16,305 - metrics - INFO - Move 16: (6, 5) - Valid: True, Latency: 6430ms, Confidence: 0.90
+2025-11-03 21:14:16,306 - GUI - INFO - Move 16: (6, 5) - Valid
+2025-11-03 21:14:16,307 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:14:16,308 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:14:16,309 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:14:16,310 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:14:16,311 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][P][P][ ]
+[ ][ ][ ][P][P][P][P][13]
+[ ][ ][11][ ][14][P][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (6, 5)
+Path Length: 17 / 64
+Cells Filled: 17 / 64
+Cells Remaining: 47
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (7, 5)
+  (6, 4)
+  (6, 6)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:14:34,565 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:14:34,568 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:14:34,570 - llm_manager - INFO - {
+  "next_move": {"row": 6, "col": 4},
+  "reason": "The next required clue in sequence is clue 6 located at (6, 4). Moving left to that cell follows the puzzle rules and advances the path toward completing the ordered clues."
+}
+2025-11-03 21:14:34,570 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:14:34,573 - llm_manager - INFO - Ollama response length: 227 chars
+2025-11-03 21:14:34,575 - llm_manager - INFO - Parsed move: (6, 4)
+2025-11-03 21:14:34,576 - metrics - INFO - Move 17: (6, 4) - Valid: True, Latency: 18267ms, Confidence: 0.90
+2025-11-03 21:14:34,578 - GUI - INFO - Move 17: (6, 4) - Valid
+2025-11-03 21:14:34,579 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:14:34,582 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:14:34,583 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:14:34,585 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:14:34,587 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][P][P][ ]
+[ ][ ][ ][P][P][P][P][13]
+[ ][ ][11][ ][P][P][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (6, 4)
+Path Length: 18 / 64
+Cells Filled: 18 / 64
+Cells Remaining: 46
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (7, 4)
+  (6, 3)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:15:11,762 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:15:11,762 - llm_manager - INFO - === LLM FULL RESPONSE ===
+2025-11-03 21:15:11,765 - llm_manager - INFO - {"next_move": {"row": 7, "col": 4}, "reason": "Moving down to (7,4) explores the untouched bottom area and keeps the path away from the dense visited cluster, reducing the risk of creating isolated unfilled cells."}
+2025-11-03 21:15:11,766 - llm_manager - INFO - === END LLM RESPONSE ===
+2025-11-03 21:15:11,768 - llm_manager - INFO - Ollama response length: 215 chars
+2025-11-03 21:15:11,770 - llm_manager - INFO - Parsed move: (7, 4)
+2025-11-03 21:15:11,770 - metrics - INFO - Move 18: (7, 4) - Valid: True, Latency: 37187ms, Confidence: 0.90
+2025-11-03 21:15:11,771 - GUI - INFO - Move 18: (7, 4) - Valid
+2025-11-03 21:15:11,772 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:15:11,773 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:15:11,774 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:15:11,775 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:15:11,777 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 64 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 3][ ][ ][ 4][ 5]
+[ ][ ][ ][ 8][ ][ ][ 7][ 6]
+[ ][P][P][ ][ ][ ][ ][ ]
+[P][P][P][P][ ][ ][ ][ ]
+[P][P][10][P][P][P][P][ ]
+[ ][ ][ ][P][P][P][P][13]
+[ ][ ][11][ ][P][P][ ][ ]
+[ ][ ][ ][ ][P][ ][ ][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (7, 4)
+Path Length: 19 / 64
+Cells Filled: 19 / 64
+Cells Remaining: 45
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (4, 1)
+  Clue 2: (4, 0)
+  Clue 3: (2, 1)
+  Clue 4: (4, 4)
+  Clue 5: (5, 7)
+  Clue 6: (6, 4)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (7, 3)
+  (7, 5)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===

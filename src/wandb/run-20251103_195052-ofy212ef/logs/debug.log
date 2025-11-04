@@ -1,0 +1,23 @@
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_setup.py:_flush():81] Configure stats pid to 19048
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\.config\wandb\settings
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\Desktop\CS5900\Zip-game\wandb\settings
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_init.py:setup_run_log_directory():706] Logging user logs to C:\Users\thame\Desktop\CS5900\Zip-game\wandb\run-20251103_195052-ofy212ef\logs\debug.log
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to C:\Users\thame\Desktop\CS5900\Zip-game\wandb\run-20251103_195052-ofy212ef\logs\debug-internal.log
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_init.py:init():833] calling init triggers
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-11-03 19:50:52,044 INFO    MainThread:19048 [wandb_init.py:init():881] starting backend
+2025-11-03 19:50:54,280 INFO    MainThread:19048 [wandb_init.py:init():884] sending inform_init request
+2025-11-03 19:50:54,331 INFO    MainThread:19048 [wandb_init.py:init():892] backend started and connected
+2025-11-03 19:50:54,332 INFO    MainThread:19048 [wandb_init.py:init():962] updated telemetry
+2025-11-03 19:50:54,335 INFO    MainThread:19048 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2025-11-03 19:50:55,367 INFO    MainThread:19048 [wandb_init.py:init():1033] starting run threads in backend
+2025-11-03 19:50:55,423 INFO    MainThread:19048 [wandb_run.py:_console_start():2506] atexit reg
+2025-11-03 19:50:55,423 INFO    MainThread:19048 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-11-03 19:50:55,424 INFO    MainThread:19048 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-11-03 19:50:55,424 INFO    MainThread:19048 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-11-03 19:50:55,426 INFO    MainThread:19048 [wandb_init.py:init():1073] run started, returning control to user process
+2025-11-03 19:51:08,796 INFO    wandb-AsyncioManager-main:19048 [service_client.py:_forward_responses():80] Reached EOF.
+2025-11-03 19:51:08,796 INFO    wandb-AsyncioManager-main:19048 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

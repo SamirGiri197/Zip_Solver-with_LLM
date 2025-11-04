@@ -1,0 +1,80 @@
+2025-11-03 20:39:33,733 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 20:39:33,735 - metrics - INFO - Game metrics started for 8x8 board
+2025-11-03 20:39:33,736 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:39:33,736 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:39:33,736 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:39:38,628 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:39:38,633 - llm_manager - INFO - Ollama response length: 261 chars
+2025-11-03 20:39:38,635 - llm_manager - INFO - Parsed move: (7, 1)
+2025-11-03 20:39:38,636 - metrics - INFO - Move 1: (7, 1) - Valid: True, Latency: 4900ms, Confidence: 0.90
+2025-11-03 20:39:38,636 - GUI - INFO - Move 1: (7, 1) - Valid
+2025-11-03 20:39:39,631 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:39:39,632 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:39:39,633 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:39:45,644 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:39:45,648 - llm_manager - INFO - Ollama response length: 274 chars
+2025-11-03 20:39:45,650 - llm_manager - INFO - Parsed move: (6, 1)
+2025-11-03 20:39:45,650 - metrics - INFO - Move 2: (6, 1) - Valid: True, Latency: 6018ms, Confidence: 0.90
+2025-11-03 20:39:45,651 - GUI - INFO - Move 2: (6, 1) - Valid
+2025-11-03 20:39:46,657 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:39:46,658 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:39:46,658 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:39:50,644 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:39:50,646 - llm_manager - INFO - Ollama response length: 172 chars
+2025-11-03 20:39:50,648 - llm_manager - INFO - Parsed move: (5, 1)
+2025-11-03 20:39:50,649 - metrics - INFO - Move 3: (5, 1) - Valid: True, Latency: 3991ms, Confidence: 0.90
+2025-11-03 20:39:50,650 - GUI - INFO - Move 3: (5, 1) - Valid
+2025-11-03 20:39:51,651 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:39:51,652 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:39:51,653 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:39:55,665 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:39:55,667 - llm_manager - INFO - Ollama response length: 238 chars
+2025-11-03 20:39:55,670 - llm_manager - INFO - Parsed move: (5, 0)
+2025-11-03 20:39:55,671 - metrics - INFO - Move 4: (5, 0) - Valid: True, Latency: 4018ms, Confidence: 0.90
+2025-11-03 20:39:55,676 - GUI - INFO - Move 4: (5, 0) - Valid
+2025-11-03 20:39:56,691 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:39:56,692 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:39:56,693 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:39:59,597 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:39:59,600 - llm_manager - INFO - Ollama response length: 199 chars
+2025-11-03 20:39:59,609 - llm_manager - INFO - Parsed move: (6, 0)
+2025-11-03 20:39:59,610 - metrics - INFO - Move 5: (6, 0) - Valid: True, Latency: 2918ms, Confidence: 0.90
+2025-11-03 20:39:59,611 - GUI - INFO - Move 5: (6, 0) - Valid
+2025-11-03 20:40:00,617 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:40:00,618 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:40:00,619 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:40:03,189 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:40:03,190 - llm_manager - INFO - Ollama response length: 171 chars
+2025-11-03 20:40:03,191 - llm_manager - INFO - Parsed move: (7, 0)
+2025-11-03 20:40:03,192 - metrics - INFO - Move 6: (7, 0) - Valid: True, Latency: 2574ms, Confidence: 0.90
+2025-11-03 20:40:03,192 - GUI - INFO - Move 6: (7, 0) - Valid
+2025-11-03 20:40:04,186 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:40:04,187 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:40:04,188 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 20:40:08,474 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 20:40:08,476 - llm_manager - INFO - Ollama response length: 130 chars
+2025-11-03 20:40:08,483 - llm_manager - ERROR - Error calling Ollama: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 255, in solve_with_ollama
+    logger.info(f"Parsed move: ({result['next_move']['row']}, {result['next_move']['col']})")
+                                 ~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-11-03 20:40:08,487 - GUI - WARNING - No move from LLM
+2025-11-03 20:40:08,488 - metrics - INFO - Game ended - Success: False, Time: 34.8s
+2025-11-03 20:40:08,489 - metrics - INFO - Metrics logged to wandb successfully
+2025-11-03 20:40:08,489 - GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 8x8
+Total Moves: 6
+Completion: FAILED ✗
+Time: 34.8s
+
+=== METRICS ===
+Valid Moves: 6/6
+Bad Moves: 0
+Clue Hits: 1
+Move Efficiency: 100.0%
+Clue Accuracy: 20.0%
+Avg Latency: 4070ms
+Success Ratio: 0.0%

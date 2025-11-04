@@ -1,0 +1,9 @@
+2025-11-03 19:52:16,052 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 19:52:16,053 - llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-03 19:52:16,053 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 19:52:16,053 - llm_manager - ERROR - Error calling Ollama: '\n    "next_move"'
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 166, in solve_with_ollama
+    prompt = ZIP_PUZZLE_PROMPT.format(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: '\n    "next_move"'

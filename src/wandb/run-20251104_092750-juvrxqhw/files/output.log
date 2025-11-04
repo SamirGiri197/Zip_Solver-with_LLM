@@ -1,0 +1,32 @@
+2025-11-04 09:27:55,090 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+2025-11-04 09:27:55,094 - evaluation.eval - INFO - Game metrics started for 5x5 board
+2025-11-04 09:27:55,094 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: None)
+2025-11-04 09:27:55,094 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-04 09:27:55,094 - LLM_configuration.llm_manager - ERROR - Error calling Gemini: can only concatenate str (not "dict") to str
+2025-11-04 09:27:55,095 - UI.GUI - WARNING - No move from LLM (stuck: 1/3)
+2025-11-04 09:27:56,092 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: None)
+2025-11-04 09:27:56,093 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-04 09:27:56,094 - LLM_configuration.llm_manager - ERROR - Error calling Gemini: can only concatenate str (not "dict") to str
+2025-11-04 09:27:56,095 - UI.GUI - WARNING - No move from LLM (stuck: 2/3)
+2025-11-04 09:27:57,093 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: None)
+2025-11-04 09:27:57,094 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-04 09:27:57,095 - LLM_configuration.llm_manager - ERROR - Error calling Gemini: can only concatenate str (not "dict") to str
+2025-11-04 09:27:57,095 - UI.GUI - WARNING - No move from LLM (stuck: 3/3)
+2025-11-04 09:27:58,094 - evaluation.eval - INFO - Game ended - Success: False, Time: 3.0s
+2025-11-04 09:27:58,096 - evaluation.eval - INFO - Metrics logged to wandb successfully
+2025-11-04 09:27:58,096 - UI.GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 5x5
+Total Moves: 0
+Completion: FAILED ✗
+Time: 3.0s
+
+=== METRICS ===
+Valid Moves: 0/0
+Bad Moves: 0
+Clue Hits: 0
+Move Efficiency: 0.0%
+Clue Accuracy: 0.0%
+Avg Latency: 0ms
+Success Ratio: 0.0%

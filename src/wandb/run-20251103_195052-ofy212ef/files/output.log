@@ -1,0 +1,4 @@
+2025-11-03 19:50:55,426 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 19:50:55,434 - llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-03 19:50:55,434 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 19:50:55,435 - llm_manager - ERROR - Ollama not available. Install: pip install ollama

@@ -1,0 +1,5 @@
+# Python version
+python_version >= "3.12"
+
+# Required libraries
+pygame>=2.5.0

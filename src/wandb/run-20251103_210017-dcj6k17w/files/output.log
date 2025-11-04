@@ -1,0 +1,845 @@
+2025-11-03 21:00:21,900 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 21:00:21,902 - metrics - INFO - Game metrics started for 8x8 board
+2025-11-03 21:00:21,902 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:00:21,903 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:00:21,903 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:00:21,903 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][ ][ ][ 6][ ]
+[ ][ ][ ][11][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 5][ ][ ]
+[ ][ ][ ][12][P][ ][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (5, 4)
+Path length: 1 / 64
+Cells remaining: 63
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (4, 4)
+  (6, 4)
+  (5, 3)
+  (5, 5)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (5, 4)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:00:27,366 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:00:27,368 - llm_manager - INFO - Ollama response length: 145 chars
+2025-11-03 21:00:27,369 - llm_manager - INFO - Parsed move: (5, 5)
+2025-11-03 21:00:27,370 - metrics - INFO - Move 1: (5, 5) - Valid: True, Latency: 5467ms, Confidence: 0.90
+2025-11-03 21:00:27,371 - GUI - INFO - Move 1: (5, 5) - Valid
+2025-11-03 21:00:28,363 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:00:28,363 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:00:28,363 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:00:28,363 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][ ][ ][ 6][ ]
+[ ][ ][ ][11][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 5][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (5, 5)
+Path length: 2 / 64
+Cells remaining: 62
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (4, 5)
+  (6, 5)
+  (5, 6)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (5, 5)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:00:41,240 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:00:41,243 - llm_manager - INFO - Ollama response length: 227 chars
+2025-11-03 21:00:41,248 - llm_manager - INFO - Parsed move: (4, 5)
+2025-11-03 21:00:41,248 - metrics - INFO - Move 2: (4, 5) - Valid: True, Latency: 12886ms, Confidence: 0.90
+2025-11-03 21:00:41,250 - GUI - INFO - Move 2: (4, 5) - Valid
+2025-11-03 21:00:42,245 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:00:42,246 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:00:42,247 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:00:42,249 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][ ][ ][ 6][ ]
+[ ][ ][ ][11][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (4, 5)
+Path length: 3 / 64
+Cells remaining: 61
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (3, 5)
+  (4, 4)
+  (4, 6)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (4, 5)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:00:53,637 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:00:53,638 - llm_manager - INFO - Ollama response length: 176 chars
+2025-11-03 21:00:53,640 - llm_manager - INFO - Parsed move: (4, 4)
+2025-11-03 21:00:53,641 - metrics - INFO - Move 3: (4, 4) - Valid: True, Latency: 11395ms, Confidence: 0.90
+2025-11-03 21:00:53,642 - GUI - INFO - Move 3: (4, 4) - Valid
+2025-11-03 21:00:54,648 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:00:54,648 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:00:54,648 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:00:54,649 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][ ][ ][ 6][ ]
+[ ][ ][ ][11][ ][ ][ ][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (4, 4)
+Path length: 4 / 64
+Cells remaining: 60
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (3, 4)
+  (4, 3)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (4, 4)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:01:04,947 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:01:04,949 - llm_manager - INFO - Ollama response length: 293 chars
+2025-11-03 21:01:04,952 - llm_manager - INFO - Parsed move: (3, 4)
+2025-11-03 21:01:04,953 - metrics - INFO - Move 4: (3, 4) - Valid: True, Latency: 10305ms, Confidence: 0.90
+2025-11-03 21:01:04,954 - GUI - INFO - Move 4: (3, 4) - Valid
+2025-11-03 21:01:05,961 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:01:05,961 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:01:05,962 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:01:05,963 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][ ][ ][ 6][ ]
+[ ][ ][ ][11][P][ ][ ][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (3, 4)
+Path length: 5 / 64
+Cells remaining: 59
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (2, 4)
+  (3, 3)
+  (3, 5)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (3, 4)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:01:18,531 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:01:18,532 - llm_manager - INFO - Ollama response length: 231 chars
+2025-11-03 21:01:18,534 - llm_manager - INFO - Parsed move: (2, 4)
+2025-11-03 21:01:18,541 - metrics - INFO - Move 5: (2, 4) - Valid: True, Latency: 12580ms, Confidence: 0.90
+2025-11-03 21:01:18,543 - GUI - INFO - Move 5: (2, 4) - Valid
+2025-11-03 21:01:19,553 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:01:19,554 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:01:19,555 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:01:19,556 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][ ][ 6][ ]
+[ ][ ][ ][11][P][ ][ ][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (2, 4)
+Path length: 6 / 64
+Cells remaining: 58
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (1, 4)
+  (2, 3)
+  (2, 5)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (2, 4)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:01:42,609 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:01:42,610 - llm_manager - INFO - Ollama response length: 199 chars
+2025-11-03 21:01:42,619 - llm_manager - INFO - Parsed move: (2, 5)
+2025-11-03 21:01:42,621 - metrics - INFO - Move 6: (2, 5) - Valid: True, Latency: 23067ms, Confidence: 0.90
+2025-11-03 21:01:42,622 - GUI - INFO - Move 6: (2, 5) - Valid
+2025-11-03 21:01:43,633 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:01:43,633 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:01:43,634 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:01:43,634 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][ 6][ ]
+[ ][ ][ ][11][P][ ][ ][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (2, 5)
+Path length: 7 / 64
+Cells remaining: 57
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (1, 5)
+  (3, 5)
+  (2, 6)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (2, 5)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:01:50,840 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:01:50,841 - llm_manager - INFO - Ollama response length: 163 chars
+2025-11-03 21:01:50,843 - llm_manager - INFO - Parsed move: (3, 5)
+2025-11-03 21:01:50,843 - metrics - INFO - Move 7: (3, 5) - Valid: True, Latency: 7210ms, Confidence: 0.90
+2025-11-03 21:01:50,844 - GUI - INFO - Move 7: (3, 5) - Valid
+2025-11-03 21:01:51,861 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:01:51,863 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:01:51,864 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:01:51,864 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][ 6][ ]
+[ ][ ][ ][11][P][P][ ][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (3, 5)
+Path length: 8 / 64
+Cells remaining: 56
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (3, 6)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (3, 5)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:02:02,792 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:02:02,794 - llm_manager - INFO - Ollama response length: 153 chars
+2025-11-03 21:02:02,805 - llm_manager - INFO - Parsed move: (3, 6)
+2025-11-03 21:02:02,806 - metrics - INFO - Move 8: (3, 6) - Valid: True, Latency: 10943ms, Confidence: 0.90
+2025-11-03 21:02:02,807 - GUI - INFO - Move 8: (3, 6) - Valid
+2025-11-03 21:02:03,813 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:02:03,814 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:02:03,815 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:02:03,822 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][ 6][ ]
+[ ][ ][ ][11][P][P][P][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (3, 6)
+Path length: 9 / 64
+Cells remaining: 55
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (2, 6)
+  (4, 6)
+  (3, 7)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (3, 6)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:02:14,787 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:02:14,788 - llm_manager - INFO - Ollama response length: 245 chars
+2025-11-03 21:02:14,789 - llm_manager - INFO - Parsed move: (2, 6)
+2025-11-03 21:02:14,789 - metrics - INFO - Move 9: (2, 6) - Valid: True, Latency: 10975ms, Confidence: 0.90
+2025-11-03 21:02:14,789 - GUI - INFO - Move 9: (2, 6) - Valid
+2025-11-03 21:02:15,787 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:02:15,795 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:02:15,796 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:02:15,797 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][P][ ]
+[ ][ ][ ][11][P][P][P][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (2, 6)
+Path length: 10 / 64
+Cells remaining: 54
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (1, 6)
+  (2, 7)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (2, 6)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:02:34,989 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:02:34,991 - llm_manager - INFO - Ollama response length: 210 chars
+2025-11-03 21:02:35,001 - llm_manager - INFO - Parsed move: (2, 7)
+2025-11-03 21:02:35,002 - metrics - INFO - Move 10: (2, 7) - Valid: True, Latency: 19206ms, Confidence: 0.90
+2025-11-03 21:02:35,002 - GUI - INFO - Move 10: (2, 7) - Valid
+2025-11-03 21:02:35,994 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:02:35,994 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:02:35,995 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:02:35,996 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][P][P]
+[ ][ ][ ][11][P][P][P][ ]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (2, 7)
+Path length: 11 / 64
+Cells remaining: 53
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (1, 7)
+  (3, 7)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (2, 7)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:02:41,157 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:02:41,158 - llm_manager - INFO - Ollama response length: 178 chars
+2025-11-03 21:02:41,158 - llm_manager - INFO - Parsed move: (3, 7)
+2025-11-03 21:02:41,158 - metrics - INFO - Move 11: (3, 7) - Valid: True, Latency: 5164ms, Confidence: 0.90
+2025-11-03 21:02:41,159 - GUI - INFO - Move 11: (3, 7) - Valid
+2025-11-03 21:02:42,171 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:02:42,172 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:02:42,173 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:02:42,174 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][P][P]
+[ ][ ][ ][11][P][P][P][P]
+[ ][ ][ ][ ][P][P][ ][ ]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (3, 7)
+Path length: 12 / 64
+Cells remaining: 52
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (4, 7)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (3, 7)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:02:48,384 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:02:48,385 - llm_manager - INFO - Ollama response length: 202 chars
+2025-11-03 21:02:48,388 - llm_manager - INFO - Parsed move: (4, 7)
+2025-11-03 21:02:48,388 - metrics - INFO - Move 12: (4, 7) - Valid: True, Latency: 6216ms, Confidence: 0.90
+2025-11-03 21:02:48,389 - GUI - INFO - Move 12: (4, 7) - Valid
+2025-11-03 21:02:48,390 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:02:48,392 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:02:48,396 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:02:48,398 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:02:48,402 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][P][P]
+[ ][ ][ ][11][P][P][P][P]
+[ ][ ][ ][ ][P][P][ ][P]
+[ ][ ][ ][12][P][P][ 3][ 4]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (4, 7)
+Path length: 13 / 64
+Cells remaining: 51
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (5, 7)
+  (4, 6)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (4, 7)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:03:24,548 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:03:24,551 - llm_manager - INFO - Ollama response length: 198 chars
+2025-11-03 21:03:24,553 - llm_manager - INFO - Parsed move: (5, 7)
+2025-11-03 21:03:24,554 - metrics - INFO - Move 13: (5, 7) - Valid: True, Latency: 36158ms, Confidence: 0.90
+2025-11-03 21:03:24,556 - GUI - INFO - Move 13: (5, 7) - Valid
+2025-11-03 21:03:24,558 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:03:24,563 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:03:24,564 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:03:24,566 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:03:24,567 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][P][P]
+[ ][ ][ ][11][P][P][P][P]
+[ ][ ][ ][ ][P][P][ ][P]
+[ ][ ][ ][12][P][P][ 3][P]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (5, 7)
+Path length: 14 / 64
+Cells remaining: 50
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (6, 7)
+  (5, 6)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (5, 7)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:03:30,915 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:03:30,917 - llm_manager - INFO - Ollama response length: 174 chars
+2025-11-03 21:03:30,919 - llm_manager - INFO - Parsed move: (5, 6)
+2025-11-03 21:03:30,920 - metrics - INFO - Move 14: (5, 6) - Valid: True, Latency: 6356ms, Confidence: 0.90
+2025-11-03 21:03:30,922 - GUI - INFO - Move 14: (5, 6) - Valid
+2025-11-03 21:03:30,924 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:03:30,924 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:03:30,929 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:03:30,934 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:03:30,937 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][P][P]
+[ ][ ][ ][11][P][P][P][P]
+[ ][ ][ ][ ][P][P][ ][P]
+[ ][ ][ ][12][P][P][P][P]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (5, 6)
+Path length: 15 / 64
+Cells remaining: 49
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  (4, 6)
+  (6, 6)
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (5, 6)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:03:41,320 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:03:41,321 - llm_manager - INFO - Ollama response length: 207 chars
+2025-11-03 21:03:41,322 - llm_manager - INFO - Parsed move: (4, 6)
+2025-11-03 21:03:41,323 - metrics - INFO - Move 15: (4, 6) - Valid: True, Latency: 10393ms, Confidence: 0.90
+2025-11-03 21:03:41,323 - GUI - INFO - Move 15: (4, 6) - Valid
+2025-11-03 21:03:41,325 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:03:41,328 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:03:41,334 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:03:41,336 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:03:41,336 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+You are solving a ZIP puzzle.
+
+GRID VISUALIZATION (current state):
+[ ][ 8][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ 7][ ][ ]
+[ ][10][ ][ ][P][P][P][P]
+[ ][ ][ ][11][P][P][P][P]
+[ ][ ][ ][ ][P][P][P][P]
+[ ][ ][ ][12][P][P][P][P]
+[ ][ ][ 9][ ][ 2][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ]
+
+Legend:
+[P] = Already visited
+[#] = Clue number
+[ ] = Empty cell
+Current position marked as last [P]
+
+CURRENT STATE:
+Position: (4, 6)
+Path length: 16 / 64
+Cells remaining: 48
+
+AVAILABLE NEIGHBORS (you can ONLY move to these):
+  NONE - Game stuck!
+
+REQUIRED SEQUENCE (visit in order):
+  Clue 1: (5, 4)
+  Clue 2: (5, 7)
+  Clue 3: (3, 3)
+  Clue 4: (5, 3)
+
+STRATEGY:
+1. You are at position (4, 6)
+2. You can ONLY move to available neighbors
+3. Try to fill ALL 64 cells
+4. Visit clue numbers in order (1, 2, 3, ...)
+
+RESPOND with JSON - pick ONE neighbor from AVAILABLE NEIGHBORS:
+{"next_move": {"row": R, "col": C}, "reason": "brief explanation"}
+=== END PROMPT ===
+2025-11-03 21:03:43,961 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:03:43,962 - llm_manager - INFO - Ollama response length: 131 chars
+2025-11-03 21:03:43,964 - llm_manager - WARNING - Error accessing JSON fields: 'NoneType' object is not subscriptable
+2025-11-03 21:03:43,965 - GUI - WARNING - No move from LLM (stuck: 2/3)
+2025-11-03 21:03:43,971 - GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-03 21:03:43,972 - metrics - INFO - Game ended - Success: False, Time: 202.1s
+2025-11-03 21:03:43,974 - metrics - INFO - Metrics logged to wandb successfully
+2025-11-03 21:03:43,974 - GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 8x8
+Total Moves: 15
+Completion: FAILED ✗
+Time: 202.1s
+
+=== METRICS ===
+Valid Moves: 15/15
+Bad Moves: 0
+Clue Hits: 4
+Move Efficiency: 100.0%
+Clue Accuracy: 100.0%
+Avg Latency: 12555ms
+Success Ratio: 0.0%

@@ -1,0 +1,125 @@
+2025-11-03 21:21:31,019 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 21:21:31,020 - metrics - INFO - Game metrics started for 4x4 board
+2025-11-03 21:21:31,021 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:21:31,021 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:21:31,021 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:21:31,022 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 16 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 5]
+[ ][ ][ 6][ ]
+[P][ 4][ ][ 3]
+[ ][ ][ 2][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (2, 0)
+Path Length: 1 / 16
+Cells Filled: 1 / 16
+Cells Remaining: 15
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (2, 0)
+  Clue 2: (2, 1)
+  Clue 3: (1, 2)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (1, 0)
+  (3, 0)
+  (2, 1)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===
+2025-11-03 21:21:51,758 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:21:51,759 - llm_manager - INFO - ================================================================================
+2025-11-03 21:21:51,760 - llm_manager - INFO - LLM FULL RESPONSE (Move 2):
+2025-11-03 21:21:51,761 - llm_manager - INFO - ================================================================================
+2025-11-03 21:21:51,762 - llm_manager - INFO - {
+  "next_move": { "row": 2, "col": 1 },
+  "reason": "Moving to (2,1) follows the required order, visiting Clue 2 right after starting at Clue 1."
+}
+2025-11-03 21:21:51,763 - llm_manager - INFO - ================================================================================
+2025-11-03 21:21:51,764 - llm_manager - INFO - Response length: 148 chars
+2025-11-03 21:21:51,766 - llm_manager - INFO - Parsed move: (2, 1)
+2025-11-03 21:21:51,767 - metrics - INFO - Move 1: (2, 1) - Valid: True, Latency: 20746ms, Confidence: 0.90
+2025-11-03 21:21:51,768 - GUI - INFO - Move 1: (2, 1) - Valid
+2025-11-03 21:21:52,772 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:21:52,773 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:21:52,775 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:21:52,775 - llm_manager - INFO - === PROMPT SENT TO LLM ===
+ZIP PUZZLE SOLVER
+
+=== RULES ===
+1. You must fill ALL 16 cells in the grid
+2. Start at clue 1 and END at the highest clue number
+3. Visit ALL numbered clues (1, 2, 3, ...) IN SEQUENCE
+4. Create a continuous path - each cell connects to the next
+5. Can only move to ADJACENT cells (up, down, left, right, or diagonal)
+6. CANNOT revisit cells - each cell used only once
+7. Between clues, you can visit any empty cells
+
+=== CURRENT BOARD STATE ===
+[ ][ ][ ][ 5]
+[ ][ ][ 6][ ]
+[P][P][ ][ 3]
+[ ][ ][ 2][ ]
+
+Legend:
+[P] = Your path (visited cells)
+[#] = Numbered clue (must visit in order)
+[ ] = Empty cell (can fill)
+
+=== GAME PROGRESS ===
+Current Position: (2, 1)
+Path Length: 2 / 16
+Cells Filled: 2 / 16
+Cells Remaining: 14
+
+=== CLUES TO VISIT (IN THIS ORDER) ===
+  Clue 1: (2, 0)
+  Clue 2: (2, 1)
+  Clue 3: (1, 2)
+
+=== AVAILABLE NEXT MOVES ===
+You can ONLY move to these adjacent cells:
+  (1, 1)
+  (3, 1)
+  (2, 2)
+
+=== YOUR TASK ===
+1. Choose ONE cell from "AVAILABLE NEXT MOVES"
+2. Move there to continue filling the grid
+3. Eventually reach the highest clue number
+4. Fill all remaining empty cells
+
+=== RESPONSE FORMAT ===
+Return ONLY this JSON:
+{"next_move": {"row": R, "col": C}, "reason": "why this move"}
+
+Choose wisely to avoid getting stuck!
+=== END PROMPT ===

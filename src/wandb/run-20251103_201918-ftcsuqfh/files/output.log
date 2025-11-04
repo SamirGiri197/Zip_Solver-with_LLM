@@ -1,0 +1,29 @@
+2025-11-03 20:19:23,128 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 20:19:23,129 - metrics - INFO - Game metrics started for 8x8 board
+2025-11-03 20:19:23,130 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 20:19:23,130 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 20:19:23,130 - llm_manager - ERROR - Error calling Ollama: 'total_cells'
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 169, in solve_with_ollama
+    prompt = ZIP_PUZZLE_PROMPT.format(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'total_cells'
+2025-11-03 20:19:23,132 - GUI - WARNING - No move from LLM
+2025-11-03 20:19:23,133 - metrics - INFO - Game ended - Success: False, Time: 0.0s
+2025-11-03 20:19:23,133 - metrics - INFO - Metrics logged to wandb successfully
+2025-11-03 20:19:23,133 - GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 8x8
+Total Moves: 0
+Completion: FAILED ✗
+Time: 0.0s
+
+=== METRICS ===
+Valid Moves: 0/0
+Bad Moves: 0
+Clue Hits: 0
+Move Efficiency: 0.0%
+Clue Accuracy: 0.0%
+Avg Latency: 0ms
+Success Ratio: 0.0%

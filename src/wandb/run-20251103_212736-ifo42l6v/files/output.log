@@ -1,0 +1,47 @@
+2025-11-03 21:27:41,017 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 21:27:41,019 - metrics - INFO - Game metrics started for 5x5 board
+2025-11-03 21:27:41,019 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:27:41,019 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:27:41,019 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:27:52,533 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:27:52,535 - llm_manager - INFO - ================================================================================
+2025-11-03 21:27:52,537 - llm_manager - INFO - LLM FULL RESPONSE (Move 2):
+2025-11-03 21:27:52,538 - llm_manager - INFO - ================================================================================
+2025-11-03 21:27:52,540 - llm_manager - INFO - Moving toward clue 2 at (0, 3) we want to head north while keeping the bottom row open for later use. Stepping to (3, 0) keeps the path on the left side, avoids closing off any cells, and maintains many options for the rest of the grid.
+
+{"next_move": {"row": 3, "col": 0}, "reason": "heads toward next clue while preserving open space and avoiding dead ends"}
+2025-11-03 21:27:52,541 - llm_manager - INFO - ================================================================================
+2025-11-03 21:27:52,544 - llm_manager - INFO - Parsed move: (3, 0)
+2025-11-03 21:27:52,545 - metrics - INFO - Move 1: (3, 0) - Valid: True, Latency: 11526ms, Confidence: 0.90
+2025-11-03 21:27:52,547 - GUI - INFO - Move 1: (3, 0) - Valid
+2025-11-03 21:27:53,535 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:27:53,535 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:27:53,536 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:28:02,334 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:28:02,335 - llm_manager - INFO - ================================================================================
+2025-11-03 21:28:02,337 - llm_manager - INFO - LLM FULL RESPONSE (Move 3):
+2025-11-03 21:28:02,337 - llm_manager - INFO - ================================================================================
+2025-11-03 21:28:02,338 - llm_manager - INFO - I’m heading for clue 2 at (0, 3). Moving up to (2, 0) keeps the leftmost column open for a snake‑style traversal and leaves many options for later moves, whereas moving right would restrict future paths.
+
+{"next_move": {"row": 2, "col": 0}, "reason": "advances toward clue 2 while preserving open space for later routing"}
+2025-11-03 21:28:02,339 - llm_manager - INFO - ================================================================================
+2025-11-03 21:28:02,342 - llm_manager - INFO - Parsed move: (2, 0)
+2025-11-03 21:28:02,344 - metrics - INFO - Move 2: (2, 0) - Valid: True, Latency: 8809ms, Confidence: 0.90
+2025-11-03 21:28:02,346 - GUI - INFO - Move 2: (2, 0) - Valid
+2025-11-03 21:28:03,343 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:28:03,343 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:28:03,344 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud
+2025-11-03 21:28:11,607 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-03 21:28:11,608 - llm_manager - INFO - ================================================================================
+2025-11-03 21:28:11,609 - llm_manager - INFO - LLM FULL RESPONSE (Move 4):
+2025-11-03 21:28:11,609 - llm_manager - INFO - ================================================================================
+2025-11-03 21:28:11,610 - llm_manager - INFO - I need to head toward the next clue, which is at (0, 3). Moving right to (2, 1) brings me closer to the target column and keeps the upper‑left area open for later moves, while avoiding revisiting already used cells.
+
+{"next_move": {"row": 2, "col": 1}, "reason": "moves toward clue 2 and maintains open paths"}
+2025-11-03 21:28:11,611 - llm_manager - INFO - ================================================================================
+2025-11-03 21:28:11,612 - llm_manager - INFO - Parsed move: (2, 1)
+2025-11-03 21:28:11,613 - metrics - INFO - Move 3: (2, 1) - Valid: True, Latency: 8270ms, Confidence: 0.90
+2025-11-03 21:28:11,614 - GUI - INFO - Move 3: (2, 1) - Valid
+2025-11-03 21:28:12,619 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:28:12,619 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:28:12,620 - llm_manager - INFO - Calling Ollama with model: gpt-oss:120b-cloud

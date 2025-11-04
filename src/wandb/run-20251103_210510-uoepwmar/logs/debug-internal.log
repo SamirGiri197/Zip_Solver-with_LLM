@@ -1,0 +1,11 @@
+{"time":"2025-11-03T21:05:12.8341785-05:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2025-11-03T21:05:13.6025849-05:00","level":"INFO","msg":"stream: created new stream","id":"uoepwmar"}
+{"time":"2025-11-03T21:05:13.6025849-05:00","level":"INFO","msg":"handler: started","stream_id":"uoepwmar"}
+{"time":"2025-11-03T21:05:13.6049926-05:00","level":"INFO","msg":"writer: started","stream_id":"uoepwmar"}
+{"time":"2025-11-03T21:05:13.6049926-05:00","level":"INFO","msg":"sender: started","stream_id":"uoepwmar"}
+{"time":"2025-11-03T21:05:13.6049926-05:00","level":"INFO","msg":"stream: started","id":"uoepwmar"}
+{"time":"2025-11-03T21:12:30.4194118-05:00","level":"INFO","msg":"stream: closing","id":"uoepwmar"}
+{"time":"2025-11-03T21:12:30.9588723-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-11-03T21:12:31.1889962-05:00","level":"INFO","msg":"handler: closed","stream_id":"uoepwmar"}
+{"time":"2025-11-03T21:12:31.1896724-05:00","level":"INFO","msg":"sender: closed","stream_id":"uoepwmar"}
+{"time":"2025-11-03T21:12:31.1902513-05:00","level":"INFO","msg":"stream: closed","id":"uoepwmar"}

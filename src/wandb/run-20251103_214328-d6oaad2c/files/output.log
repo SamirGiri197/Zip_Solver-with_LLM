@@ -1,0 +1,47 @@
+2025-11-03 21:43:32,844 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 21:43:32,845 - metrics - INFO - Game metrics started for 4x4 board
+2025-11-03 21:43:32,846 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:43:32,846 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:43:32,847 - llm_manager - ERROR - Error calling Ollama: name 'grid_array_str' is not defined
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 269, in solve_with_ollama
+    {grid_array_str}
+     ^^^^^^^^^^^^^^
+NameError: name 'grid_array_str' is not defined
+2025-11-03 21:43:32,851 - GUI - WARNING - No move from LLM (stuck: 1/3)
+2025-11-03 21:43:33,844 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:43:33,845 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:43:33,848 - llm_manager - ERROR - Error calling Ollama: name 'grid_array_str' is not defined
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 269, in solve_with_ollama
+    {grid_array_str}
+     ^^^^^^^^^^^^^^
+NameError: name 'grid_array_str' is not defined
+2025-11-03 21:43:33,860 - GUI - WARNING - No move from LLM (stuck: 2/3)
+2025-11-03 21:43:34,847 - llm_manager - INFO - LLM provider set to: ollama (model: gpt-oss:120b-cloud)
+2025-11-03 21:43:34,848 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 21:43:34,851 - llm_manager - ERROR - Error calling Ollama: name 'grid_array_str' is not defined
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\llm_manager.py", line 269, in solve_with_ollama
+    {grid_array_str}
+     ^^^^^^^^^^^^^^
+NameError: name 'grid_array_str' is not defined
+2025-11-03 21:43:34,865 - GUI - WARNING - No move from LLM (stuck: 3/3)
+2025-11-03 21:43:35,866 - metrics - INFO - Game ended - Success: False, Time: 3.0s
+2025-11-03 21:43:35,868 - metrics - INFO - Metrics logged to wandb successfully
+2025-11-03 21:43:35,868 - GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 4x4
+Total Moves: 0
+Completion: FAILED ✗
+Time: 3.0s
+
+=== METRICS ===
+Valid Moves: 0/0
+Bad Moves: 0
+Clue Hits: 0
+Move Efficiency: 0.0%
+Clue Accuracy: 0.0%
+Avg Latency: 0ms
+Success Ratio: 0.0%

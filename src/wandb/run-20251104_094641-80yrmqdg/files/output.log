@@ -1,0 +1,1419 @@
+2025-11-04 09:46:44,069 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+2025-11-04 09:46:44,071 - evaluation.eval - INFO - Game metrics started for 4x4 board
+2025-11-04 09:46:44,071 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:46:44,071 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:46:44,071 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:46:44,071 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 2:
+2025-11-04 09:46:44,072 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ .  3  2  .
+ .  .  .  P
+ .  .  5  6
+ .  4  .  .
+
+
+                VISUAL BOARD:
+                [ ][ 3][ 2][ ]
+[ ][ ][ ][P]
+[ ][ ][ 5][ 6]
+[ ][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+    Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 3)
+                CELLS FILLED: 1/16
+                AVAILABLE NEXT MOVES:   (0, 3)
+  (2, 3)
+  (1, 2)
+
+                What is your next move and why?
+2025-11-04 09:46:47,419 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:46:47,420 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:46:47,420 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 2):
+2025-11-04 09:46:47,420 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current Position:** (1, 3) - We've just filled Clue 1.
+*   **Next Clue:** Clue 2 (0, 1)
+*   **Available Moves:** (0, 3), (2, 3), (1, 2)
+
+To reach Clue 2 at (0, 1), we need to move from our current position (1, 3) to (0, 3).
+
+**Therefore, my next move is to move to (0, 3).**
+
+**Reasoning:**
+
+This move takes us directly to the cell adjacent to our current position, fulfilling the requirements of the puzzle. We must visit the clues in order, so reaching the next clue is the priority.
+
+2025-11-04 09:46:47,422 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 3)
+2025-11-04 09:46:47,422 - evaluation.eval - INFO - Move 1: (0, 3) - Valid: True, Latency: 3351ms, Confidence: 0.90
+2025-11-04 09:46:47,423 - UI.GUI - INFO - Move 1: (0, 3) - Valid
+2025-11-04 09:46:48,422 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:46:48,424 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:46:48,425 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:46:48,426 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 3:
+2025-11-04 09:46:48,426 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ .  3  2  P
+ .  .  .  P
+ .  .  5  6
+ .  4  .  .
+
+
+                VISUAL BOARD:
+                [ ][ 3][ 2][P]
+[ ][ ][ ][P]
+[ ][ ][ 5][ 6]
+[ ][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+    Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (0, 3)
+                CELLS FILLED: 2/16
+                AVAILABLE NEXT MOVES:   (0, 2)
+
+                What is your next move and why?
+2025-11-04 09:46:51,469 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:46:51,470 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:46:51,470 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 3):
+2025-11-04 09:46:51,470 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   We're at position (0, 3) - the cell with Clue 2.
+*   We need to visit Clue 3 (2, 3) next.
+*   Available moves: (0, 2)
+
+**Reasoning:**
+
+*   The only available move is to the left (0, 2).
+*   This move will take us to an empty cell, which we can fill to continue the path.
+
+**Next Move:**
+
+Move to (0, 2)
+
+**Updated State:**
+
+*   Current Position: (0, 2)
+*   Cells Filled: 3/16
+*   Available Next Moves: (0, 1), (1, 2)
+
+2025-11-04 09:46:51,471 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 2)
+2025-11-04 09:46:51,472 - evaluation.eval - INFO - Move 2: (0, 2) - Valid: True, Latency: 3047ms, Confidence: 0.90
+2025-11-04 09:46:51,472 - UI.GUI - INFO - Move 2: (0, 2) - Valid
+2025-11-04 09:46:52,462 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:46:52,463 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:46:52,465 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:46:52,466 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 4:
+2025-11-04 09:46:52,467 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ .  3  P  P
+ .  .  .  P
+ .  .  5  6
+ .  4  .  .
+
+
+                VISUAL BOARD:
+                [ ][ 3][P][P]
+[ ][ ][ ][P]
+[ ][ ][ 5][ 6]
+[ ][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+    Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (0, 2)
+                CELLS FILLED: 3/16
+                AVAILABLE NEXT MOVES:   (1, 2)
+  (0, 1)
+
+                What is your next move and why?
+2025-11-04 09:46:55,255 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:46:55,256 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:46:55,256 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 4):
+2025-11-04 09:46:55,256 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current Position:** (0, 2) - We're at the cell with the number 3.
+*   **Next Clue:** Clue 2 is (0, 1)
+*   **Available Moves:** (0, 1)
+*   **Goal:** Move to cell (0, 1) to visit Clue 2.
+
+**Therefore, my next move is to move to cell (0, 1).**
+
+**Reasoning:**
+
+The rules dictate we must move to the next clue in sequence. The only available move is to (0, 1) to visit clue 2.  We cannot move diagonally or revisit cells.
+
+2025-11-04 09:46:55,258 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 1)
+2025-11-04 09:46:55,258 - evaluation.eval - INFO - Move 3: (0, 1) - Valid: True, Latency: 2794ms, Confidence: 0.90
+2025-11-04 09:46:55,258 - UI.GUI - INFO - Move 3: (0, 1) - Valid
+2025-11-04 09:46:56,249 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:46:56,250 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:46:56,251 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:46:56,252 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 5:
+2025-11-04 09:46:56,253 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ .  P  P  P
+ .  .  .  P
+ .  .  5  6
+ .  4  .  .
+
+
+                VISUAL BOARD:
+                [ ][P][P][P]
+[ ][ ][ ][P]
+[ ][ ][ 5][ 6]
+[ ][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (0, 1)
+                CELLS FILLED: 4/16
+                AVAILABLE NEXT MOVES:   (1, 1)
+  (0, 0)
+
+                What is your next move and why?
+2025-11-04 09:47:00,665 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:00,666 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:00,667 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 5):
+2025-11-04 09:47:00,667 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   **Current Position:** (0, 1) - We're currently at the cell in row 0, column 1.
+*   **Clues Visited:** Clue 1 (1, 3) and Clue 2 (0, 1) are completed.
+*   **Next Clue to Visit:** Clue 3 (2, 3)
+*   **Available Moves:** (0, 0)  and (1, 1) are available
+
+**Reasoning:**
+
+We need to reach the cell (2, 3) to fulfill Clue 3.  The only available move from our current position (0, 1) is to move to (0, 0). This will allow us to move to the correct cell to visit Clue 3.
+
+**Next Move:**
+
+Move to (0, 0).
+
+**Updated State:**
+
+*   **Current Position:** (0, 0)
+*   **Clues Visited:** Clue 1, Clue 2, Clue 3
+*   **Cells Filled:** 5/16
+*   **Available Next Moves:** (0, 1), (1, 0)
+
+2025-11-04 09:47:00,668 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 0)
+2025-11-04 09:47:00,668 - evaluation.eval - INFO - Move 4: (0, 0) - Valid: True, Latency: 4418ms, Confidence: 0.90
+2025-11-04 09:47:00,669 - UI.GUI - INFO - Move 4: (0, 0) - Valid
+2025-11-04 09:47:01,666 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:01,667 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:01,668 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:01,669 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 6:
+2025-11-04 09:47:01,670 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ .  .  .  P
+ .  .  5  6
+ .  4  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[ ][ ][ ][P]
+[ ][ ][ 5][ 6]
+[ ][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (0, 0)
+                CELLS FILLED: 5/16
+                AVAILABLE NEXT MOVES:   (1, 0)
+
+                What is your next move and why?
+2025-11-04 09:47:07,693 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:07,694 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:07,695 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 6):
+2025-11-04 09:47:07,695 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   **Grid:**
+    ```
+    P  P  P  P
+    .  .  .  P
+    .  .  5  6
+    .  4  .  .
+    ```
+*   **Filled Cells:** 5/16
+*   **Current Position:** (0, 0)
+*   **Available Moves:** (1, 0)  (This means we can move to cell (1, 0))
+
+*   **Clues Visited:** Clue 1 (1, 3), Clue 2 (0, 1), Clue 3 (2, 3)
+*   **Next Clue to Visit:** Clue 4 (0, 0)
+
+**Reasoning:**
+
+1.  **Goal:** We need to fill the grid completely and visit clues 1, 2, 3, and 4 sequentially, without revisiting cells.
+
+2.  **Available Moves:** From our current position (0, 0), we can only move to (1, 0).  That cell is empty.
+
+3.  **Next Step:** We must fill the cell at (1, 0) with the next clue.
+
+**Therefore, my next move is to move to cell (1, 0).**
+
+**Updated State:**
+
+*   **Grid:**
+    ```
+    P  P  P  P
+    P  .  .  P
+    .  .  5  6
+    .  4  .  .
+    ```
+*   **Filled Cells:** 6/16
+*   **Current Position:** (1, 0)
+*   **Available Next Moves:** (0, 0), (1, 1), (1, 2)
+2025-11-04 09:47:07,696 - LLM_configuration.llm_manager - INFO - Parsed move from text: (1, 0)
+2025-11-04 09:47:07,697 - evaluation.eval - INFO - Move 5: (1, 0) - Valid: True, Latency: 6029ms, Confidence: 0.90
+2025-11-04 09:47:07,697 - UI.GUI - INFO - Move 5: (1, 0) - Valid
+2025-11-04 09:47:08,691 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:08,692 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:08,694 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:08,698 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 7:
+2025-11-04 09:47:08,700 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ .  .  5  6
+ .  4  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[ ][ ][ 5][ 6]
+[ ][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 0)
+                CELLS FILLED: 6/16
+                AVAILABLE NEXT MOVES:   (2, 0)
+  (1, 1)
+
+                What is your next move and why?
+2025-11-04 09:47:13,687 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:13,690 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:13,690 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 7):
+2025-11-04 09:47:13,690 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   **Current Position:** (1, 0) - We're at the cell in row 1, column 0.
+*   **Cells Filled:** 6/16
+*   **Available Moves:** (2, 0), (1, 1)
+*   **Clues to Visit:** 1 -> 2 -> 3
+
+**Goal:** Visit Clue 3 (2, 3)
+
+**Reasoning:**
+
+1.  **Clue 3 Location:** Clue 3 is at (2, 3).
+2.  **Path to Clue 3:** To reach (2, 3) from (1, 0), we need to move right 2 cells.
+3.  **Available Moves:** We can move to (2, 0) or (1, 1). The best move to continue the path to clue 3 is (2, 0).
+
+**Next Move:**
+
+Move to cell (2, 0)
+
+**Explanation:**
+
+Moving to (2, 0) will place a number in the grid in line with the order given. This will also make it easier to get to Clue 3.
+
+**Updated State:**
+
+*   **Current Position:** (2, 0)
+*   **Cells Filled:** 7/16
+*   **Available Next Moves:** (2, 1), (1, 0)
+
+2025-11-04 09:47:13,691 - LLM_configuration.llm_manager - INFO - Parsed move from text: (2, 0)
+2025-11-04 09:47:13,692 - evaluation.eval - INFO - Move 6: (2, 0) - Valid: True, Latency: 5000ms, Confidence: 0.90
+2025-11-04 09:47:13,693 - UI.GUI - INFO - Move 6: (2, 0) - Valid
+2025-11-04 09:47:14,688 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:14,689 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:14,690 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:14,696 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 8:
+2025-11-04 09:47:14,696 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  .  5  6
+ .  4  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][ ][ 5][ 6]
+[ ][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (2, 0)
+                CELLS FILLED: 7/16
+                AVAILABLE NEXT MOVES:   (3, 0)
+  (2, 1)
+
+                What is your next move and why?
+2025-11-04 09:47:19,319 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:19,323 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:19,324 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 8):
+2025-11-04 09:47:19,324 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   **Current Position:** (2, 0)
+*   **Cells Filled:** 7/16
+*   **Available Moves:** (3, 0), (2, 1)
+
+**Goal:**  We need to visit Clue 3 (2, 3) and continue filling the grid in a continuous path.
+
+**Reasoning:**
+
+1.  **Clue 3 Location:** Clue 3 is at (2, 3).
+2.  **Movement to Clue 3:** The most direct path to Clue 3 from (2, 0) is to move right.
+3.  **Available Moves:** Considering the available moves, (3,0) leads to a cell that isn't clue 3 so, and (2,1) is a valid move.
+
+**Next Move:**
+
+I will move to cell **(2, 1)**
+
+**Reason:**
+This move brings me closer to Clue 3 and allows me to continue filling the grid in a continuous path.
+
+**Updated State:**
+*   **Current Position:** (2, 1)
+*   **Cells Filled:** 8/16
+*   **Available Next Moves:** (2, 2), (1, 1), (1, 2)
+
+
+2025-11-04 09:47:19,326 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (3, 0)
+2025-11-04 09:47:19,326 - evaluation.eval - INFO - Move 7: (3, 0) - Valid: True, Latency: 4638ms, Confidence: 0.90
+2025-11-04 09:47:19,326 - UI.GUI - INFO - Move 7: (3, 0) - Valid
+2025-11-04 09:47:20,320 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:20,326 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:20,332 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:20,333 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 9:
+2025-11-04 09:47:20,334 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  .  5  6
+ P  4  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][ ][ 5][ 6]
+[P][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (3, 0)
+                CELLS FILLED: 8/16
+                AVAILABLE NEXT MOVES:   (3, 1)
+
+                What is your next move and why?
+2025-11-04 09:47:23,656 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:23,657 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:23,658 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 9):
+2025-11-04 09:47:23,658 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current Position:** (3, 0) - We are at the bottom-right cell in the grid.
+*   **Clues Visited:** Clue 1 (1, 3), Clue 2 (0, 1), Clue 3 (2, 3)
+*   **Next Clue:** We need to visit Clue 4 (0, 0) to complete the puzzle.
+*   **Available Moves:** (3, 1) is not the path.
+
+Therefore, the next move is to move to (0, 0) to fill the next clue.
+
+**Next Move:** (0, 0)
+
+**Reasoning:** We need to visit the next clue (Clue 4, located at (0,0)). Moving to (0,0) allows us to start filling the puzzle, and is the only available move.
+2025-11-04 09:47:23,659 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 0)
+2025-11-04 09:47:23,659 - evaluation.eval - INFO - Move 8: (0, 0) - Valid: False, Latency: 3333ms, Confidence: 0.90
+2025-11-04 09:47:23,660 - UI.GUI - WARNING - Invalid move: (0, 0) (stuck: 1/3)
+2025-11-04 09:47:24,670 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:24,671 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:24,673 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:24,674 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 9:
+2025-11-04 09:47:24,675 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  .  5  6
+ P  4  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][ ][ 5][ 6]
+[P][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (3, 0)
+                CELLS FILLED: 8/16
+                AVAILABLE NEXT MOVES:   (3, 1)
+
+                What is your next move and why?
+2025-11-04 09:47:28,300 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:28,305 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:28,306 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 9):
+2025-11-04 09:47:28,306 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current Position:** (3, 0) - We are at the bottom-right cell in the last row.
+*   **Clues Visited:** Clue 1 (1, 3) and Clue 2 (0, 1) and Clue 3 (2, 3) have been visited.
+*   **Next Clue:** We need to visit Clue 4.
+*   **Clue 4 Location:** Clue 4 is at (1, 2).
+*   **Available Moves:** We can move to (1, 2).
+
+**Therefore, my next move is to move to cell (1, 2).**
+
+**Reasoning:**
+
+This is the only available move that brings us closer to visiting the next clue (Clue 4 at (1,2)). Diagonal moves are not allowed, and we cannot revisit cells. Moving to (1, 2) fills an empty cell and moves us towards the next clue in the sequence.
+
+2025-11-04 09:47:28,307 - LLM_configuration.llm_manager - INFO - Parsed move from text: (1, 2)
+2025-11-04 09:47:28,307 - evaluation.eval - INFO - Move 9: (1, 2) - Valid: False, Latency: 3636ms, Confidence: 0.90
+2025-11-04 09:47:28,308 - UI.GUI - WARNING - Invalid move: (1, 2) (stuck: 2/3)
+2025-11-04 09:47:29,302 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:29,303 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:29,304 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:29,304 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 9:
+2025-11-04 09:47:29,305 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  .  5  6
+ P  4  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][ ][ 5][ 6]
+[P][ 4][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (3, 0)
+                CELLS FILLED: 8/16
+                AVAILABLE NEXT MOVES:   (3, 1)
+
+                What is your next move and why?
+2025-11-04 09:47:33,933 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:33,934 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:33,934 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 9):
+2025-11-04 09:47:33,935 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current Position:** (3, 0) - We're at the bottom-right corner of the grid.
+*   **Clues Visited:** Clue 1 (1, 3), Clue 2 (0, 1), Clue 3 (2, 3)
+*   **Next Clue to Visit:** Clue 4 (0, 0)
+*   **Available Moves:** (3, 1) -  This move takes us to cell (3, 1) which is adjacent to our current position.
+
+**Decision:**
+
+My next move is to move to cell (3, 1).
+
+**Reasoning:**
+
+1.  **Reaching Clue 4:** The next clue to visit is Clue 4, located at (0, 0). Moving to (3, 1) brings us closer to that clue.
+
+2.  **Adjacency:** The move to (3, 1) is a valid adjacent move (right).
+
+3.  **No other options:** The only adjacent cells available are (3,1).
+
+**Updated State:**
+
+*   **Current Position:** (3, 1)
+*   **Cells Filled:** 9/16
+*   **Available Next Moves:** None (This cell is already filled)
+
+Let me know what happens next!
+2025-11-04 09:47:33,935 - LLM_configuration.llm_manager - INFO - Parsed move from text: (3, 1)
+2025-11-04 09:47:33,936 - evaluation.eval - INFO - Move 10: (3, 1) - Valid: True, Latency: 4634ms, Confidence: 0.90
+2025-11-04 09:47:33,936 - UI.GUI - INFO - Move 10: (3, 1) - Valid
+2025-11-04 09:47:34,929 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:34,938 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:34,939 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:34,940 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 10:
+2025-11-04 09:47:34,941 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  .  5  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][ ][ 5][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (3, 1)
+                CELLS FILLED: 9/16
+                AVAILABLE NEXT MOVES:   (2, 1)
+  (3, 2)
+
+                What is your next move and why?
+2025-11-04 09:47:39,451 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:39,451 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:39,451 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 10):
+2025-11-04 09:47:39,452 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Goal:** Fill the entire 4x4 grid with clues (1-6) following the rules.
+*   **Current State:** We are at (3, 1), have filled 9/16 cells, and have the following moves available: (2, 1) and (3, 2).
+*   **Next Clue:** We need to visit Clue 3, which is at (2, 3).
+
+**Decision:**
+
+I will move to (2, 3).
+
+**Reasoning:**
+
+*   **Reaching the next clue:** Moving to (2, 3) directly places us at the location of Clue 3.
+*   **Adjacency:** The move to (2,3) is adjacent to the current position.
+*   **No other options:** Moving to (2,1) does not help us reach Clue 3, while (3,2) also doesn't.
+
+Therefore, the next move is to (2, 3).
+
+**Updated State:**
+
+*   **Current Position:** (2, 3)
+*   **Cells Filled:** 10/16
+*   **Available Next Moves:** (1, 3), (2, 2), (3, 3), (3,2)
+2025-11-04 09:47:39,453 - LLM_configuration.llm_manager - INFO - Parsed move from text: (2, 3)
+2025-11-04 09:47:39,453 - evaluation.eval - INFO - Move 11: (2, 3) - Valid: False, Latency: 4516ms, Confidence: 0.90
+2025-11-04 09:47:39,454 - UI.GUI - WARNING - Invalid move: (2, 3) (stuck: 1/3)
+2025-11-04 09:47:40,465 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:40,471 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:40,473 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:40,473 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 10:
+2025-11-04 09:47:40,474 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  .  5  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][ ][ 5][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (3, 1)
+                CELLS FILLED: 9/16
+                AVAILABLE NEXT MOVES:   (2, 1)
+  (3, 2)
+
+                What is your next move and why?
+2025-11-04 09:47:43,340 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:43,340 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:43,342 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 10):
+2025-11-04 09:47:43,342 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   We're at (3, 1)
+*   We need to visit Clue 3 (2, 3)
+*   Available moves: (2, 1), (2, 3)
+
+**Reasoning:**
+
+1.  **Clue 3 Location:** Clue 3 is at (2, 3).
+2.  **Nearest Move:**  Moving from (3, 1) to (2, 3) is the directest path to the next clue.
+
+**Next Move:**
+
+Move to cell (2, 3)
+
+**Explanation:**
+
+This move directly fulfills the rule of visiting clues in order and moving to the next clue.
+
+2025-11-04 09:47:43,342 - LLM_configuration.llm_manager - INFO - Parsed move from text: (2, 3)
+2025-11-04 09:47:43,342 - evaluation.eval - INFO - Move 12: (2, 3) - Valid: False, Latency: 2872ms, Confidence: 0.90
+2025-11-04 09:47:43,343 - UI.GUI - WARNING - Invalid move: (2, 3) (stuck: 2/3)
+2025-11-04 09:47:44,336 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:44,337 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:44,337 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:44,338 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 10:
+2025-11-04 09:47:44,338 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  .  5  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][ ][ 5][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (3, 1)
+                CELLS FILLED: 9/16
+                AVAILABLE NEXT MOVES:   (2, 1)
+  (3, 2)
+
+                What is your next move and why?
+2025-11-04 09:47:48,717 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:48,718 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:48,723 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 10):
+2025-11-04 09:47:48,723 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   **Clue Visited:** Clue 1 (1,3), Clue 2 (0,1), Clue 3 (2,3) are filled.
+*   **Current Position:** (3, 1)
+*   **Available Moves:** (2, 1), (3, 2)
+*   **Cells Filled:** 9/16
+
+**Goal:** Fill the grid with clues 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16.
+
+**Reasoning:**
+
+We need to move to the next clue, which is Clue 4.  Clue 4 is located at (1, 1).
+
+The available moves are (2, 1) and (3, 2). To reach (1, 1) from (3, 1) we must move up and left. (3,2) can not get us to (1,1).
+
+**Next Move:**
+
+I will move to cell (2, 1)
+
+**Explanation:**
+This move takes us to the location of Clue 4.
+
+2025-11-04 09:47:48,724 - LLM_configuration.llm_manager - INFO - Parsed move from text: (2, 1)
+2025-11-04 09:47:48,724 - evaluation.eval - INFO - Move 13: (2, 1) - Valid: True, Latency: 4388ms, Confidence: 0.90
+2025-11-04 09:47:48,724 - UI.GUI - INFO - Move 13: (2, 1) - Valid
+2025-11-04 09:47:49,724 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:49,725 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:49,726 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:49,726 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 11:
+2025-11-04 09:47:49,727 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  P  5  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][P][ 5][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (2, 1)
+                CELLS FILLED: 10/16
+                AVAILABLE NEXT MOVES:   (1, 1)
+  (2, 2)
+
+                What is your next move and why?
+2025-11-04 09:47:54,114 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:54,115 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:54,115 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 11):
+2025-11-04 09:47:54,116 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   **Grid:**
+    ```
+    P  P  P  P
+    P  .  .  P
+    P  P  5  6
+    P  P  .  .
+    ```
+*   **Filled Cells:** 10/16
+*   **Current Position:** (2, 1)
+*   **Available Moves:** (1, 1), (2, 2)
+
+*   **Clues Visited:** Clue 1 (1, 3), Clue 2 (0, 1), Clue 3 (2, 3)
+
+**Goal:**  Visit Clue 4 (2, 2).
+
+**Reasoning:**
+
+We need to move to (2, 2) to fill in Clue 4.  Looking at the available moves (1, 1) and (2, 2), only (2, 2) gets us closer to the target.
+
+**Next Move:** (2, 2)
+
+**Explanation:**
+
+Moving to (2, 2) fills in the empty space, enabling us to proceed to Clue 4.
+
+Let me know if you'd like to continue the puzzle!
+2025-11-04 09:47:54,116 - LLM_configuration.llm_manager - INFO - Parsed move from text: (2, 2)
+2025-11-04 09:47:54,116 - evaluation.eval - INFO - Move 14: (2, 2) - Valid: True, Latency: 4392ms, Confidence: 0.90
+2025-11-04 09:47:54,117 - UI.GUI - INFO - Move 14: (2, 2) - Valid
+2025-11-04 09:47:55,123 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:55,123 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:55,124 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:55,124 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 12:
+2025-11-04 09:47:55,125 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  .  P
+ P  P  P  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][ ][P]
+[P][P][P][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (2, 2)
+                CELLS FILLED: 11/16
+                AVAILABLE NEXT MOVES:   (1, 2)
+  (3, 2)
+  (2, 3)
+
+                What is your next move and why?
+2025-11-04 09:47:58,674 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:47:58,675 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:47:58,676 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 12):
+2025-11-04 09:47:58,676 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   We're at (2, 2) (as stated in the prompt).
+*   We've filled 11 out of 16 cells.
+*   Available moves are: (1, 2), (3, 2), and (2, 3).
+*   We need to visit Clue 3 (2, 3).
+
+**Reasoning:**
+
+The goal is to reach Clue 3 (2, 3).  Looking at the available moves, the most direct path is to move from (2, 2) to (2, 3). This will immediately place us on the next clue.
+
+**Next Move:**
+
+Therefore, my next move is to move to **(2, 3)**.
+
+**Explanation:**
+
+This move directly fulfills the rule of visiting clues in order and placing a number in the grid. It also utilizes one of the available moves.
+
+2025-11-04 09:47:58,678 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (1, 2)
+2025-11-04 09:47:58,678 - evaluation.eval - INFO - Move 15: (1, 2) - Valid: True, Latency: 3555ms, Confidence: 0.90
+2025-11-04 09:47:58,678 - UI.GUI - INFO - Move 15: (1, 2) - Valid
+2025-11-04 09:47:59,669 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:47:59,670 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:47:59,671 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:47:59,671 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 13:
+2025-11-04 09:47:59,671 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  P  P
+ P  P  P  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][P][P]
+[P][P][P][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 2)
+                CELLS FILLED: 12/16
+                AVAILABLE NEXT MOVES:   (1, 1)
+
+                What is your next move and why?
+2025-11-04 09:48:02,940 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:48:02,941 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:48:02,948 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 13):
+2025-11-04 09:48:02,949 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current Position:** (1, 2)
+*   **Available Moves:** (1, 1) - This is the only available move.
+*   **Goal:** Visit Clue 3 (2, 3)
+
+**Reasoning:**
+
+We need to reach Clue 3 at (2, 3). Moving to (1, 1) will not lead us there.  We must move to adjacent cells. Therefore, the move is to visit clue 3.
+
+**Next Move:**
+
+Move to cell (2, 3) - Filling in the 13th cell.
+
+**Updated State:**
+
+*   **Current Position:** (2, 3)
+*   **Cells Filled:** 13/16
+*   **Available Next Moves:** (1, 3), (2, 2)
+
+I hope this clarifies the solution!
+2025-11-04 09:48:02,950 - LLM_configuration.llm_manager - INFO - Parsed move from text: (2, 3)
+2025-11-04 09:48:02,950 - evaluation.eval - INFO - Move 16: (2, 3) - Valid: False, Latency: 3281ms, Confidence: 0.90
+2025-11-04 09:48:02,950 - UI.GUI - WARNING - Invalid move: (2, 3) (stuck: 1/3)
+2025-11-04 09:48:03,949 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:48:03,950 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:48:03,951 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:48:03,951 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 13:
+2025-11-04 09:48:03,951 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  P  P
+ P  P  P  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][P][P]
+[P][P][P][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 2)
+                CELLS FILLED: 12/16
+                AVAILABLE NEXT MOVES:   (1, 1)
+
+                What is your next move and why?
+2025-11-04 09:48:08,343 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:48:08,343 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:48:08,344 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 13):
+2025-11-04 09:48:08,344 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the next move.
+
+**Current State:**
+
+*   We're at position (1, 2).
+*   We've filled 12 out of 16 cells.
+*   The next clue to visit is Clue 3, located at (2, 3).
+*   Available moves: (1,1), (1,2), (1,3), (0,2), (0,3), (2,2), (2,3)
+
+**Goal:** Move to Clue 3 at (2, 3)
+
+**Decision:**
+
+The optimal move is to move to (2, 3) since this directly visits the next clue.
+
+**Next Move:**
+
+Move to (2, 3)
+
+**Reasoning:**
+
+*   This fulfills rule 2 (visit clues in order).
+*   It adheres to rule 4 (cannot revisit cells).
+*   It is the most direct path to the next required cell, minimizing unnecessary moves.
+
+**Updated State:**
+
+*   Current position: (2, 3)
+*   Cells Filled: 13/16
+*   Available Next Moves: (1,3), (2,2), (2,3)
+2025-11-04 09:48:08,345 - LLM_configuration.llm_manager - INFO - Parsed move from text: (2, 3)
+2025-11-04 09:48:08,345 - evaluation.eval - INFO - Move 17: (2, 3) - Valid: False, Latency: 4396ms, Confidence: 0.90
+2025-11-04 09:48:08,352 - UI.GUI - WARNING - Invalid move: (2, 3) (stuck: 2/3)
+2025-11-04 09:48:09,347 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:48:09,347 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:48:09,347 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:48:09,347 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 13:
+2025-11-04 09:48:09,349 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  .  P  P
+ P  P  P  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][ ][P][P]
+[P][P][P][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 2)
+                CELLS FILLED: 12/16
+                AVAILABLE NEXT MOVES:   (1, 1)
+
+                What is your next move and why?
+2025-11-04 09:48:14,216 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:48:14,217 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:48:14,217 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 13):
+2025-11-04 09:48:14,218 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Goal:** Fill the 16 cells in a continuous path, visiting clues 1, 2, and 3 in order.
+*   **Current State:** We're at (1, 2), clue 1 is at (1, 3), clue 2 is at (0, 1) and clue 3 is at (2, 3).  We've filled 12 cells.
+*   **Available Moves:** We can move to (1, 1).
+
+**Decision:**
+
+I will move to (1, 1).
+
+**Reasoning:**
+
+1.  **Clue 1 is already visited:** I've already visited clue 1 at (1, 3).
+2. **Clue 2 is next:** The next clue to visit is clue 2 at (0, 1). Moving to (0, 1) gets me closer to that clue.
+3.  **Adjacent Move:** Moving to (0, 1) is an adjacent move.
+4. **No revisiting:** This move doesn't involve revisiting any cell.
+
+**Updated State:**
+
+*   **Current Position:** (0, 1)
+*   **Cells Filled:** 13/16
+*   **Available Next Moves:** (0, 0), (0, 2), (1, 1)
+
+Let me know if you want to simulate the next step.
+2025-11-04 09:48:14,218 - LLM_configuration.llm_manager - INFO - Parsed move from text: (1, 1)
+2025-11-04 09:48:14,218 - evaluation.eval - INFO - Move 18: (1, 1) - Valid: True, Latency: 4872ms, Confidence: 0.90
+2025-11-04 09:48:14,219 - UI.GUI - INFO - Move 18: (1, 1) - Valid
+2025-11-04 09:48:15,229 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:48:15,231 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:48:15,231 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:48:15,231 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 14:
+2025-11-04 09:48:15,232 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  P  P  P
+ P  P  P  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][P][P][P]
+[P][P][P][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 1)
+                CELLS FILLED: 13/16
+                AVAILABLE NEXT MOVES:   NONE - Game stuck!
+
+                What is your next move and why?
+2025-11-04 09:48:19,949 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:48:19,951 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:48:19,951 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 14):
+2025-11-04 09:48:19,951 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+**Current State:**
+
+*   We're at (1, 1).
+*   Clue 1 is at (1, 3).
+*   Clue 2 is at (0, 1).
+*   Clue 3 is at (2, 3).
+*   We've filled 13 out of 16 cells.
+*   We cannot move diagonally.
+*   We cannot revisit cells.
+
+**The Problem:**
+
+The available moves are currently NONE. This indicates that we're completely blocked. Looking at the board, we need to get to Clue 2 at (0, 1).  Currently, all adjacent cells (up, down, left, right) are either filled or are clues.
+
+**Next Move:**
+
+The next move is to **move to (0, 0)**.
+
+**Reasoning:**
+
+This is the only remaining valid move. Moving to (0,0) will help us to reach Clue 2 (0,1). This unlocks the path to the next clue.
+
+**Updated State:**
+
+*   Current position: (0, 0)
+*   Cells filled: 14/16
+*   Available next moves:  (0, 1), (0, 2), (1, 0), (1, 2), (2, 0)
+
+2025-11-04 09:48:19,953 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 0)
+2025-11-04 09:48:19,954 - evaluation.eval - INFO - Move 19: (0, 0) - Valid: False, Latency: 4723ms, Confidence: 0.90
+2025-11-04 09:48:19,954 - UI.GUI - WARNING - Invalid move: (0, 0) (stuck: 1/3)
+2025-11-04 09:48:20,960 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:48:20,960 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:48:20,961 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:48:20,961 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 14:
+2025-11-04 09:48:20,961 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  P  P  P
+ P  P  P  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][P][P][P]
+[P][P][P][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 1)
+                CELLS FILLED: 13/16
+                AVAILABLE NEXT MOVES:   NONE - Game stuck!
+
+                What is your next move and why?
+2025-11-04 09:48:24,719 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:48:24,720 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:48:24,720 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 14):
+2025-11-04 09:48:24,721 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation. The puzzle is indeed stuck!
+
+**Current State:**
+
+*   We've filled 13 out of 16 cells.
+*   We're at (1, 1)
+*   We've visited Clue 1 (1, 3) and Clue 2 (0, 1), and Clue 3 (2, 3).
+*   We must now visit Clue 4 (0, 0).
+
+**The Problem:**
+
+From our current position (1, 1), we have no valid moves. We cannot move up, down, left, or right without hitting a wall (either the edge of the grid or a previously visited cell).
+
+**Solution:**
+
+The next move is to fill cell (0, 0).
+
+**Reasoning:**
+
+This is the *only* remaining legal move. Filling the cell at (0, 0) will allow the path to continue to the next clue, and unlock the subsequent moves.
+
+**Final Answer:**
+
+Next move: Fill cell (0, 0)
+
+2025-11-04 09:48:24,728 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 0)
+2025-11-04 09:48:24,728 - evaluation.eval - INFO - Move 20: (0, 0) - Valid: False, Latency: 3769ms, Confidence: 0.90
+2025-11-04 09:48:24,729 - UI.GUI - WARNING - Invalid move: (0, 0) (stuck: 2/3)
+2025-11-04 09:48:25,725 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-04 09:48:25,726 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-04 09:48:25,727 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-04 09:48:25,727 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 14:
+2025-11-04 09:48:25,728 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 16 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P  P
+ P  P  P  P
+ P  P  P  6
+ P  P  .  .
+
+
+                VISUAL BOARD:
+                [P][P][P][P]
+[P][P][P][P]
+[P][P][P][ 6]
+[P][P][ ][ ]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+  ✓ Clue 2: (0, 1)
+    Clue 3: (2, 3)
+
+
+                CURRENT POSITION: (1, 1)
+                CELLS FILLED: 13/16
+                AVAILABLE NEXT MOVES:   NONE - Game stuck!
+
+                What is your next move and why?
+2025-11-04 09:48:30,062 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-04 09:48:30,062 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-04 09:48:30,063 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 14):
+2025-11-04 09:48:30,063 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+**Current State:**
+
+*   We've filled 13 out of 16 cells.
+*   We're currently at (1, 1).
+*   We need to visit clues 1, 2, and 3 in that order.
+*   We have no available moves from our current position (1, 1).
+
+**Understanding the Constraints:**
+
+*   We *must* visit clues in order.
+*   We can only move to adjacent cells (up, down, left, right).
+*   We cannot revisit cells.
+*   We must fill empty cells between clues.
+
+**The Problem:**
+
+The current board is completely blocked.  Every adjacent cell is either filled or is a clue, and there's no legal move from (1, 1).
+
+**Next Move and Reasoning:**
+
+The only solution is to **fill the empty cell at (0, 0)**.
+
+**Reasoning:**
+
+This single action opens a path to the next clue, clue 2, at (0, 1) and creates a continuous path forward.  Without filling this cell, the puzzle is unsolvable.
+
+**Therefore, my next move is to fill the cell at (0, 0).**
+
+2025-11-04 09:48:30,064 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (0, 0)
+2025-11-04 09:48:30,065 - evaluation.eval - INFO - Move 21: (0, 0) - Valid: False, Latency: 4338ms, Confidence: 0.90
+2025-11-04 09:48:30,065 - UI.GUI - WARNING - Invalid move: (0, 0) (stuck: 3/3)
+2025-11-04 09:48:31,071 - evaluation.eval - INFO - Game ended - Success: False, Time: 107.0s
+2025-11-04 09:48:31,071 - evaluation.eval - INFO - Metrics logged to wandb successfully
+2025-11-04 09:48:31,071 - UI.GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 4x4
+Total Moves: 21
+Completion: FAILED ✗
+Time: 107.0s
+
+=== METRICS ===
+Valid Moves: 12/21
+Bad Moves: 9
+Clue Hits: 8
+Move Efficiency: 57.1%
+Clue Accuracy: 266.7%
+Avg Latency: 4094ms
+Success Ratio: 0.0%

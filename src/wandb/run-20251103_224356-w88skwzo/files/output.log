@@ -1,0 +1,10 @@
+2025-11-03 22:44:01,338 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+Exception in thread Thread-1 (solve_with_llm):
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\Zip-game\UI\GUI.py", line 220, in solve_with_llm
+    from game.metrics import metrics_collector
+ModuleNotFoundError: No module named 'game'

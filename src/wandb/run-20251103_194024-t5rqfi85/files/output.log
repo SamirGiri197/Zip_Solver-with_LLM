@@ -1,0 +1,4 @@
+2025-11-03 19:40:29,460 - llm_manager - INFO - wandb initialized successfully
+2025-11-03 19:40:29,461 - llm_manager - INFO - LLM provider set to: ollama
+2025-11-03 19:40:29,461 - llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-03 19:40:29,462 - llm_manager - ERROR - Error calling Ollama: '\n    "next_move"'
