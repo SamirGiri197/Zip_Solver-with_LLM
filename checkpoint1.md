@@ -51,15 +51,18 @@ This move takes us directly to the cell adjacent to our current position, fulfil
 
 ## Screenshots
 
-<div style="display:flex; justify-content:center; gap:10px;">
-  <div>
-    <img src="SS/ollama.png" width="48%" />
-    <p style="text-align:center;"><b>Figure 1:</b> ollama gemma3:4b 5x5 ZIP Puzzle</p>
-  </div>
-  <div>
-    <img src="SS/gemini.png" width="48%" />
-    <p style="text-align:center;"><b>Figure 2:</b> gemini:2.0-flash 5x5 ZIP Puzzle</p>
-  </div>
-</div>
+<table>
+<tr>
+  <td align="center">
+    <img src="SS/ollama.png" width="400"><br>
+    <b>Figure 1:</b> ollama gemma3:4b playing a 5x5 ZIP Puzzle
+  </td>
+  <td align="center">
+    <img src="SS/gemini.png" width="400"><br>
+    <b>Figure 2:</b> gemini:2.0-flash playing a 5x5 ZIP Puzzle
+  </td>
+</tr>
+</table>
+
 
 
