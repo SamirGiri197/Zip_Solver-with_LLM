@@ -53,5 +53,7 @@ This move takes us directly to the cell adjacent to our current position, fulfil
 
 <p float="left">
   <img src="SS/ollama.png" width="48%%" />
+  <figcaption><b>Figure 1:</b> Example of ollama gemma3:4b playing a 5x5 ZIP Puzzle.</figcaption>
   <img src="SS/gemini.png" width="49%" />
+    <figcaption><b>Figure 2:</b> Example of gemini:2.0-flash playing a 5x5 ZIP Puzzle.</figcaption>
 </p>
