@@ -34,11 +34,12 @@ prompt = f"""ZIP PUZZLE RULES:
                 What is your next move and why?"""
                 
 ## Response from LLM
-          Okay, let's analyze the situation.
 
-*   **Current Position:** (1, 3) - We've just filled Clue 1.
-*   **Next Clue:** Clue 2 (0, 1)
-*   **Available Moves:** (0, 3), (2, 3), (1, 2)
+  Okay, let's analyze the situation.
+
+  **Current Position:** (1, 3) - We've just filled Clue 1.
+  **Next Clue:** Clue 2 (0, 1)
+  **Available Moves:** (0, 3), (2, 3), (1, 2)
 
 To reach Clue 2 at (0, 1), we need to move from our current position (1, 3) to (0, 3).
 
