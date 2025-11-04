@@ -55,6 +55,10 @@ python main.py
 1. Go to config/llm_config.py
 2. update LLM_PROVIDERS
 
+## How to Change Prompt
+1. Goto src/llm_configuration/llm_manager.py
+2. Find Prompt = """ ............ """ and make changes as required.
+
 
 ## How to Play
 
