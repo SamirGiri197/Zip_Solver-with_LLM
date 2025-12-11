@@ -1,0 +1,1092 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-25 16:43:50,478 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+2025-11-25 16:43:50,485 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:43:50,485 - evaluation.eval - INFO - LLM evaluation started for 3x3 board
+2025-11-25 16:43:50,485 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:43:50,486 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with gemini
+2025-11-25 16:43:50,486 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-11-25 16:43:50,486 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:43:50,486 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  .    .  [ 1]
+  .    .    3
+  .    2    4
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:43:50,487 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:43:52,345 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:43:52,346 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:52,347 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (0,2) and have filled 1 out of 9 cells. The next clue I need to visit is clue 2, which is located at position (2,1). My available moves are (1,2) and (0,1).
+
+If I move to (1,2), the path will be (0,2) -> (1,2). This move doesn't immediately block any paths, but it also doesn't directly lead me towards clue 2.
+If I move to (0,1), the path will be (0,2) -> (0,1). This move also doesn't immediately block any paths, and it opens up the possibility to go down towards clue 2. It seems slightly better than going to (1,2) as it provides more flexibility.
+
+MOVE: (0,1)
+
+2025-11-25 16:43:52,348 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:52,350 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:43:52,350 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 2
+2025-11-25 16:43:52,350 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:43:52,352 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:43:52,353 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:43:52,353 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:52,353 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:43:52,354 - LLM_configuration.llm_manager - INFO - I am currently at position (0,2) and have filled 1 out of 9 cells. The next clue I need to visit is clue 2, which is located at position (2,1). My available moves are (1,2) and (0,1).
+
+If I move to (1,2), the path will be (0,2) -> (1,2). This move doesn't immediately block any paths, but it also doesn't directly lead me towards clue 2.
+If I move to (0,1), the path will be (0,2) -> (0,1). This move also doesn't immediately block any paths, and it opens up the possibility to go down towards clue 2. It seems slightly better than going to (1,2) as it provides more flexibility.
+2025-11-25 16:43:52,354 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:52,354 - LLM_configuration.llm_manager - INFO - DECISION: Move to (0, 1)
+2025-11-25 16:43:52,354 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+🧠 GEMINI THINKING (Move 2):
+--------------------------------------------------
+I am currently at position (0,2) and have filled 1 out of 9 cells. The next clue I need to visit is clue 2, which is located at position (2,1). My available moves are (1,2) and (0,1).
+
+If I move to (1,2), the path will be (0,2) -> (1,2). This move doesn't immediately block any paths, but it also doesn't directly lead me towards clue 2.
+If I move to (0,1), the path will be (0,2) -> (0,1). This move also doesn't immediately block any paths, and it opens up the possibility to go down towards clue 2. It seems slightly better than going to (1,2) as it provides more flexibility.
+--------------------------------------------------
+💡 DECISION: (0, 1)
+2025-11-25 16:43:52,360 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (0, 1)
+2025-11-25 16:43:52,361 - evaluation.eval - INFO - Move 1: (0, 1) - Valid: True, Correct: False, Latency: 1875ms
+2025-11-25 16:43:52,361 - UI.GUI - INFO - Move 1: (0, 1) - Valid
+2025-11-25 16:43:53,358 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:43:53,358 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 3 with gemini
+2025-11-25 16:43:53,359 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 3:
+2025-11-25 16:43:53,360 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:43:53,360 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 2/9 cells filled
+Current Position: (0,1)
+Path Taken: (0,2) -> (0,1)
+
+Visual Board State:
+  .  [ 2] [ 1]
+  .    .    3
+  .    2    4
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,1), (0,0)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:43:53,361 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:43:54,897 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:43:54,897 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:54,897 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (0,1) and have filled 2 out of 9 cells. The next clue I need to visit is clue 2, which is located at position (2,1). From my current location, the available moves are (1,1) and (0,0). Moving to (1,1) would position me closer to clue 3 which is located at (1,2) but not to clue 2 which is our target. Moving to (0,0) would keep me further away from clue 2 which is our target and makes filling all cells more difficult later on. However, since clue 2 is at (2,1), neither move puts me in a very advantageous position to reach the clue.
+
+MOVE: (1,1)
+
+2025-11-25 16:43:54,898 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:54,898 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:43:54,899 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 3
+2025-11-25 16:43:54,899 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:43:54,899 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:43:54,900 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:43:54,900 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:54,900 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:43:54,901 - LLM_configuration.llm_manager - INFO - I am currently at position (0,1) and have filled 2 out of 9 cells. The next clue I need to visit is clue 2, which is located at position (2,1). From my current location, the available moves are (1,1) and (0,0). Moving to (1,1) would position me closer to clue 3 which is located at (1,2) but not to clue 2 which is our target. Moving to (0,0) would keep me further away from clue 2 which is our target and makes filling all cells more difficult later on. However, since clue 2 is at (2,1), neither move puts me in a very advantageous position to reach the clue.
+2025-11-25 16:43:54,901 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:54,901 - LLM_configuration.llm_manager - INFO - DECISION: Move to (1, 1)
+2025-11-25 16:43:54,902 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 3):
+--------------------------------------------------
+I am currently at position (0,1) and have filled 2 out of 9 cells. The next clue I need to visit is clue 2, which is located at position (2,1). From my current location, the available moves are (1,1) and (0,0). Moving to (1,1) would position me closer to clue 3 which is located at (1,2) but not to clue 2 which is our target. Moving to (0,0) would keep me further away from clue 2 which is our target and makes filling all cells more difficult later on. However, since clue 2 is at (2,1), neither move puts me in a very advantageous position to reach the clue.
+--------------------------------------------------
+💡 DECISION: (1, 1)
+2025-11-25 16:43:54,904 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (1, 1)
+2025-11-25 16:43:54,905 - evaluation.eval - INFO - Move 2: (1, 1) - Valid: True, Correct: False, Latency: 1546ms
+2025-11-25 16:43:54,905 - UI.GUI - INFO - Move 2: (1, 1) - Valid
+2025-11-25 16:43:55,906 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:43:55,909 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 4 with gemini
+2025-11-25 16:43:55,911 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 4:
+2025-11-25 16:43:55,912 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:43:55,913 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 3/9 cells filled
+Current Position: (1,1)
+Path Taken: (0,2) -> (0,1) -> (1,1)
+
+Visual Board State:
+  .  [ 2] [ 1]
+  .  [ 3]   3
+  .    2    4
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,1), (1,0), (1,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:43:55,915 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:43:58,038 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:43:58,039 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:58,040 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (1,1) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (0,1). From my current position, the available moves are (2,1), (1,0), and (1,2).
+
+- Move to (2,1): This would mean going away from the location of clue 2, which I need to visit next. Also, in the visual board state, the number 2 is already present in (2,1), which means that cell has already been visited. This is not a valid move.
+- Move to (1,0): This move does not directly get closer to clue 2, but it doesn't block any immediate paths and leaves flexibility for the future.
+- Move to (1,2): This is not a valid move, as the cell (1,2) already has the clue number 3. I can only visit a cell once.
+
+Therefore, I should move to (1,0).
+
+MOVE: (1,0)
+
+2025-11-25 16:43:58,041 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:58,041 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:43:58,042 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 4
+2025-11-25 16:43:58,043 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:43:58,043 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:43:58,047 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:43:58,049 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:58,051 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:43:58,051 - LLM_configuration.llm_manager - INFO - I am currently at position (1,1) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (0,1). From my current position, the available moves are (2,1), (1,0), and (1,2).
+
+- Move to (2,1): This would mean going away from the location of clue 2, which I need to visit next. Also, in the visual board state, the number 2 is already present in (2,1), which means that cell has already been visited. This is not a valid move.
+- Move to (1,0): This move does not directly get closer to clue 2, but it doesn't block any immediate paths and leaves flexibility for the future.
+- Move to (1,2): This is not a valid move, as the cell (1,2) already has the clue number 3. I can only visit a cell once.
+
+Therefore, I should move to (1,0).
+2025-11-25 16:43:58,052 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:43:58,052 - LLM_configuration.llm_manager - INFO - DECISION: Move to (1, 0)
+2025-11-25 16:43:58,052 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 4):
+--------------------------------------------------
+I am currently at position (1,1) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (0,1). From my current position, the available moves are (2,1), (1,0), and (1,2).
+
+- Move to (2,1): This would mean going away from the location of clue 2, which I need to visit next. Also, in the visual board state, the number 2 is already present in (2,1), which means that cell has already been visited. This is not a valid move.
+- Move to (1,0): This move does not directly get closer to clue 2, but it doesn't block any immediate paths and leaves flexibility for the future.
+- Move to (1,2): This is not a valid move, as the cell (1,2) already has the clue number 3. I can only visit a cell once.
+
+Therefore, I should move to (1,0).
+--------------------------------------------------
+💡 DECISION: (1, 0)
+2025-11-25 16:43:58,055 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (1, 0)
+2025-11-25 16:43:58,056 - evaluation.eval - INFO - Move 3: (1, 0) - Valid: True, Correct: False, Latency: 2147ms
+2025-11-25 16:43:58,056 - UI.GUI - INFO - Move 3: (1, 0) - Valid
+2025-11-25 16:43:59,061 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:43:59,063 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 5 with gemini
+2025-11-25 16:43:59,064 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 5:
+2025-11-25 16:43:59,065 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:43:59,066 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 4/9 cells filled
+Current Position: (1,0)
+Path Taken: (0,2) -> (0,1) -> (1,1) -> (1,0)
+
+Visual Board State:
+  .  [ 2] [ 1]
+[ 4] [ 3]   3
+  .    2    4
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,0), (2,0)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:43:59,066 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:01,780 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:44:01,783 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:01,785 - LLM_configuration.llm_manager - INFO - THINKING:
+I am at position (1,0) and have filled 4 cells. I need to find the next available move to visit all 9 cells and end at the highest numbered clue. Currently, clue locations 1 is at (0,2), clue 2 is at (0,1), clue 3 is at (1,1), and clue 4 is at (2,2). I have visited clue 1, clue 2, clue 3, so the next clue to visit should be clue 4 at (2,2).
+Available moves are (0,0) and (2,0).
+If I move to (0,0), I will be at (0,0). Then the path would look like this: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (0,0). From (0,0) I can go to (0,1) which I've already been to, or (1,0) which I've already been to, so this is not a good move. I would be trapped.
+If I move to (2,0), I will be at (2,0). Then the path would look like this: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0). From (2,0) I can go to (2,1).
+
+Let's try the (2,0) path, I can then proceed to (2,1). Now I need to reach (2,2) which is clue 4. If I proceed to (2,1), then I can go to (2,2). So (2,0) is the optimal move.
+
+MOVE: (2,0)
+
+2025-11-25 16:44:01,785 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:01,786 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:01,787 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 5
+2025-11-25 16:44:01,788 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:01,791 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:44:01,793 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:44:01,793 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:01,797 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:44:01,798 - LLM_configuration.llm_manager - INFO - I am at position (1,0) and have filled 4 cells. I need to find the next available move to visit all 9 cells and end at the highest numbered clue. Currently, clue locations 1 is at (0,2), clue 2 is at (0,1), clue 3 is at (1,1), and clue 4 is at (2,2). I have visited clue 1, clue 2, clue 3, so the next clue to visit should be clue 4 at (2,2).
+Available moves are (0,0) and (2,0).
+If I move to (0,0), I will be at (0,0). Then the path would look like this: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (0,0). From (0,0) I can go to (0,1) which I've already been to, or (1,0) which I've already been to, so this is not a good move. I would be trapped.
+If I move to (2,0), I will be at (2,0). Then the path would look like this: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0). From (2,0) I can go to (2,1).
+
+Let's try the (2,0) path, I can then proceed to (2,1). Now I need to reach (2,2) which is clue 4. If I proceed to (2,1), then I can go to (2,2). So (2,0) is the optimal move.
+2025-11-25 16:44:01,798 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:01,799 - LLM_configuration.llm_manager - INFO - DECISION: Move to (2, 0)
+2025-11-25 16:44:01,800 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 5):
+--------------------------------------------------
+I am at position (1,0) and have filled 4 cells. I need to find the next available move to visit all 9 cells and end at the highest numbered clue. Currently, clue locations 1 is at (0,2), clue 2 is at (0,1), clue 3 is at (1,1), and clue 4 is at (2,2). I have visited clue 1, clue 2, clue 3, so the next clue to visit should be clue 4 at (2,2).
+Available moves are (0,0) and (2,0).
+If I move to (0,0), I will be at (0,0). Then the path would look like this: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (0,0). From (0,0) I can go to (0,1) which I've already been to, or (1,0) which I've already been to, so this is not a good move. I would be trapped.
+If I move to (2,0), I will be at (2,0). Then the path would look like this: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0). From (2,0) I can go to (2,1).
+
+Let's try the (2,0) path, I can then proceed to (2,1). Now I need to reach (2,2) which is clue 4. If I proceed to (2,1), then I can go to (2,2). So (2,0) is the optimal move.
+--------------------------------------------------
+💡 DECISION: (2, 0)
+2025-11-25 16:44:01,802 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (2, 0)
+2025-11-25 16:44:01,802 - evaluation.eval - INFO - Move 4: (2, 0) - Valid: True, Correct: True, Latency: 2739ms
+2025-11-25 16:44:01,803 - UI.GUI - INFO - Move 4: (2, 0) - Valid
+2025-11-25 16:44:02,795 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:44:02,796 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 6 with gemini
+2025-11-25 16:44:02,797 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 6:
+2025-11-25 16:44:02,797 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:02,798 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 5/9 cells filled
+Current Position: (2,0)
+Path Taken: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0)
+
+Visual Board State:
+  .  [ 2] [ 1]
+[ 4] [ 3]   3
+[ 5]   2    4
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:44:02,799 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:03,941 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:44:03,944 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:03,947 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (2,0) and have filled 5 cells. The next clue I need to visit is clue number 2. There are two clue number 2's on the board. However, I have already visited the one at (0,1). That means the next clue is the one at position (2,1). I only have one available move which is to (2,1).
+
+MOVE: (2,1)
+
+2025-11-25 16:44:03,947 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:03,949 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:03,950 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 6
+2025-11-25 16:44:03,958 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:03,959 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:44:03,963 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:44:03,965 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:03,966 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:44:03,966 - LLM_configuration.llm_manager - INFO - I am currently at position (2,0) and have filled 5 cells. The next clue I need to visit is clue number 2. There are two clue number 2's on the board. However, I have already visited the one at (0,1). That means the next clue is the one at position (2,1). I only have one available move which is to (2,1).
+2025-11-25 16:44:03,967 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:03,972 - LLM_configuration.llm_manager - INFO - DECISION: Move to (2, 1)
+2025-11-25 16:44:03,973 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 6):
+--------------------------------------------------
+I am currently at position (2,0) and have filled 5 cells. The next clue I need to visit is clue number 2. There are two clue number 2's on the board. However, I have already visited the one at (0,1). That means the next clue is the one at position (2,1). I only have one available move which is to (2,1).
+--------------------------------------------------
+💡 DECISION: (2, 1)
+2025-11-25 16:44:03,979 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (2, 1)
+2025-11-25 16:44:03,980 - evaluation.eval - INFO - Move 5: (2, 1) - Valid: True, Correct: False, Latency: 1184ms
+2025-11-25 16:44:03,980 - UI.GUI - INFO - Move 5: (2, 1) - Valid
+2025-11-25 16:44:04,985 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:44:04,987 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 7 with gemini
+2025-11-25 16:44:04,988 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 7:
+2025-11-25 16:44:04,989 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:04,989 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 6/9 cells filled
+Current Position: (2,1)
+Path Taken: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1)
+
+Visual Board State:
+  .  [ 2] [ 1]
+[ 4] [ 3]   3
+[ 5] [ 6]   4
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:44:04,989 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:06,130 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:44:06,131 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:06,131 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (2,1) and have filled 6 out of 9 cells. There are no more clues to visit. I need to fill the remaining 3 cells to complete the path. My only available move is (2,2). Moving to (2,2) leaves two remaining cells to fill, which can be done in a single horizontal and single vertical move.
+
+MOVE: (2,2)
+
+2025-11-25 16:44:06,131 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:06,132 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:06,133 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 7
+2025-11-25 16:44:06,133 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:06,133 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:44:06,133 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:44:06,133 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:06,134 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:44:06,134 - LLM_configuration.llm_manager - INFO - I am currently at position (2,1) and have filled 6 out of 9 cells. There are no more clues to visit. I need to fill the remaining 3 cells to complete the path. My only available move is (2,2). Moving to (2,2) leaves two remaining cells to fill, which can be done in a single horizontal and single vertical move.
+2025-11-25 16:44:06,134 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:06,134 - LLM_configuration.llm_manager - INFO - DECISION: Move to (2, 2)
+2025-11-25 16:44:06,135 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 7):
+--------------------------------------------------
+I am currently at position (2,1) and have filled 6 out of 9 cells. There are no more clues to visit. I need to fill the remaining 3 cells to complete the path. My only available move is (2,2). Moving to (2,2) leaves two remaining cells to fill, which can be done in a single horizontal and single vertical move.
+--------------------------------------------------
+💡 DECISION: (2, 2)
+2025-11-25 16:44:06,137 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (2, 2)
+2025-11-25 16:44:06,138 - evaluation.eval - INFO - Move 6: (2, 2) - Valid: True, Correct: False, Latency: 1151ms
+2025-11-25 16:44:06,138 - UI.GUI - INFO - Move 6: (2, 2) - Valid
+2025-11-25 16:44:07,142 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:44:07,143 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 8 with gemini
+2025-11-25 16:44:07,144 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 8:
+2025-11-25 16:44:07,144 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:07,144 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 7/9 cells filled
+Current Position: (2,2)
+Path Taken: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1) -> (2,2)
+
+Visual Board State:
+  .  [ 2] [ 1]
+[ 4] [ 3]   3
+[ 5] [ 6] [ 7]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:44:07,145 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:08,729 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:44:08,730 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:08,731 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (2,2) and have filled 7 out of 9 cells. Since I'm solving a ZIP PUZZLE, I need to visit all cells and end at the highest clue number. The board is 3x3. I have already visited clue numbers 1, 2, 3. I have filled positions (0,2), (0,1), (1,1), (1,0), (2,0), (2,1), (2,2). I need to fill all 9 cells in total. Available next moves: (1,2).
+If I move to (1,2), then I will have 8 cells filled. The only remaining cell will be (0,0). It will be impossible to visit it from (1,2).
+
+MOVE: (1,2)
+
+2025-11-25 16:44:08,732 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:08,733 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:08,733 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 8
+2025-11-25 16:44:08,733 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:08,734 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:44:08,734 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:44:08,734 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:08,734 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:44:08,735 - LLM_configuration.llm_manager - INFO - I am currently at position (2,2) and have filled 7 out of 9 cells. Since I'm solving a ZIP PUZZLE, I need to visit all cells and end at the highest clue number. The board is 3x3. I have already visited clue numbers 1, 2, 3. I have filled positions (0,2), (0,1), (1,1), (1,0), (2,0), (2,1), (2,2). I need to fill all 9 cells in total. Available next moves: (1,2).
+If I move to (1,2), then I will have 8 cells filled. The only remaining cell will be (0,0). It will be impossible to visit it from (1,2).
+2025-11-25 16:44:08,735 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:08,736 - LLM_configuration.llm_manager - INFO - DECISION: Move to (1, 2)
+2025-11-25 16:44:08,736 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 8):
+--------------------------------------------------
+I am currently at position (2,2) and have filled 7 out of 9 cells. Since I'm solving a ZIP PUZZLE, I need to visit all cells and end at the highest clue number. The board is 3x3. I have already visited clue numbers 1, 2, 3. I have filled positions (0,2), (0,1), (1,1), (1,0), (2,0), (2,1), (2,2). I need to fill all 9 cells in total. Available next moves: (1,2).
+If I move to (1,2), then I will have 8 cells filled. The only remaining cell will be (0,0). It will be impossible to visit it from (1,2).
+--------------------------------------------------
+💡 DECISION: (1, 2)
+2025-11-25 16:44:08,745 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (1, 2)
+2025-11-25 16:44:08,746 - evaluation.eval - INFO - Move 7: (1, 2) - Valid: True, Correct: False, Latency: 1603ms
+2025-11-25 16:44:08,746 - UI.GUI - INFO - Move 7: (1, 2) - Valid
+2025-11-25 16:44:09,738 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:44:09,738 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 9 with gemini
+2025-11-25 16:44:09,738 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 9:
+2025-11-25 16:44:09,739 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:09,740 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 8/9 cells filled
+Current Position: (1,2)
+Path Taken: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1) -> (2,2) -> (1,2)
+
+Visual Board State:
+  .  [ 2] [ 1]
+[ 4] [ 3] [ 8]
+[ 5] [ 6] [ 7]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: None (stuck!)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:44:09,740 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:11,052 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:44:11,053 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:11,054 - LLM_configuration.llm_manager - INFO - THINKING:
+I am at position (1,2) and have filled 8 of 9 cells. The path so far is (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1) -> (2,2) -> (1,2). Since I have filled 8 cells, I need to visit the last cell to complete the puzzle. The only remaining cell is (0,0). However, I am currently at (1,2) and there is no valid move left to reach (0,0) without revisiting a cell. This means I am stuck and the puzzle is unsolvable with the current path. There are no available moves.
+
+MOVE: None
+
+2025-11-25 16:44:11,056 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:11,057 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:11,057 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 9
+2025-11-25 16:44:11,058 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:11,058 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:44:11,059 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:44:11,059 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:11,059 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:44:11,059 - LLM_configuration.llm_manager - INFO - I am at position (1,2) and have filled 8 of 9 cells. The path so far is (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1) -> (2,2) -> (1,2). Since I have filled 8 cells, I need to visit the last cell to complete the puzzle. The only remaining cell is (0,0). However, I am currently at (1,2) and there is no valid move left to reach (0,0) without revisiting a cell. This means I am stuck and the puzzle is unsolvable with the current path. There are no available moves.
+2025-11-25 16:44:11,060 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:11,060 - LLM_configuration.llm_manager - INFO - DECISION: Move to (1, 2)
+2025-11-25 16:44:11,060 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 9):
+--------------------------------------------------
+I am at position (1,2) and have filled 8 of 9 cells. The path so far is (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1) -> (2,2) -> (1,2). Since I have filled 8 cells, I need to visit the last cell to complete the puzzle. The only remaining cell is (0,0). However, I am currently at (1,2) and there is no valid move left to reach (0,0) without revisiting a cell. This means I am stuck and the puzzle is unsolvable with the current path. There are no available moves.
+--------------------------------------------------
+💡 DECISION: (1, 2)
+2025-11-25 16:44:11,069 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (1, 2)
+2025-11-25 16:44:11,069 - evaluation.eval - INFO - Move 8: (1, 2) - Valid: False, Correct: False, Latency: 1331ms
+2025-11-25 16:44:11,070 - UI.GUI - WARNING - Invalid move: (1, 2) (stuck: 1/3)
+2025-11-25 16:44:12,063 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:44:12,064 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 9 with gemini
+2025-11-25 16:44:12,065 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 9:
+2025-11-25 16:44:12,065 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:12,065 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 8/9 cells filled
+Current Position: (1,2)
+Path Taken: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1) -> (2,2) -> (1,2)
+
+Visual Board State:
+  .  [ 2] [ 1]
+[ 4] [ 3] [ 8]
+[ 5] [ 6] [ 7]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: None (stuck!)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:44:12,066 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:13,138 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:44:13,138 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:13,138 - LLM_configuration.llm_manager - INFO - THINKING:
+I'm currently at (1,2) and have visited 8 cells. I need to visit the 9th and final cell to complete the puzzle. Since I've visited all the clues, I need to find the last remaining empty cell. Looking at the board, the only available cell is (0,0).
+
+MOVE: (0,0)
+
+2025-11-25 16:44:13,139 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:13,139 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:13,140 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 9
+2025-11-25 16:44:13,143 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:13,144 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:44:13,146 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:44:13,146 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:13,147 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:44:13,147 - LLM_configuration.llm_manager - INFO - I'm currently at (1,2) and have visited 8 cells. I need to visit the 9th and final cell to complete the puzzle. Since I've visited all the clues, I need to find the last remaining empty cell. Looking at the board, the only available cell is (0,0).
+2025-11-25 16:44:13,148 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:13,148 - LLM_configuration.llm_manager - INFO - DECISION: Move to (0, 0)
+2025-11-25 16:44:13,148 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 9):
+--------------------------------------------------
+I'm currently at (1,2) and have visited 8 cells. I need to visit the 9th and final cell to complete the puzzle. Since I've visited all the clues, I need to find the last remaining empty cell. Looking at the board, the only available cell is (0,0).
+--------------------------------------------------
+💡 DECISION: (0, 0)
+2025-11-25 16:44:13,152 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (0, 0)
+2025-11-25 16:44:13,153 - evaluation.eval - INFO - Move 9: (0, 0) - Valid: False, Correct: False, Latency: 1089ms
+2025-11-25 16:44:13,153 - UI.GUI - WARNING - Invalid move: (0, 0) (stuck: 2/3)
+2025-11-25 16:44:14,158 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-25 16:44:14,160 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 9 with gemini
+2025-11-25 16:44:14,160 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 9:
+2025-11-25 16:44:14,160 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:14,160 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+
+=== CURRENT GAME STATE ===
+Progress: 8/9 cells filled
+Current Position: (1,2)
+Path Taken: (0,2) -> (0,1) -> (1,1) -> (1,0) -> (2,0) -> (2,1) -> (2,2) -> (1,2)
+
+Visual Board State:
+  .  [ 2] [ 1]
+[ 4] [ 3] [ 8]
+[ 5] [ 6] [ 7]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: None (stuck!)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-11-25 16:44:14,162 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-25 16:44:15,269 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-11-25 16:44:15,272 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:15,274 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (1,2) and have filled 8 out of 9 cells. The puzzle requires me to visit every cell exactly once. Since I have filled 8 cells, there is only one remaining cell to visit, which must be (0,0). However, from (1,2) I cannot reach (0,0) in one move (horizontally or vertically). Therefore, I am stuck, and the puzzle is unsolvable with the current path.
+
+MOVE: None
+
+2025-11-25 16:44:15,274 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:15,274 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:15,274 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 9
+2025-11-25 16:44:15,274 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-25 16:44:15,275 - LLM_configuration.llm_manager - INFO - Provider: gemini
+2025-11-25 16:44:15,276 - LLM_configuration.llm_manager - INFO - Model: gemini-2.0-flash
+2025-11-25 16:44:15,276 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:15,277 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-11-25 16:44:15,277 - LLM_configuration.llm_manager - INFO - I am currently at position (1,2) and have filled 8 out of 9 cells. The puzzle requires me to visit every cell exactly once. Since I have filled 8 cells, there is only one remaining cell to visit, which must be (0,0). However, from (1,2) I cannot reach (0,0) in one move (horizontally or vertically). Therefore, I am stuck, and the puzzle is unsolvable with the current path.
+2025-11-25 16:44:15,277 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-25 16:44:15,278 - LLM_configuration.llm_manager - INFO - DECISION: Move to (1, 2)
+2025-11-25 16:44:15,278 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 GEMINI THINKING (Move 9):
+--------------------------------------------------
+I am currently at position (1,2) and have filled 8 out of 9 cells. The puzzle requires me to visit every cell exactly once. Since I have filled 8 cells, there is only one remaining cell to visit, which must be (0,0). However, from (1,2) I cannot reach (0,0) in one move (horizontally or vertically). Therefore, I am stuck, and the puzzle is unsolvable with the current path.
+--------------------------------------------------
+💡 DECISION: (1, 2)
+2025-11-25 16:44:15,280 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (1, 2)
+2025-11-25 16:44:15,280 - evaluation.eval - INFO - Move 10: (1, 2) - Valid: False, Correct: False, Latency: 1120ms
+2025-11-25 16:44:15,280 - UI.GUI - WARNING - Invalid move: (1, 2) (stuck: 3/3)
+2025-11-25 16:44:16,282 - evaluation.eval - INFO - Game ended - Success: False, Efficiency: 70.0%, Accuracy: 10.0%
+2025-11-25 16:44:16,283 - evaluation.eval - INFO - Comprehensive metrics logged to wandb
+2025-11-25 16:44:16,283 - UI.GUI - INFO - === GAME PERFORMANCE ANALYSIS ===
+2025-11-25 16:44:16,284 - UI.GUI - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 3x3 | Completion: FAILED ✗
+Time: 25.8s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 10
+Valid Moves: 7 (70.0%)
+Bad Moves: 3
+Correct Moves: 1 (10.0%)
+Clue Hits: 3
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 70.0% (valid moves / total moves)
+Path Accuracy: 10.0% (optimal path following)
+Completion: 77.8% of puzzle filled
+Avg Latency: 1578ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 100 avg chars
+Move Consistency: 66.7%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 1.80 avg distance from best path
+
+=== INSIGHTS ===
+Moderate performance with room for improvement
+
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 3x3 | Completion: FAILED ✗
+Time: 25.8s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 10
+Valid Moves: 7 (70.0%)
+Bad Moves: 3
+Correct Moves: 1 (10.0%)
+Clue Hits: 3
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 70.0% (valid moves / total moves)
+Path Accuracy: 10.0% (optimal path following)
+Completion: 77.8% of puzzle filled
+Avg Latency: 1578ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 100 avg chars
+Move Consistency: 66.7%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 1.80 avg distance from best path
+
+=== INSIGHTS ===
+Moderate performance with room for improvement
+
+Menu Error: Library not initialized
+
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 94, in <module>
+    main()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 91, in main
+    start_game_with_settings(n, mode)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 58, in start_game_with_settings
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 1073, in run
+    if self.handle_button_click(e.pos):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 512, in handle_button_click
+    self.go_back_to_menu()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 384, in go_back_to_menu
+    main()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 91, in main
+    start_game_with_settings(n, mode)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 58, in start_game_with_settings
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 1134, in run
+    self.draw_grid()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 968, in draw_grid
+    self.screen.fill(WHITE)
+pygame.error: display Surface quit

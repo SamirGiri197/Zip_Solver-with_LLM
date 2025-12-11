@@ -1,0 +1,335 @@
+2025-11-23 17:39:50,350 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+2025-11-23 17:39:50,352 - evaluation.eval - INFO - LLM evaluation started for 4x4 board
+2025-11-23 17:39:50,352 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-23 17:39:50,353 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-23 17:39:50,353 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-23 17:39:50,354 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 2:
+2025-11-23 17:39:50,354 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE SOLVER - MOVE 2
+
+RULES:
+1. Fill ALL 16 cells in a continuous path
+2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+3. Move only to adjacent cells (up, down, left, right), NO diagonal moves
+4. Cannot revisit cells
+5. Between clues, fill any empty cells
+
+CURRENT STATE:
+GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .  .
+ 2  .  .  P
+ .  .  3  .
+ .  .  4  .
+
+
+VISUAL BOARD:
+[ ][ ][ ][ ]
+[ 2][ ][ ][P]
+[ ][ ][ 3][ ]
+[ ][ ][ 4][ ]
+
+CLUES TO VISIT IN ORDER:
+CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+
+
+CURRENT POSITION: (1, 3)
+CELLS FILLED: 1/16
+AVAILABLE NEXT MOVES:   (0, 3)
+  (2, 3)
+  (1, 2)
+
+IMPORTANT: You must respond with ONLY the coordinates of your next move.
+Format: (row, col)
+Example: (1, 2)
+
+Your Primary task is to Solve the puzzle, and explain what is your next move and explain why?
+2025-11-23 17:39:51,610 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 17:39:51,611 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 17:39:51,611 - LLM_configuration.llm_manager - INFO - OLLAMA RESPONSE (Move 2):
+2025-11-23 17:39:51,612 - LLM_configuration.llm_manager - INFO - (1, 2)
+
+2025-11-23 17:39:51,613 - LLM_configuration.llm_manager - INFO - Parsed coordinates from text: (1, 2)
+2025-11-23 17:39:51,613 - evaluation.eval - INFO - Move 1: (1, 2) - Valid: True, Correct: False, Latency: 1261ms
+2025-11-23 17:39:51,613 - UI.GUI - INFO - Move 1: (1, 2) - Valid
+2025-11-23 17:39:52,606 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-23 17:39:52,609 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-23 17:39:52,610 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-23 17:39:52,611 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 3:
+2025-11-23 17:39:52,612 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE SOLVER - MOVE 3
+
+RULES:
+1. Fill ALL 16 cells in a continuous path
+2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+3. Move only to adjacent cells (up, down, left, right), NO diagonal moves
+4. Cannot revisit cells
+5. Between clues, fill any empty cells
+
+CURRENT STATE:
+GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .  .
+ 2  .  P  P
+ .  .  3  .
+ .  .  4  .
+
+
+VISUAL BOARD:
+[ ][ ][ ][ ]
+[ 2][ ][P][P]
+[ ][ ][ 3][ ]
+[ ][ ][ 4][ ]
+
+CLUES TO VISIT IN ORDER:
+CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+
+
+CURRENT POSITION: (1, 2)
+CELLS FILLED: 2/16
+AVAILABLE NEXT MOVES:   (0, 2)
+  (2, 2)
+  (1, 1)
+
+IMPORTANT: You must respond with ONLY the coordinates of your next move.
+Format: (row, col)
+Example: (1, 2)
+
+Your Primary task is to Solve the puzzle, and explain what is your next move and explain why?
+2025-11-23 17:39:53,979 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 17:39:53,980 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 17:39:53,980 - LLM_configuration.llm_manager - INFO - OLLAMA RESPONSE (Move 3):
+2025-11-23 17:39:53,981 - LLM_configuration.llm_manager - INFO - (1, 1)
+I need to move to Clue 1 (1,3) and I'm currently at (1,2). Moving up to (1,1) will allow me to reach Clue 1.
+2025-11-23 17:39:53,982 - LLM_configuration.llm_manager - INFO - Parsed coordinates from text: (1, 1)
+2025-11-23 17:39:53,982 - evaluation.eval - INFO - Move 2: (1, 1) - Valid: True, Correct: False, Latency: 1373ms
+2025-11-23 17:39:53,982 - UI.GUI - INFO - Move 2: (1, 1) - Valid
+2025-11-23 17:39:54,972 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-23 17:39:54,975 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-23 17:39:54,977 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-23 17:39:54,978 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 4:
+2025-11-23 17:39:54,978 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE SOLVER - MOVE 4
+
+RULES:
+1. Fill ALL 16 cells in a continuous path
+2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+3. Move only to adjacent cells (up, down, left, right), NO diagonal moves
+4. Cannot revisit cells
+5. Between clues, fill any empty cells
+
+CURRENT STATE:
+GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .  .
+ 2  P  P  P
+ .  .  3  .
+ .  .  4  .
+
+
+VISUAL BOARD:
+[ ][ ][ ][ ]
+[ 2][P][P][P]
+[ ][ ][ 3][ ]
+[ ][ ][ 4][ ]
+
+CLUES TO VISIT IN ORDER:
+CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+
+
+CURRENT POSITION: (1, 1)
+CELLS FILLED: 3/16
+AVAILABLE NEXT MOVES:   (0, 1)
+  (2, 1)
+  (1, 0)
+
+IMPORTANT: You must respond with ONLY the coordinates of your next move.
+Format: (row, col)
+Example: (1, 2)
+
+Your Primary task is to Solve the puzzle, and explain what is your next move and explain why?
+2025-11-23 17:39:56,055 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 17:39:56,055 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 17:39:56,056 - LLM_configuration.llm_manager - INFO - OLLAMA RESPONSE (Move 4):
+2025-11-23 17:39:56,056 - LLM_configuration.llm_manager - INFO - (1, 2)
+I need to move to clue 2 (1, 2) to continue the path.
+2025-11-23 17:39:56,057 - LLM_configuration.llm_manager - INFO - Parsed coordinates from text: (1, 2)
+2025-11-23 17:39:56,057 - evaluation.eval - INFO - Move 3: (1, 2) - Valid: False, Correct: True, Latency: 1082ms
+2025-11-23 17:39:56,057 - UI.GUI - WARNING - Invalid move: (1, 2) (stuck: 1/3)
+2025-11-23 17:39:57,047 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-23 17:39:57,047 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-23 17:39:57,051 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-23 17:39:57,053 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 4:
+2025-11-23 17:39:57,055 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE SOLVER - MOVE 4
+
+RULES:
+1. Fill ALL 16 cells in a continuous path
+2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+3. Move only to adjacent cells (up, down, left, right), NO diagonal moves
+4. Cannot revisit cells
+5. Between clues, fill any empty cells
+
+CURRENT STATE:
+GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .  .
+ 2  P  P  P
+ .  .  3  .
+ .  .  4  .
+
+
+VISUAL BOARD:
+[ ][ ][ ][ ]
+[ 2][P][P][P]
+[ ][ ][ 3][ ]
+[ ][ ][ 4][ ]
+
+CLUES TO VISIT IN ORDER:
+CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+
+
+CURRENT POSITION: (1, 1)
+CELLS FILLED: 3/16
+AVAILABLE NEXT MOVES:   (0, 1)
+  (2, 1)
+  (1, 0)
+
+IMPORTANT: You must respond with ONLY the coordinates of your next move.
+Format: (row, col)
+Example: (1, 2)
+
+Your Primary task is to Solve the puzzle, and explain what is your next move and explain why?
+2025-11-23 17:39:57,795 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 17:39:57,797 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 17:39:57,798 - LLM_configuration.llm_manager - INFO - OLLAMA RESPONSE (Move 4):
+2025-11-23 17:39:57,798 - LLM_configuration.llm_manager - INFO - (1, 2)
+
+2025-11-23 17:39:57,799 - LLM_configuration.llm_manager - INFO - Parsed coordinates from text: (1, 2)
+2025-11-23 17:39:57,799 - evaluation.eval - INFO - Move 4: (1, 2) - Valid: False, Correct: True, Latency: 752ms
+2025-11-23 17:39:57,799 - UI.GUI - WARNING - Invalid move: (1, 2) (stuck: 2/3)
+2025-11-23 17:39:58,795 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: gemma3:latest)
+2025-11-23 17:39:58,798 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: ollama
+2025-11-23 17:39:58,800 - LLM_configuration.llm_manager - INFO - Calling Ollama with model: gemma3:latest
+2025-11-23 17:39:58,800 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 4:
+2025-11-23 17:39:58,801 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE SOLVER - MOVE 4
+
+RULES:
+1. Fill ALL 16 cells in a continuous path
+2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+3. Move only to adjacent cells (up, down, left, right), NO diagonal moves
+4. Cannot revisit cells
+5. Between clues, fill any empty cells
+
+CURRENT STATE:
+GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .  .
+ 2  P  P  P
+ .  .  3  .
+ .  .  4  .
+
+
+VISUAL BOARD:
+[ ][ ][ ][ ]
+[ 2][P][P][P]
+[ ][ ][ 3][ ]
+[ ][ ][ 4][ ]
+
+CLUES TO VISIT IN ORDER:
+CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (1, 3)
+
+
+CURRENT POSITION: (1, 1)
+CELLS FILLED: 3/16
+AVAILABLE NEXT MOVES:   (0, 1)
+  (2, 1)
+  (1, 0)
+
+IMPORTANT: You must respond with ONLY the coordinates of your next move.
+Format: (row, col)
+Example: (1, 2)
+
+Your Primary task is to Solve the puzzle, and explain what is your next move and explain why?
+2025-11-23 17:39:59,560 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 17:39:59,561 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 17:39:59,562 - LLM_configuration.llm_manager - INFO - OLLAMA RESPONSE (Move 4):
+2025-11-23 17:39:59,562 - LLM_configuration.llm_manager - INFO - (1, 2)
+
+2025-11-23 17:39:59,563 - LLM_configuration.llm_manager - INFO - Parsed coordinates from text: (1, 2)
+2025-11-23 17:39:59,563 - evaluation.eval - INFO - Move 5: (1, 2) - Valid: False, Correct: True, Latency: 765ms
+2025-11-23 17:39:59,564 - UI.GUI - WARNING - Invalid move: (1, 2) (stuck: 3/3)
+2025-11-23 17:40:00,555 - evaluation.eval - INFO - Game ended - Success: False, Efficiency: 40.0%, Accuracy: 60.0%
+2025-11-23 17:40:00,559 - evaluation.eval - INFO - Comprehensive metrics logged to wandb
+2025-11-23 17:40:00,559 - UI.GUI - INFO - === GAME PERFORMANCE ANALYSIS ===
+2025-11-23 17:40:00,560 - UI.GUI - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 10.2s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 5
+Valid Moves: 2 (40.0%)
+Bad Moves: 3
+Correct Moves: 3 (60.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 40.0% (valid moves / total moves)
+Path Accuracy: 60.0% (optimal path following)
+Completion: 12.5% of puzzle filled
+Avg Latency: 1047ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 49 avg chars
+Move Consistency: 25.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.80 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 10.2s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 5
+Valid Moves: 2 (40.0%)
+Bad Moves: 3
+Correct Moves: 3 (60.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 40.0% (valid moves / total moves)
+Path Accuracy: 60.0% (optimal path following)
+Completion: 12.5% of puzzle filled
+Avg Latency: 1047ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 49 avg chars
+Move Consistency: 25.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.80 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 965, in <module>
+    main()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 961, in main
+    start_game_with_settings(n, mode_or_provider if 'mode_or_provider' in locals() else ("human" if game_mode == "human" else llm_provider))
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 873, in start_game_with_settings
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 1081, in run
+    self.draw_grid()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 915, in draw_grid
+    self.screen.fill(WHITE)
+pygame.error: display Surface quit

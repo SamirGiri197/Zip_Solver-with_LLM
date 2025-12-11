@@ -1,0 +1,2057 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 16:45:04,258 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\pygame\pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[34m[1mwandb[0m: wandb.init() called while a run is active and reinit is set to 'default', so returning the previous run.
+
+==================================================
+▶ STARTING RUN 1 OF 10
+==================================================
+2025-12-10 16:45:04,348 - INFO - LLM evaluation started for 4x4 board
+2025-12-10 16:45:04,348 - INFO - === GAME 1 — GUI MODE — claude ===
+2025-12-10 16:45:04,628 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+2025-12-10 16:45:04,628 - WARNING - Could not generate solver path for evaluation
+2025-12-10 16:45:04,629 - INFO - LLM evaluation started for 4x4 board
+2025-12-10 16:45:04,629 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:04,629 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:04,636 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:04,639 - INFO - ============================================================
+2025-12-10 16:45:04,639 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  .    .  [ 1]   .
+  4    .    .    .
+  .    3    .    2
+  .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1), (0,3)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:04,640 - INFO - ============================================================
+2025-12-10 16:45:04,788 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:04,788 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:04,949 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:04,950 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:04,958 - WARNING - No move from LLM (stuck: 1/3)
+2025-12-10 16:45:04,958 - INFO - Move 1: (-1, -1) - Valid: False, Correct: False, Latency: 328ms
+2025-12-10 16:45:05,959 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:05,960 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:05,986 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:05,990 - INFO - ============================================================
+2025-12-10 16:45:05,990 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  .    .  [ 1]   .
+  4    .    .    .
+  .    3    .    2
+  .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1), (0,3)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:05,991 - INFO - ============================================================
+2025-12-10 16:45:06,136 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:06,137 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:06,291 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:06,293 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:06,300 - WARNING - No move from LLM (stuck: 2/3)
+2025-12-10 16:45:06,301 - INFO - Move 2: (-1, -1) - Valid: False, Correct: False, Latency: 341ms
+2025-12-10 16:45:07,319 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:07,322 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:07,328 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:07,333 - INFO - ============================================================
+2025-12-10 16:45:07,333 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  .    .  [ 1]   .
+  4    .    .    .
+  .    3    .    2
+  .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1), (0,3)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:07,334 - INFO - ============================================================
+2025-12-10 16:45:07,480 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:07,481 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:07,632 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:07,633 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:07,643 - WARNING - No move from LLM (stuck: 3/3)
+2025-12-10 16:45:07,643 - INFO - Move 3: (-1, -1) - Valid: False, Correct: False, Latency: 322ms
+2025-12-10 16:45:08,634 - INFO - Game ended - Success: False, Efficiency: 0.0%, Accuracy: 0.0%
+2025-12-10 16:45:08,640 - INFO - Comprehensive metrics logged to wandb
+2025-12-10 16:45:08,641 - INFO - === GAME PERFORMANCE ANALYSIS ===
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 101: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 802, in solve_with_llm
+    logger.info(detailed_summary)
+Message: '\n=== LLM PERFORMANCE ANALYSIS ===\nBoard: 4x4 | Completion: FAILED ✗\nTime: 4.0s | Grade: F\n\n=== CORE METRICS ===\nTotal Moves: 3\nValid Moves: 0 (0.0%)\nBad Moves: 3\nCorrect Moves: 0 (0.0%)\nClue Hits: 0\n\n=== PERFORMANCE ANALYSIS ===\nMove Efficiency: 0.0% (valid moves / total moves)\nPath Accuracy: 0.0% (optimal path following)\nCompletion: 0.0% of puzzle filled\nAvg Latency: 330ms per move\n\n=== QUALITY METRICS ===\nResponse Parsing: 0.0% success rate\nReasoning Quality: 14 avg chars\nMove Consistency: 0.0%\n\n=== ADVANCED ANALYSIS ===\nEarly Error Rate: 0.0% (first 25% of moves)\nLate Error Rate: 0.0% (last 25% of moves)\nRecovery Rate: 0.0% (bounce back from errors)\nOptimal Deviation: 0.00 avg distance from best path\n\n=== INSIGHTS ===\nStruggled with move selection\n'
+Arguments: ()
+2025-12-10 16:45:08,641 - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 4.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 330ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 4.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 330ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+
+📊 METRICS FOR RUN 1
+----------------------------------------
+board_size          : 4
+total_cells         : 16
+total_moves         : 3
+puzzle_completed    : False
+completion_time_seconds: 4.004870891571045
+valid_moves         : 0
+bad_moves           : 3
+correct_moves       : 0
+clue_hits           : 0
+move_efficiency_percent: 0.0
+path_accuracy_percent: 0.0
+completion_percent  : 0.0
+average_latency_ms  : 330.3
+parsing_success_rate_percent: 0.0
+reasoning_quality_score: 14.0
+consistency_score_percent: 0.0
+early_error_rate_percent: 0.0
+late_error_rate_percent: 0.0
+recovery_rate_percent: 0.0
+optimal_deviation_avg: 0.0
+performance_grade   : F
+
+📈 AVERAGES AFTER 1 RUNS
+----------------------------------------
+Avg Move Efficiency: 0.000
+Avg Path Accuracy:   0.000
+Success Rate:        0.000
+
+2025-12-10 16:45:08,659 - INFO - [1/10] Current success rate=0.0%
+
+==================================================
+▶ STARTING RUN 2 OF 10
+==================================================
+2025-12-10 16:45:08,660 - INFO - LLM evaluation started for 4x4 board
+2025-12-10 16:45:08,660 - INFO - === GAME 2 — GUI MODE — claude ===
+2025-12-10 16:45:08,662 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+2025-12-10 16:45:08,663 - INFO - LLM evaluation started for 4x4 board
+2025-12-10 16:45:08,663 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:08,663 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:08,667 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:08,672 - INFO - ============================================================
+2025-12-10 16:45:08,672 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (3,0)
+Path Taken: (3,0)
+
+Visual Board State:
+  .    .    .    4
+  .    .    .    5
+  .    2    .    .
+[ 1]   .    3    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,0), (3,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:08,672 - INFO - ============================================================
+2025-12-10 16:45:08,818 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:08,818 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:08,972 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:08,972 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:08,981 - WARNING - No move from LLM (stuck: 1/3)
+2025-12-10 16:45:08,982 - INFO - Move 1: (-1, -1) - Valid: False, Correct: False, Latency: 318ms
+2025-12-10 16:45:09,975 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:09,975 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:09,980 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:09,989 - INFO - ============================================================
+2025-12-10 16:45:09,989 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (3,0)
+Path Taken: (3,0)
+
+Visual Board State:
+  .    .    .    4
+  .    .    .    5
+  .    2    .    .
+[ 1]   .    3    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,0), (3,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:09,990 - INFO - ============================================================
+2025-12-10 16:45:10,139 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:10,140 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:10,290 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:10,291 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:10,297 - WARNING - No move from LLM (stuck: 2/3)
+2025-12-10 16:45:10,298 - INFO - Move 2: (-1, -1) - Valid: False, Correct: False, Latency: 323ms
+2025-12-10 16:45:11,299 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:11,300 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:11,316 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:11,327 - INFO - ============================================================
+2025-12-10 16:45:11,327 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (3,0)
+Path Taken: (3,0)
+
+Visual Board State:
+  .    .    .    4
+  .    .    .    5
+  .    2    .    .
+[ 1]   .    3    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,0), (3,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:11,327 - INFO - ============================================================
+2025-12-10 16:45:11,470 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:11,470 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:11,622 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:11,623 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:11,629 - WARNING - No move from LLM (stuck: 3/3)
+2025-12-10 16:45:11,629 - INFO - Move 3: (-1, -1) - Valid: False, Correct: False, Latency: 329ms
+2025-12-10 16:45:12,620 - INFO - Game ended - Success: False, Efficiency: 0.0%, Accuracy: 0.0%
+2025-12-10 16:45:12,626 - INFO - Comprehensive metrics logged to wandb
+2025-12-10 16:45:12,630 - INFO - === GAME PERFORMANCE ANALYSIS ===
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 101: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 802, in solve_with_llm
+    logger.info(detailed_summary)
+Message: '\n=== LLM PERFORMANCE ANALYSIS ===\nBoard: 4x4 | Completion: FAILED ✗\nTime: 4.0s | Grade: F\n\n=== CORE METRICS ===\nTotal Moves: 3\nValid Moves: 0 (0.0%)\nBad Moves: 3\nCorrect Moves: 0 (0.0%)\nClue Hits: 0\n\n=== PERFORMANCE ANALYSIS ===\nMove Efficiency: 0.0% (valid moves / total moves)\nPath Accuracy: 0.0% (optimal path following)\nCompletion: 0.0% of puzzle filled\nAvg Latency: 323ms per move\n\n=== QUALITY METRICS ===\nResponse Parsing: 0.0% success rate\nReasoning Quality: 14 avg chars\nMove Consistency: 0.0%\n\n=== ADVANCED ANALYSIS ===\nEarly Error Rate: 0.0% (first 25% of moves)\nLate Error Rate: 0.0% (last 25% of moves)\nRecovery Rate: 0.0% (bounce back from errors)\nOptimal Deviation: 0.00 avg distance from best path\n\n=== INSIGHTS ===\nStruggled with move selection\n'
+Arguments: ()
+2025-12-10 16:45:12,632 - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 4.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 323ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 4.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 323ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+
+📊 METRICS FOR RUN 2
+----------------------------------------
+board_size          : 4
+total_cells         : 16
+total_moves         : 3
+puzzle_completed    : False
+completion_time_seconds: 3.957080602645874
+valid_moves         : 0
+bad_moves           : 3
+correct_moves       : 0
+clue_hits           : 0
+move_efficiency_percent: 0.0
+path_accuracy_percent: 0.0
+completion_percent  : 0.0
+average_latency_ms  : 323.4
+parsing_success_rate_percent: 0.0
+reasoning_quality_score: 14.0
+consistency_score_percent: 0.0
+early_error_rate_percent: 0.0
+late_error_rate_percent: 0.0
+recovery_rate_percent: 0.0
+optimal_deviation_avg: 0.0
+performance_grade   : F
+
+📈 AVERAGES AFTER 2 RUNS
+----------------------------------------
+Avg Move Efficiency: 0.000
+Avg Path Accuracy:   0.000
+Success Rate:        0.000
+
+2025-12-10 16:45:12,669 - INFO - [2/10] Current success rate=0.0%
+
+==================================================
+▶ STARTING RUN 3 OF 10
+==================================================
+2025-12-10 16:45:12,670 - INFO - LLM evaluation started for 4x4 board
+2025-12-10 16:45:12,670 - INFO - === GAME 3 — GUI MODE — claude ===
+2025-12-10 16:45:12,673 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+2025-12-10 16:45:12,674 - INFO - LLM evaluation started for 4x4 board
+2025-12-10 16:45:12,674 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:12,674 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:12,677 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:12,680 - INFO - ============================================================
+2025-12-10 16:45:12,680 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,3)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (3,3)
+Path Taken: (3,3)
+
+Visual Board State:
+  .    .    .    3
+  2    .    .    .
+  .    4    .    .
+  .    .    .  [ 1]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,3), (3,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:12,680 - INFO - ============================================================
+2025-12-10 16:45:12,825 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:12,826 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:12,977 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:12,977 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:12,984 - WARNING - No move from LLM (stuck: 1/3)
+2025-12-10 16:45:12,984 - INFO - Move 1: (-1, -1) - Valid: False, Correct: False, Latency: 311ms
+2025-12-10 16:45:13,986 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:13,987 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:13,998 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:14,005 - INFO - ============================================================
+2025-12-10 16:45:14,006 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,3)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (3,3)
+Path Taken: (3,3)
+
+Visual Board State:
+  .    .    .    3
+  2    .    .    .
+  .    4    .    .
+  .    .    .  [ 1]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,3), (3,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:14,007 - INFO - ============================================================
+2025-12-10 16:45:14,156 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:14,157 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:14,310 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:14,310 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:14,318 - WARNING - No move from LLM (stuck: 2/3)
+2025-12-10 16:45:14,318 - INFO - Move 2: (-1, -1) - Valid: False, Correct: False, Latency: 332ms
+2025-12-10 16:45:15,313 - INFO - LLM provider set to: claude (model: claude-sonnet-4-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with claude'
+Arguments: ()
+2025-12-10 16:45:15,314 - INFO - 🎯 Generating move 2 with claude
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 16:45:15,323 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 16:45:15,327 - INFO - ============================================================
+2025-12-10 16:45:15,328 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,3)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (3,3)
+Path Taken: (3,3)
+
+Visual Board State:
+  .    .    .    3
+  2    .    .    .
+  .    4    .    .
+  .    .    .  [ 1]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,3), (3,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Solve the puzzle step by step, providing your THINKING and MOVE each time. Remember to consider future implications of your current move on completing the entire puzzle. You must returen your move in coordinate system (row, column). and it only have positive co-ordinates similar to the Matrix form
+2025-12-10 16:45:15,328 - INFO - ============================================================
+2025-12-10 16:45:15,473 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:15,473 - ERROR - ❌ Attempt 1 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:15,685 - ERROR - API call failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 318, in _call_llm_api
+    return self._call_claude_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 296, in _call_claude_api
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\anthropic\_utils\_utils.py", line 281, in wrapper
+    raise TypeError(msg)
+TypeError: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given"
+Arguments: ()
+2025-12-10 16:45:15,686 - ERROR - ❌ Attempt 2 failed: Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream') arguments to be given
+2025-12-10 16:45:15,699 - WARNING - No move from LLM (stuck: 3/3)
+2025-12-10 16:45:15,700 - INFO - Move 3: (-1, -1) - Valid: False, Correct: False, Latency: 386ms

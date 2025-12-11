@@ -1,0 +1,11 @@
+{"time":"2025-12-10T11:42:32.3951259-05:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2025-12-10T11:42:34.1807406-05:00","level":"INFO","msg":"stream: created new stream","id":"rjfmg7mc"}
+{"time":"2025-12-10T11:42:34.1814331-05:00","level":"INFO","msg":"handler: started","stream_id":"rjfmg7mc"}
+{"time":"2025-12-10T11:42:34.1850892-05:00","level":"INFO","msg":"stream: started","id":"rjfmg7mc"}
+{"time":"2025-12-10T11:42:34.1850892-05:00","level":"INFO","msg":"writer: started","stream_id":"rjfmg7mc"}
+{"time":"2025-12-10T11:42:34.1850892-05:00","level":"INFO","msg":"sender: started","stream_id":"rjfmg7mc"}
+{"time":"2025-12-10T11:47:11.3728171-05:00","level":"INFO","msg":"stream: closing","id":"rjfmg7mc"}
+{"time":"2025-12-10T11:47:11.9583426-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-10T11:47:12.3495789-05:00","level":"INFO","msg":"handler: closed","stream_id":"rjfmg7mc"}
+{"time":"2025-12-10T11:47:12.3495789-05:00","level":"INFO","msg":"sender: closed","stream_id":"rjfmg7mc"}
+{"time":"2025-12-10T11:47:12.3495789-05:00","level":"INFO","msg":"stream: closed","id":"rjfmg7mc"}

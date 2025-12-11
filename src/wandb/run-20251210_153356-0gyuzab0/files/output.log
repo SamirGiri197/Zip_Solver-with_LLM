@@ -1,0 +1,530 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 15:33:59,904 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\pygame\pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[34m[1mwandb[0m: wandb.init() called while a run is active and reinit is set to 'default', so returning the previous run.
+
+==================================================
+▶ STARTING RUN 1 OF 10
+==================================================
+2025-12-10 15:34:00,000 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 15:34:00,001 - INFO - === GAME 1 — GUI MODE — openai ===
+2025-12-10 15:34:00,219 - INFO - LLM provider set to: openai (model: gpt-5)
+2025-12-10 15:34:00,220 - WARNING - Could not generate solver path for evaluation
+2025-12-10 15:34:00,220 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 15:34:00,220 - INFO - LLM provider set to: openai (model: gpt-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 15:34:00,220 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 15:34:00,228 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 15:34:00,240 - INFO - ============================================================
+2025-12-10 15:34:00,242 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,1)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  .    .  [ 1]
+  2    4    .
+  3    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 15:34:00,243 - INFO - ============================================================
+2025-12-10 15:34:18,675 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4dd' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 424, in solve
+    logger.info(f"📝 LLM RAW RESPONSE (Attempt {attempt + 1}):")
+Message: '📝 LLM RAW RESPONSE (Attempt 1):'
+Arguments: ()
+2025-12-10 15:34:18,681 - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 15:34:18,689 - INFO - ----------------------------------------
+2025-12-10 15:34:18,689 - INFO -
+2025-12-10 15:34:18,689 - INFO - ----------------------------------------
+2025-12-10 15:34:18,690 - INFO - ================================================================================
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f9e0' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 433, in solve
+    self._log_thinking_process(move_number, thinking, coordinates)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 376, in _log_thinking_process
+    logger.info(f"🧠 LLM THINKING PROCESS - Move {move_number}")
+Message: '🧠 LLM THINKING PROCESS - Move 2'
+Arguments: ()
+2025-12-10 15:34:18,690 - INFO - 🧠 LLM THINKING PROCESS - Move 2
+2025-12-10 15:34:18,694 - INFO - ================================================================================
+2025-12-10 15:34:18,694 - INFO - Provider: openai
+2025-12-10 15:34:18,694 - INFO - Model: gpt-5
+2025-12-10 15:34:18,695 - INFO - ----------------------------------------
+2025-12-10 15:34:18,695 - INFO - REASONING:
+2025-12-10 15:34:18,695 - INFO -
+2025-12-10 15:34:18,696 - INFO - ----------------------------------------
+2025-12-10 15:34:18,696 - INFO - DECISION: No valid move extracted
+2025-12-10 15:34:18,696 - INFO - ================================================================================
+
+🧠 OPENAI THINKING (Move 2):
+--------------------------------------------------
+
+--------------------------------------------------
+❌ DECISION: Could not extract move
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 36: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 450, in solve
+    logger.warning(f"❌ Could not parse coordinates from response")
+Message: '❌ Could not parse coordinates from response'
+Arguments: ()
+2025-12-10 15:34:18,699 - WARNING - ❌ Could not parse coordinates from response
+2025-12-10 15:34:34,642 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4dd' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 424, in solve
+    logger.info(f"📝 LLM RAW RESPONSE (Attempt {attempt + 1}):")
+Message: '📝 LLM RAW RESPONSE (Attempt 2):'
+Arguments: ()
+2025-12-10 15:34:34,645 - INFO - 📝 LLM RAW RESPONSE (Attempt 2):
+2025-12-10 15:34:34,661 - INFO - ----------------------------------------
+2025-12-10 15:34:34,661 - INFO -
+2025-12-10 15:34:34,662 - INFO - ----------------------------------------
+2025-12-10 15:34:34,663 - INFO - ================================================================================
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f9e0' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 433, in solve
+    self._log_thinking_process(move_number, thinking, coordinates)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 376, in _log_thinking_process
+    logger.info(f"🧠 LLM THINKING PROCESS - Move {move_number}")
+Message: '🧠 LLM THINKING PROCESS - Move 2'
+Arguments: ()
+2025-12-10 15:34:34,663 - INFO - 🧠 LLM THINKING PROCESS - Move 2
+2025-12-10 15:34:34,670 - INFO - ================================================================================
+2025-12-10 15:34:34,670 - INFO - Provider: openai
+2025-12-10 15:34:34,671 - INFO - Model: gpt-5
+2025-12-10 15:34:34,671 - INFO - ----------------------------------------
+2025-12-10 15:34:34,671 - INFO - REASONING:
+2025-12-10 15:34:34,671 - INFO -
+2025-12-10 15:34:34,672 - INFO - ----------------------------------------
+2025-12-10 15:34:34,672 - INFO - DECISION: No valid move extracted
+2025-12-10 15:34:34,672 - INFO - ================================================================================
+
+
+🧠 OPENAI THINKING (Move 2):
+--------------------------------------------------
+
+--------------------------------------------------
+❌ DECISION: Could not extract move
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 36: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 450, in solve
+    logger.warning(f"❌ Could not parse coordinates from response")
+Message: '❌ Could not parse coordinates from response'
+Arguments: ()
+2025-12-10 15:34:34,674 - WARNING - ❌ Could not parse coordinates from response
+2025-12-10 15:34:34,677 - WARNING - No move from LLM (stuck: 1/3)
+2025-12-10 15:34:34,678 - INFO - Move 1: (-1, -1) - Valid: False, Correct: False, Latency: 34457ms
+2025-12-10 15:34:35,680 - INFO - LLM provider set to: openai (model: gpt-5)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 15:34:35,680 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 15:34:35,688 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 15:34:35,694 - INFO - ============================================================
+2025-12-10 15:34:35,694 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,1)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  .    .  [ 1]
+  2    4    .
+  3    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 15:34:35,695 - INFO - ============================================================
+2025-12-10 15:34:53,349 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4dd' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 424, in solve
+    logger.info(f"📝 LLM RAW RESPONSE (Attempt {attempt + 1}):")
+Message: '📝 LLM RAW RESPONSE (Attempt 1):'
+Arguments: ()
+2025-12-10 15:34:53,352 - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 15:34:53,365 - INFO - ----------------------------------------
+2025-12-10 15:34:53,365 - INFO -
+2025-12-10 15:34:53,365 - INFO - ----------------------------------------
+2025-12-10 15:34:53,366 - INFO - ================================================================================
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f9e0' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 433, in solve
+    self._log_thinking_process(move_number, thinking, coordinates)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 376, in _log_thinking_process
+    logger.info(f"🧠 LLM THINKING PROCESS - Move {move_number}")
+Message: '🧠 LLM THINKING PROCESS - Move 2'
+Arguments: ()
+2025-12-10 15:34:53,366 - INFO - 🧠 LLM THINKING PROCESS - Move 2
+2025-12-10 15:34:53,371 - INFO - ================================================================================
+2025-12-10 15:34:53,372 - INFO - Provider: openai
+2025-12-10 15:34:53,374 - INFO - Model: gpt-5
+2025-12-10 15:34:53,374 - INFO - ----------------------------------------
+2025-12-10 15:34:53,374 - INFO - REASONING:
+2025-12-10 15:34:53,375 - INFO -
+2025-12-10 15:34:53,375 - INFO - ----------------------------------------
+2025-12-10 15:34:53,375 - INFO - DECISION: No valid move extracted
+2025-12-10 15:34:53,375 - INFO - ================================================================================
+
+
+🧠 OPENAI THINKING (Move 2):
+--------------------------------------------------
+
+--------------------------------------------------
+❌ DECISION: Could not extract move
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 36: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 450, in solve
+    logger.warning(f"❌ Could not parse coordinates from response")
+Message: '❌ Could not parse coordinates from response'
+Arguments: ()
+2025-12-10 15:34:53,377 - WARNING - ❌ Could not parse coordinates from response

@@ -1,0 +1,11 @@
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_setup.py:_flush():81] Configure stats pid to 24564
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\.config\wandb\settings
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\settings
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_init.py:setup_run_log_directory():706] Logging user logs to C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\run-20251210_210800-1uskum99\logs\debug.log
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\run-20251210_210800-1uskum99\logs\debug-internal.log
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_init.py:init():833] calling init triggers
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-12-10 21:08:00,059 INFO    MainThread:24564 [wandb_init.py:init():881] starting backend

@@ -1,0 +1,11 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 14:53:43,817 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\pygame\pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+usage: zip_llm_tests.py [-h] [--num-runs NUM_RUNS] [--board-size {3,4,5,6,7,8,9,10,12,15}] [--llm-provider {gemini,openai,claude,ollama}]
+                        [--run-name RUN_NAME] [--gui GUI] [--log-level {DEBUG,INFO,WARNING,ERROR}] [--max-moves MAX_MOVES] [--timeout TIMEOUT]
+zip_llm_tests.py: error: unrecognized arguments: --llm-platform openai

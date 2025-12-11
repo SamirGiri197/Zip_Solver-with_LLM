@@ -1,0 +1,966 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 15:08:51,226 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\pygame\pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[34m[1mwandb[0m: wandb.init() called while a run is active and reinit is set to 'default', so returning the previous run.
+
+==================================================
+▶ STARTING RUN 1 OF 10
+==================================================
+2025-12-10 15:08:51,304 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 15:08:51,304 - INFO - === GAME 1 — GUI MODE — openai ===
+2025-12-10 15:08:51,553 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+2025-12-10 15:08:51,553 - WARNING - Could not generate solver path for evaluation
+2025-12-10 15:08:51,554 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 15:08:51,555 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 15:08:51,555 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 15:08:51,561 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 15:08:51,566 - INFO - ============================================================
+2025-12-10 15:08:51,566 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (2,2)
+Clue 2: position (0,1)
+Clue 3: position (2,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (2,2)
+Path Taken: (2,2)
+
+Visual Board State:
+  .    3    2
+  .    .    .
+  4    .  [ 1]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (2,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 15:08:51,567 - INFO - ============================================================
+2025-12-10 15:08:52,387 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-12-10 15:08:52,389 - ERROR - API call failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: '❌ Attempt 1 failed: Error code: 400 - {\'error\': {\'message\': "Unsupported parameter: \'max_tokens\' is not supported with this model. Use \'max_completion_tokens\' instead.", \'type\': \'invalid_request_error\', \'param\': \'max_tokens\', \'code\': \'unsupported_parameter\'}}'
+Arguments: ()
+2025-12-10 15:08:52,389 - ERROR - ❌ Attempt 1 failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-12-10 15:08:53,325 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-12-10 15:08:53,331 - ERROR - API call failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: '❌ Attempt 2 failed: Error code: 400 - {\'error\': {\'message\': "Unsupported parameter: \'max_tokens\' is not supported with this model. Use \'max_completion_tokens\' instead.", \'type\': \'invalid_request_error\', \'param\': \'max_tokens\', \'code\': \'unsupported_parameter\'}}'
+Arguments: ()
+2025-12-10 15:08:53,332 - ERROR - ❌ Attempt 2 failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-12-10 15:08:53,352 - WARNING - No move from LLM (stuck: 1/3)
+2025-12-10 15:08:53,352 - INFO - Move 1: (-1, -1) - Valid: False, Correct: False, Latency: 1798ms
+2025-12-10 15:08:54,355 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 15:08:54,356 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 15:08:54,368 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 15:08:54,372 - INFO - ============================================================
+2025-12-10 15:08:54,373 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (2,2)
+Clue 2: position (0,1)
+Clue 3: position (2,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (2,2)
+Path Taken: (2,2)
+
+Visual Board State:
+  .    3    2
+  .    .    .
+  4    .  [ 1]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (2,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 15:08:54,373 - INFO - ============================================================
+2025-12-10 15:08:54,712 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-12-10 15:08:54,718 - ERROR - API call failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: '❌ Attempt 1 failed: Error code: 400 - {\'error\': {\'message\': "Unsupported parameter: \'max_tokens\' is not supported with this model. Use \'max_completion_tokens\' instead.", \'type\': \'invalid_request_error\', \'param\': \'max_tokens\', \'code\': \'unsupported_parameter\'}}'
+Arguments: ()
+2025-12-10 15:08:54,720 - ERROR - ❌ Attempt 1 failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-12-10 15:08:55,235 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-12-10 15:08:55,236 - ERROR - API call failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: '❌ Attempt 2 failed: Error code: 400 - {\'error\': {\'message\': "Unsupported parameter: \'max_tokens\' is not supported with this model. Use \'max_completion_tokens\' instead.", \'type\': \'invalid_request_error\', \'param\': \'max_tokens\', \'code\': \'unsupported_parameter\'}}'
+Arguments: ()
+2025-12-10 15:08:55,237 - ERROR - ❌ Attempt 2 failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-12-10 15:08:55,250 - WARNING - No move from LLM (stuck: 2/3)
+2025-12-10 15:08:55,250 - INFO - Move 2: (-1, -1) - Valid: False, Correct: False, Latency: 894ms
+2025-12-10 15:08:56,244 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 15:08:56,245 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 15:08:56,260 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 15:08:56,269 - INFO - ============================================================
+2025-12-10 15:08:56,269 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (2,2)
+Clue 2: position (0,1)
+Clue 3: position (2,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (2,2)
+Path Taken: (2,2)
+
+Visual Board State:
+  .    3    2
+  .    .    .
+  4    .  [ 1]
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (2,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 15:08:56,270 - INFO - ============================================================
+2025-12-10 15:08:57,195 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-12-10 15:08:57,198 - ERROR - API call failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: '❌ Attempt 1 failed: Error code: 400 - {\'error\': {\'message\': "Unsupported parameter: \'max_tokens\' is not supported with this model. Use \'max_completion_tokens\' instead.", \'type\': \'invalid_request_error\', \'param\': \'max_tokens\', \'code\': \'unsupported_parameter\'}}'
+Arguments: ()
+2025-12-10 15:08:57,201 - ERROR - ❌ Attempt 1 failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-12-10 15:08:58,048 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-12-10 15:08:58,052 - ERROR - API call failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: '❌ Attempt 2 failed: Error code: 400 - {\'error\': {\'message\': "Unsupported parameter: \'max_tokens\' is not supported with this model. Use \'max_completion_tokens\' instead.", \'type\': \'invalid_request_error\', \'param\': \'max_tokens\', \'code\': \'unsupported_parameter\'}}'
+Arguments: ()
+2025-12-10 15:08:58,054 - ERROR - ❌ Attempt 2 failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-12-10 15:08:58,069 - WARNING - No move from LLM (stuck: 3/3)
+2025-12-10 15:08:58,069 - INFO - Move 3: (-1, -1) - Valid: False, Correct: False, Latency: 1825ms
+2025-12-10 15:08:59,061 - INFO - Game ended - Success: False, Efficiency: 0.0%, Accuracy: 0.0%
+2025-12-10 15:08:59,063 - INFO - Comprehensive metrics logged to wandb
+2025-12-10 15:08:59,064 - INFO - === GAME PERFORMANCE ANALYSIS ===
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 101: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 802, in solve_with_llm
+    logger.info(detailed_summary)
+Message: '\n=== LLM PERFORMANCE ANALYSIS ===\nBoard: 3x3 | Completion: FAILED ✗\nTime: 7.5s | Grade: F\n\n=== CORE METRICS ===\nTotal Moves: 3\nValid Moves: 0 (0.0%)\nBad Moves: 3\nCorrect Moves: 0 (0.0%)\nClue Hits: 0\n\n=== PERFORMANCE ANALYSIS ===\nMove Efficiency: 0.0% (valid moves / total moves)\nPath Accuracy: 0.0% (optimal path following)\nCompletion: 0.0% of puzzle filled\nAvg Latency: 1505ms per move\n\n=== QUALITY METRICS ===\nResponse Parsing: 0.0% success rate\nReasoning Quality: 14 avg chars\nMove Consistency: 0.0%\n\n=== ADVANCED ANALYSIS ===\nEarly Error Rate: 0.0% (first 25% of moves)\nLate Error Rate: 0.0% (last 25% of moves)\nRecovery Rate: 0.0% (bounce back from errors)\nOptimal Deviation: 0.00 avg distance from best path\n\n=== INSIGHTS ===\nStruggled with move selection\n'
+Arguments: ()
+2025-12-10 15:08:59,065 - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 3x3 | Completion: FAILED ✗
+Time: 7.5s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 1505ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 3x3 | Completion: FAILED ✗
+Time: 7.5s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 1505ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+
+📊 METRICS FOR RUN 1
+----------------------------------------
+board_size          : 3
+total_cells         : 9
+total_moves         : 3
+puzzle_completed    : False
+completion_time_seconds: 7.507173776626587
+valid_moves         : 0
+bad_moves           : 3
+correct_moves       : 0
+clue_hits           : 0
+move_efficiency_percent: 0.0
+path_accuracy_percent: 0.0
+completion_percent  : 0.0
+average_latency_ms  : 1505.4
+parsing_success_rate_percent: 0.0
+reasoning_quality_score: 14.0
+consistency_score_percent: 0.0
+early_error_rate_percent: 0.0
+late_error_rate_percent: 0.0
+recovery_rate_percent: 0.0
+optimal_deviation_avg: 0.0
+performance_grade   : F
+
+📈 AVERAGES AFTER 1 RUNS
+----------------------------------------
+Avg Move Efficiency: 0.000
+Avg Path Accuracy:   0.000
+Success Rate:        0.000
+
+2025-12-10 15:08:59,097 - INFO - [1/10] Current success rate=0.0%
+
+==================================================
+▶ STARTING RUN 2 OF 10
+==================================================
+2025-12-10 15:08:59,099 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 15:08:59,099 - INFO - === GAME 2 — GUI MODE — openai ===
+2025-12-10 15:08:59,102 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+2025-12-10 15:08:59,102 - WARNING - Could not generate solver path for evaluation
+2025-12-10 15:08:59,102 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 15:08:59,102 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 15:08:59,103 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 15:08:59,106 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 15:08:59,110 - INFO - ============================================================
+2025-12-10 15:08:59,111 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,0)
+Clue 2: position (1,1)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (0,0)
+Path Taken: (0,0)
+
+Visual Board State:
+[ 1]   .    .
+  .    4    2
+  .    .    3
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 15:08:59,111 - INFO - ============================================================
+2025-12-10 15:09:00,035 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-12-10 15:09:00,038 - ERROR - API call failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: '❌ Attempt 1 failed: Error code: 400 - {\'error\': {\'message\': "Unsupported parameter: \'max_tokens\' is not supported with this model. Use \'max_completion_tokens\' instead.", \'type\': \'invalid_request_error\', \'param\': \'max_tokens\', \'code\': \'unsupported_parameter\'}}'
+Arguments: ()
+2025-12-10 15:09:00,038 - ERROR - ❌ Attempt 1 failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-12-10 15:09:00,522 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 15:09:00,525 - INFO - Retrying request to /chat/completions in 20.000000 seconds

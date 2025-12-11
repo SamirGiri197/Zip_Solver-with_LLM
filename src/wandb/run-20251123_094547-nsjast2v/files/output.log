@@ -1,0 +1,562 @@
+2025-11-23 09:45:51,436 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+2025-11-23 09:45:51,437 - evaluation.eval - INFO - Game metrics started for 3x3 board
+2025-11-23 09:45:51,439 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:45:51,439 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:45:51,439 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:45:51,439 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 2:
+2025-11-23 09:45:51,439 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .
+ .  2  .
+ P  3  4
+
+
+                VISUAL BOARD:
+                [ ][ ][ ]
+[ ][ 2][ ]
+[P][ 3][ 4]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (2, 0)
+                CELLS FILLED: 1/9
+                AVAILABLE NEXT MOVES:   (1, 0)
+  (2, 1)
+
+                What is your next move and why?
+2025-11-23 09:45:52,872 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:45:52,877 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 2):
+2025-11-23 09:45:52,879 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current position:** (2, 0) - marked as 'P' in the grid.
+*   **Next clue:** Clue 2 is at (1, 1).
+*   **Available moves:** (1, 0) and (2, 1).
+
+Moving to (2, 1) would require us to move to clue 3 at (2, 2) and then to clue 4 at (2, 3). However, there are only 9 cells available and we need to visit 9 cells only once.
+
+Therefore, moving to (1,0) is the only viable move at this stage.
+
+**Therefore, my next move is (1, 0).**
+
+2025-11-23 09:45:52,883 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (1, 1)
+2025-11-23 09:45:52,884 - evaluation.eval - INFO - Move 1: (1, 1) - Valid: False, Latency: 1446ms, Confidence: 0.90
+2025-11-23 09:45:52,885 - UI.GUI - WARNING - Invalid move: (1, 1) (stuck: 1/3)
+2025-11-23 09:45:53,890 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:45:53,891 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:45:53,891 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:45:53,892 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 2:
+2025-11-23 09:45:53,893 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .
+ .  2  .
+ P  3  4
+
+
+                VISUAL BOARD:
+                [ ][ ][ ]
+[ ][ 2][ ]
+[P][ 3][ 4]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (2, 0)
+                CELLS FILLED: 1/9
+                AVAILABLE NEXT MOVES:   (1, 0)
+  (2, 1)
+
+                What is your next move and why?
+2025-11-23 09:45:55,875 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:45:55,876 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 2):
+2025-11-23 09:45:55,877 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the best next move.
+
+*   **Current Position:** (2, 0) - This is the cell marked 'P' in the grid, which represents the start of our path at clue 1.
+*   **Next Clue:** Clue 2 is located at (1, 1).
+*   **Available Moves:** We can move to (1, 0) or (2, 1).
+
+Let's consider each option:
+
+*   **Moving to (1, 0):** This move would get us closer horizontally to Clue 2.
+
+*   **Moving to (2, 1):** This move would get us closer vertically to Clue 2.
+
+Since we need to eventually get to (1, 1), moving to **(2, 1)** seems like a slightly more direct route.
+
+Therefore, my next move is:
+
+*   **Next Move:** (2, 1)
+
+**Reasoning:** Moving to (2, 1) brings us vertically closer to the goal (clue 2), it seems like the more direct route.
+
+ANSWER: (2, 1)
+
+2025-11-23 09:45:55,881 - LLM_configuration.llm_manager - INFO - Parsed move from text: (1, 0)
+2025-11-23 09:45:55,885 - evaluation.eval - INFO - Move 2: (1, 0) - Valid: True, Latency: 1995ms, Confidence: 0.90
+2025-11-23 09:45:55,886 - UI.GUI - INFO - Move 2: (1, 0) - Valid
+2025-11-23 09:45:56,880 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:45:56,882 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:45:56,883 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:45:56,884 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 3:
+2025-11-23 09:45:56,885 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ .  .  .
+ P  2  .
+ P  3  4
+
+
+                VISUAL BOARD:
+                [ ][ ][ ]
+[P][ 2][ ]
+[P][ 3][ 4]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (1, 0)
+                CELLS FILLED: 2/9
+                AVAILABLE NEXT MOVES:   (0, 0)
+  (1, 1)
+
+                What is your next move and why?
+2025-11-23 09:45:58,007 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:45:58,008 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 3):
+2025-11-23 09:45:58,011 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the best next move.
+
+*   **Current State:** We're at (1, 0) and need to reach clue 2 at (1, 1).
+*   **Available Moves:** We can move to (0, 0) or (1, 1).
+*   **Goal:** We *must* go to clue 2 at (1, 1) next.
+
+Therefore, the only logical move is to go to **(1, 1)**.
+
+**ANSWER: (1, 1)**
+
+2025-11-23 09:45:58,017 - LLM_configuration.llm_manager - INFO - Parsed move from text: (0, 0)
+2025-11-23 09:45:58,018 - evaluation.eval - INFO - Move 3: (0, 0) - Valid: True, Latency: 1136ms, Confidence: 0.90
+2025-11-23 09:45:58,019 - UI.GUI - INFO - Move 3: (0, 0) - Valid
+2025-11-23 09:45:59,027 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:45:59,032 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:45:59,033 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:45:59,034 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 4:
+2025-11-23 09:45:59,034 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  .  .
+ P  2  .
+ P  3  4
+
+
+                VISUAL BOARD:
+                [P][ ][ ]
+[P][ 2][ ]
+[P][ 3][ 4]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (0, 0)
+                CELLS FILLED: 3/9
+                AVAILABLE NEXT MOVES:   (0, 1)
+
+                What is your next move and why?
+2025-11-23 09:45:59,803 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:45:59,805 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 4):
+2025-11-23 09:45:59,806 - LLM_configuration.llm_manager - INFO - My next move is (0,1). This is the only available move according to the rules, as I must move to an adjacent cell and cannot revisit cells.
+
+2025-11-23 09:45:59,807 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (0, 1)
+2025-11-23 09:45:59,808 - evaluation.eval - INFO - Move 4: (0, 1) - Valid: True, Latency: 775ms, Confidence: 0.90
+2025-11-23 09:45:59,808 - UI.GUI - INFO - Move 4: (0, 1) - Valid
+2025-11-23 09:46:00,812 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:00,817 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:00,820 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:00,822 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 5:
+2025-11-23 09:46:00,823 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  .
+ P  2  .
+ P  3  4
+
+
+                VISUAL BOARD:
+                [P][P][ ]
+[P][ 2][ ]
+[P][ 3][ 4]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (0, 1)
+                CELLS FILLED: 4/9
+                AVAILABLE NEXT MOVES:   (1, 1)
+  (0, 2)
+
+                What is your next move and why?
+2025-11-23 09:46:02,155 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:02,158 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 5):
+2025-11-23 09:46:02,160 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the best next move.
+
+*   **Current State:** We're at (0,1), which is adjacent to Clue 2 (1,1). We also have the option of (0,2).
+*   **Rules:** We *must* visit clues in order.
+
+Therefore, the only valid move is to the adjacent clue.
+
+**Next Move:** (1, 1)
+
+**Reasoning:** This move takes us to Clue 2, following the rule that clues must be visited in ascending order.
+2025-11-23 09:46:02,162 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (1, 1)
+2025-11-23 09:46:02,162 - evaluation.eval - INFO - Move 5: (1, 1) - Valid: True, Latency: 1345ms, Confidence: 0.90
+2025-11-23 09:46:02,163 - UI.GUI - INFO - Move 5: (1, 1) - Valid
+2025-11-23 09:46:03,169 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:03,170 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:03,171 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:03,172 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 6:
+2025-11-23 09:46:03,173 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  .
+ P  P  .
+ P  3  4
+
+
+                VISUAL BOARD:
+                [P][P][ ]
+[P][P][ ]
+[P][ 3][ 4]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (1, 1)
+                CELLS FILLED: 5/9
+                AVAILABLE NEXT MOVES:   (2, 1)
+  (1, 2)
+
+                What is your next move and why?
+2025-11-23 09:46:04,427 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:04,429 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 6):
+2025-11-23 09:46:04,431 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current position:** (1, 1)
+*   **Next clue:** 3, located at (2, 1)
+*   **Available moves:** (2, 1) and (1, 2)
+
+The optimal move is to proceed directly to the next clue.
+
+**Next move:** (2, 1)
+
+**Reasoning:** Moving to (2, 1) directly takes us to the next clue (3) and continues on the path.
+
+2025-11-23 09:46:04,434 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (2, 1)
+2025-11-23 09:46:04,435 - evaluation.eval - INFO - Move 6: (2, 1) - Valid: True, Latency: 1265ms, Confidence: 0.90
+2025-11-23 09:46:04,436 - UI.GUI - INFO - Move 6: (2, 1) - Valid
+2025-11-23 09:46:05,439 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:05,441 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:05,445 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:05,447 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 7:
+2025-11-23 09:46:05,448 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  .
+ P  P  .
+ P  P  4
+
+
+                VISUAL BOARD:
+                [P][P][ ]
+[P][P][ ]
+[P][P][ 4]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (2, 1)
+                CELLS FILLED: 6/9
+                AVAILABLE NEXT MOVES:   (2, 2)
+
+                What is your next move and why?
+2025-11-23 09:46:06,574 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:06,575 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 7):
+2025-11-23 09:46:06,575 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation.
+
+*   **Current position:** (2, 1)
+*   **Next Clue:** Clue 4 is at (2, 2).
+*   **Rule 2**: We must visit clues in order
+
+So the immediate move is the best move to get to clue 4.
+
+**Next move:** (2, 2) - This is the location of Clue 4, completing the path.
+
+2025-11-23 09:46:06,576 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (2, 2)
+2025-11-23 09:46:06,576 - evaluation.eval - INFO - Move 7: (2, 2) - Valid: True, Latency: 1135ms, Confidence: 0.90
+2025-11-23 09:46:06,576 - UI.GUI - INFO - Move 7: (2, 2) - Valid
+2025-11-23 09:46:07,581 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:07,581 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:07,582 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:07,582 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 8:
+2025-11-23 09:46:07,582 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  .
+ P  P  .
+ P  P  P
+
+
+                VISUAL BOARD:
+                [P][P][ ]
+[P][P][ ]
+[P][P][P]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (2, 2)
+                CELLS FILLED: 7/9
+                AVAILABLE NEXT MOVES:   (1, 2)
+
+                What is your next move and why?
+2025-11-23 09:46:08,407 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:08,409 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 8):
+2025-11-23 09:46:08,411 - LLM_configuration.llm_manager - INFO - The next move must be (1, 2) because it is the only remaining adjacent cell that is not already part of the path. Moving to (1, 2) will extend the continuous path and fill another cell.
+
+2025-11-23 09:46:08,413 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (1, 2)
+2025-11-23 09:46:08,413 - evaluation.eval - INFO - Move 8: (1, 2) - Valid: True, Latency: 833ms, Confidence: 0.90
+2025-11-23 09:46:08,413 - UI.GUI - INFO - Move 8: (1, 2) - Valid
+2025-11-23 09:46:09,415 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:09,415 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:09,416 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:09,417 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 9:
+2025-11-23 09:46:09,417 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  .
+ P  P  P
+ P  P  P
+
+
+                VISUAL BOARD:
+                [P][P][ ]
+[P][P][P]
+[P][P][P]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (1, 2)
+                CELLS FILLED: 8/9
+                AVAILABLE NEXT MOVES:   (0, 2)
+
+                What is your next move and why?
+2025-11-23 09:46:10,644 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:10,647 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 9):
+2025-11-23 09:46:10,647 - LLM_configuration.llm_manager - INFO - The next move is (0, 2).
+
+Reasoning:
+
+* **Rules:** We must move to an adjacent cell (up, down, left, right) and cannot revisit cells. We need to fill the final empty cell (there is only one left).
+* **Current position:** We are at (1, 2).
+* **Available moves:** The only available adjacent cell that hasn't been visited is (0, 2).
+* **Completing the path:** Moving to (0, 2) completes the continuous path of 9 cells, fulfilling the main rule.
+
+2025-11-23 09:46:10,648 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (0, 2)
+2025-11-23 09:46:10,648 - evaluation.eval - INFO - Move 9: (0, 2) - Valid: True, Latency: 1232ms, Confidence: 0.90
+2025-11-23 09:46:10,648 - UI.GUI - INFO - Move 9: (0, 2) - Valid
+2025-11-23 09:46:11,661 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:11,663 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:11,664 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:11,667 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 10:
+2025-11-23 09:46:11,667 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P
+ P  P  P
+ P  P  P
+
+
+                VISUAL BOARD:
+                [P][P][P]
+[P][P][P]
+[P][P][P]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (0, 2)
+                CELLS FILLED: 9/9
+                AVAILABLE NEXT MOVES:   NONE - Game stuck!
+
+                What is your next move and why?
+2025-11-23 09:46:12,364 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:12,366 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 10):
+2025-11-23 09:46:12,366 - LLM_configuration.llm_manager - INFO - The puzzle is already solved! All 9 cells are filled and connected in a path from clue 1 to the highest clue. The current position is the end of the path. There are no available moves because the puzzle is complete.
+
+2025-11-23 09:46:12,367 - LLM_configuration.llm_manager - WARNING - Could not parse move from response
+2025-11-23 09:46:12,367 - UI.GUI - WARNING - No move from LLM (stuck: 1/3)
+2025-11-23 09:46:13,375 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:13,377 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:13,378 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:13,379 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 10:
+2025-11-23 09:46:13,380 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P
+ P  P  P
+ P  P  P
+
+
+                VISUAL BOARD:
+                [P][P][P]
+[P][P][P]
+[P][P][P]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (0, 2)
+                CELLS FILLED: 9/9
+                AVAILABLE NEXT MOVES:   NONE - Game stuck!
+
+                What is your next move and why?
+2025-11-23 09:46:14,300 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:14,301 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 10):
+2025-11-23 09:46:14,301 - LLM_configuration.llm_manager - INFO - The game is stuck because the path has filled all 9 cells and the path needs to end on clue #1 at (2, 0).  Since all cells are filled and the last move didn't end on the clue, the puzzle is unsolvable with the current starting configuration.
+
+2025-11-23 09:46:14,304 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (2, 0)
+2025-11-23 09:46:14,305 - evaluation.eval - INFO - Move 10: (2, 0) - Valid: False, Latency: 928ms, Confidence: 0.90
+2025-11-23 09:46:14,305 - UI.GUI - WARNING - Invalid move: (2, 0) (stuck: 2/3)
+2025-11-23 09:46:15,314 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-23 09:46:15,316 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-23 09:46:15,319 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-23 09:46:15,321 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 10:
+2025-11-23 09:46:15,322 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 9 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  P  P
+ P  P  P
+ P  P  P
+
+
+                VISUAL BOARD:
+                [P][P][P]
+[P][P][P]
+[P][P][P]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (2, 0)
+
+
+                CURRENT POSITION: (0, 2)
+                CELLS FILLED: 9/9
+                AVAILABLE NEXT MOVES:   NONE - Game stuck!
+
+                What is your next move and why?
+2025-11-23 09:46:16,233 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-23 09:46:16,234 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 10):
+2025-11-23 09:46:16,234 - LLM_configuration.llm_manager - INFO - The puzzle is already filled (9/9 cells filled) and the current position is (0,2). The rules state that you must end at the highest clue, but there are no other clues to visit. Since all cells are filled and there are no valid moves, the puzzle is complete.
+
+2025-11-23 09:46:16,237 - LLM_configuration.llm_manager - WARNING - Could not parse move from response
+2025-11-23 09:46:16,237 - UI.GUI - WARNING - No move from LLM (stuck: 3/3)
+2025-11-23 09:46:17,245 - evaluation.eval - INFO - Game ended - Success: False, Time: 25.8s
+2025-11-23 09:46:17,251 - evaluation.eval - INFO - Metrics logged to wandb successfully
+2025-11-23 09:46:17,251 - UI.GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 3x3
+Total Moves: 10
+Completion: FAILED ✗
+Time: 25.8s
+
+=== METRICS ===
+Valid Moves: 8/10
+Bad Moves: 2
+Clue Hits: 5
+Move Efficiency: 80.0%
+Clue Accuracy: 500.0%
+Avg Latency: 1209ms
+Success Ratio: 0.0%

@@ -1,0 +1,710 @@
+2025-11-23 20:13:33,548 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+2025-11-23 20:13:33,551 - evaluation.eval - INFO - LLM evaluation started for 4x4 board
+2025-11-23 20:13:33,552 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:33,553 - LLM_configuration.llm_manager - INFO - Generating move 2 with ollama
+2025-11-23 20:13:33,554 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 2:
+2025-11-23 20:13:33,554 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:33,555 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 1/16 cells filled
+Current Position: (3,2)
+Path Taken: (3,2)
+
+Visual Board State:
+  2    .    .    .
+  .    .    .    .
+  5    3    .    .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,2), (3,1), (3,3)
+
+
+2025-11-23 20:13:33,555 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:34,397 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:34,398 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:34,399 - LLM_configuration.llm_manager - INFO - (2,2)
+2025-11-23 20:13:34,400 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:34,400 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (2, 2)
+2025-11-23 20:13:34,401 - evaluation.eval - INFO - Move 1: (2, 2) - Valid: True, Correct: False, Latency: 848ms
+2025-11-23 20:13:34,401 - UI.GUI - INFO - Move 1: (2, 2) - Valid
+2025-11-23 20:13:35,396 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:35,396 - LLM_configuration.llm_manager - INFO - Generating move 3 with ollama
+2025-11-23 20:13:35,398 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 3:
+2025-11-23 20:13:35,398 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:35,400 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 2/16 cells filled
+Current Position: (2,2)
+Path Taken: (3,2) -> (2,2)
+
+Visual Board State:
+  2    .    .    .
+  .    .    .    .
+  5    3  [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (2,1), (2,3)
+
+
+2025-11-23 20:13:35,401 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:35,990 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:35,992 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:35,993 - LLM_configuration.llm_manager - INFO - (2,1)
+2025-11-23 20:13:35,994 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:35,994 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (2, 1)
+2025-11-23 20:13:35,994 - evaluation.eval - INFO - Move 2: (2, 1) - Valid: True, Correct: False, Latency: 598ms
+2025-11-23 20:13:35,994 - UI.GUI - INFO - Move 2: (2, 1) - Valid
+2025-11-23 20:13:36,990 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:36,990 - LLM_configuration.llm_manager - INFO - Generating move 4 with ollama
+2025-11-23 20:13:36,991 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 4:
+2025-11-23 20:13:36,991 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:36,991 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 3/16 cells filled
+Current Position: (2,1)
+Path Taken: (3,2) -> (2,2) -> (2,1)
+
+Visual Board State:
+  2    .    .    .
+  .    .    .    .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,1), (3,1), (2,0)
+
+
+2025-11-23 20:13:36,992 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:37,509 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:37,511 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:37,511 - LLM_configuration.llm_manager - INFO - (1,1)
+2025-11-23 20:13:37,512 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:37,512 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (1, 1)
+2025-11-23 20:13:37,513 - evaluation.eval - INFO - Move 3: (1, 1) - Valid: True, Correct: False, Latency: 522ms
+2025-11-23 20:13:37,513 - UI.GUI - INFO - Move 3: (1, 1) - Valid
+2025-11-23 20:13:38,502 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:38,503 - LLM_configuration.llm_manager - INFO - Generating move 5 with ollama
+2025-11-23 20:13:38,506 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 5:
+2025-11-23 20:13:38,509 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:38,510 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 4/16 cells filled
+Current Position: (1,1)
+Path Taken: (3,2) -> (2,2) -> (2,1) -> (1,1)
+
+Visual Board State:
+  2    .    .    .
+  .  [ 4]   .    .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,1), (1,0), (1,2)
+
+
+2025-11-23 20:13:38,511 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:39,034 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:39,037 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:39,038 - LLM_configuration.llm_manager - INFO - (1,2)
+2025-11-23 20:13:39,039 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:39,040 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (1, 2)
+2025-11-23 20:13:39,040 - evaluation.eval - INFO - Move 4: (1, 2) - Valid: True, Correct: False, Latency: 537ms
+2025-11-23 20:13:39,041 - UI.GUI - INFO - Move 4: (1, 2) - Valid
+2025-11-23 20:13:40,035 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:40,035 - LLM_configuration.llm_manager - INFO - Generating move 6 with ollama
+2025-11-23 20:13:40,036 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 6:
+2025-11-23 20:13:40,037 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:40,038 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 5/16 cells filled
+Current Position: (1,2)
+Path Taken: (3,2) -> (2,2) -> (2,1) -> (1,1) -> (1,2)
+
+Visual Board State:
+  2    .    .    .
+  .  [ 4] [ 5]   .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,2), (1,3)
+
+
+2025-11-23 20:13:40,038 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:40,555 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:40,557 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:40,558 - LLM_configuration.llm_manager - INFO - (0,2)
+2025-11-23 20:13:40,558 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:40,560 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (0, 2)
+2025-11-23 20:13:40,560 - evaluation.eval - INFO - Move 5: (0, 2) - Valid: True, Correct: True, Latency: 525ms
+2025-11-23 20:13:40,560 - UI.GUI - INFO - Move 5: (0, 2) - Valid
+2025-11-23 20:13:41,554 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:41,556 - LLM_configuration.llm_manager - INFO - Generating move 7 with ollama
+2025-11-23 20:13:41,558 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 7:
+2025-11-23 20:13:41,561 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:41,561 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 6/16 cells filled
+Current Position: (0,2)
+Path Taken: (3,2) -> (2,2) -> (2,1) -> (1,1) -> (1,2) -> (0,2)
+
+Visual Board State:
+  2    .  [ 6]   .
+  .  [ 4] [ 5]   .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,1), (0,3)
+
+
+2025-11-23 20:13:41,562 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:42,064 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:42,064 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:42,064 - LLM_configuration.llm_manager - INFO - (0,1)
+2025-11-23 20:13:42,065 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:42,066 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (0, 1)
+2025-11-23 20:13:42,066 - evaluation.eval - INFO - Move 6: (0, 1) - Valid: True, Correct: False, Latency: 510ms
+2025-11-23 20:13:42,066 - UI.GUI - INFO - Move 6: (0, 1) - Valid
+2025-11-23 20:13:43,076 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:43,078 - LLM_configuration.llm_manager - INFO - Generating move 8 with ollama
+2025-11-23 20:13:43,078 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 8:
+2025-11-23 20:13:43,081 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:43,082 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 7/16 cells filled
+Current Position: (0,1)
+Path Taken: (3,2) -> (2,2) -> (2,1) -> (1,1) -> (1,2) -> (0,2) -> (0,1)
+
+Visual Board State:
+  2  [ 7] [ 6]   .
+  .  [ 4] [ 5]   .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,0)
+
+
+2025-11-23 20:13:43,083 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:43,594 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:43,595 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:43,595 - LLM_configuration.llm_manager - INFO - (0,0)
+2025-11-23 20:13:43,595 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:43,596 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (0, 0)
+2025-11-23 20:13:43,596 - evaluation.eval - INFO - Move 7: (0, 0) - Valid: True, Correct: False, Latency: 519ms
+2025-11-23 20:13:43,597 - UI.GUI - INFO - Move 7: (0, 0) - Valid
+2025-11-23 20:13:44,587 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:44,588 - LLM_configuration.llm_manager - INFO - Generating move 9 with ollama
+2025-11-23 20:13:44,591 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 9:
+2025-11-23 20:13:44,593 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:44,596 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 8/16 cells filled
+Current Position: (0,0)
+Path Taken: (3,2) -> (2,2) -> (2,1) -> (1,1) -> (1,2) -> (0,2) -> (0,1) -> (0,0)
+
+Visual Board State:
+[ 8] [ 7] [ 6]   .
+  .  [ 4] [ 5]   .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0)
+
+
+2025-11-23 20:13:44,598 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:45,123 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:45,123 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:45,123 - LLM_configuration.llm_manager - INFO - (3,1)
+2025-11-23 20:13:45,123 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:45,123 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (3, 1)
+2025-11-23 20:13:45,125 - evaluation.eval - INFO - Move 8: (3, 1) - Valid: False, Correct: False, Latency: 537ms
+2025-11-23 20:13:45,125 - UI.GUI - WARNING - Invalid move: (3, 1) (stuck: 1/3)
+2025-11-23 20:13:46,133 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:46,135 - LLM_configuration.llm_manager - INFO - Generating move 9 with ollama
+2025-11-23 20:13:46,135 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 9:
+2025-11-23 20:13:46,136 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:46,137 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 8/16 cells filled
+Current Position: (0,0)
+Path Taken: (3,2) -> (2,2) -> (2,1) -> (1,1) -> (1,2) -> (0,2) -> (0,1) -> (0,0)
+
+Visual Board State:
+[ 8] [ 7] [ 6]   .
+  .  [ 4] [ 5]   .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0)
+
+
+2025-11-23 20:13:46,137 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:46,587 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:46,589 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:46,589 - LLM_configuration.llm_manager - INFO - (3,1)
+2025-11-23 20:13:46,590 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:46,590 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (3, 1)
+2025-11-23 20:13:46,590 - evaluation.eval - INFO - Move 9: (3, 1) - Valid: False, Correct: False, Latency: 455ms
+2025-11-23 20:13:46,591 - UI.GUI - WARNING - Invalid move: (3, 1) (stuck: 2/3)
+2025-11-23 20:13:47,598 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-11-23 20:13:47,598 - LLM_configuration.llm_manager - INFO - Generating move 9 with ollama
+2025-11-23 20:13:47,599 - LLM_configuration.llm_manager - INFO -  PROMPT for Move 9:
+2025-11-23 20:13:47,599 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:47,599 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 16 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue and you must have visited all cells by then
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+Think step by step:
+1. Where are you now?
+2. What clue number should you visit next?
+3. What empty cells can you move to that get you closer to the next clue?
+4. Which move keeps your path connected and valid?
+
+RESPOND WITH ONLY: (row,col)
+Example: (1,2)
+
+Based On all the rules above and information provided below solve the following puzzle:
+
+=== BOARD INFORMATION ===
+Board Size: 4x4
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)
+(1,0)  (1,1)  (1,2)  (1,3)
+(2,0)  (2,1)  (2,2)  (2,3)
+(3,0)  (3,1)  (3,2)  (3,3)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,2)
+
+=== CURRENT GAME STATE ===
+Progress: 8/16 cells filled
+Current Position: (0,0)
+Path Taken: (3,2) -> (2,2) -> (2,1) -> (1,1) -> (1,2) -> (0,2) -> (0,1) -> (0,0)
+
+Visual Board State:
+[ 8] [ 7] [ 6]   .
+  .  [ 4] [ 5]   .
+  5  [ 3] [ 2]   .
+  .    4  [ 1]   .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0)
+
+
+2025-11-23 20:13:47,600 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-11-23 20:13:48,053 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-23 20:13:48,055 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Attempt 1):
+2025-11-23 20:13:48,055 - LLM_configuration.llm_manager - INFO - (3,0)
+2025-11-23 20:13:48,055 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-11-23 20:13:48,055 - LLM_configuration.llm_manager - INFO - PARSED MOVE: (3, 0)
+2025-11-23 20:13:48,056 - evaluation.eval - INFO - Move 10: (3, 0) - Valid: False, Correct: False, Latency: 458ms
+2025-11-23 20:13:48,056 - UI.GUI - WARNING - Invalid move: (3, 0) (stuck: 3/3)
+2025-11-23 20:13:49,066 - evaluation.eval - INFO - Game ended - Success: False, Efficiency: 70.0%, Accuracy: 10.0%
+2025-11-23 20:13:49,068 - evaluation.eval - INFO - Comprehensive metrics logged to wandb
+2025-11-23 20:13:49,071 - UI.GUI - INFO - === GAME PERFORMANCE ANALYSIS ===
+2025-11-23 20:13:49,071 - UI.GUI - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 15.5s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 10
+Valid Moves: 7 (70.0%)
+Bad Moves: 3
+Correct Moves: 1 (10.0%)
+Clue Hits: 2
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 70.0% (valid moves / total moves)
+Path Accuracy: 10.0% (optimal path following)
+Completion: 43.8% of puzzle filled
+Avg Latency: 551ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 5 avg chars
+Move Consistency: 66.7%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 1.80 avg distance from best path
+
+=== INSIGHTS ===
+Moderate performance with room for improvement
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 4x4 | Completion: FAILED ✗
+Time: 15.5s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 10
+Valid Moves: 7 (70.0%)
+Bad Moves: 3
+Correct Moves: 1 (10.0%)
+Clue Hits: 2
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 70.0% (valid moves / total moves)
+Path Accuracy: 10.0% (optimal path following)
+Completion: 43.8% of puzzle filled
+Avg Latency: 551ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 5 avg chars
+Move Consistency: 66.7%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 1.80 avg distance from best path
+
+=== INSIGHTS ===
+Moderate performance with room for improvement
+
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 965, in <module>
+    main()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 961, in main
+    start_game_with_settings(n, mode_or_provider if 'mode_or_provider' in locals() else ("human" if game_mode == "human" else llm_provider))
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\main.py", line 873, in start_game_with_settings
+    game.run()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 1081, in run
+    self.draw_grid()
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 915, in draw_grid
+    self.screen.fill(WHITE)
+pygame.error: display Surface quit

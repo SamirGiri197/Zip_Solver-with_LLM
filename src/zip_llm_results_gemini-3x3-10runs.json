@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "runs": 10,
+    "successes": 1,
+    "success_rate": 0.1,
+    "avg_efficiency": 0.7342424242424243,
+    "avg_accuracy": 0.3371717171717171,
+    "board_size": 3,
+    "llm_provider": "gemini"
+  },
+  "results": [
+    {
+      "game_id": 1,
+      "success": false,
+      "moves": 7,
+      "completion_time": 0,
+      "move_efficiency": 0.6666666666666666,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 2,
+      "success": false,
+      "moves": 9,
+      "completion_time": 0,
+      "move_efficiency": 0.7272727272727273,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 3,
+      "success": true,
+      "moves": 9,
+      "completion_time": 0,
+      "move_efficiency": 1.0,
+      "path_accuracy": 1.0,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 4,
+      "success": false,
+      "moves": 9,
+      "completion_time": 0,
+      "move_efficiency": 0.7272727272727273,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 5,
+      "success": false,
+      "moves": 7,
+      "completion_time": 0,
+      "move_efficiency": 0.6666666666666666,
+      "path_accuracy": 0.4444444444444444,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 6,
+      "success": false,
+      "moves": 8,
+      "completion_time": 0,
+      "move_efficiency": 0.7,
+      "path_accuracy": 0.5,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 7,
+      "success": false,
+      "moves": 8,
+      "completion_time": 0,
+      "move_efficiency": 0.7,
+      "path_accuracy": 0.1,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 8,
+      "success": false,
+      "moves": 8,
+      "completion_time": 0,
+      "move_efficiency": 0.7,
+      "path_accuracy": 0.6,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 9,
+      "success": false,
+      "moves": 9,
+      "completion_time": 0,
+      "move_efficiency": 0.7272727272727273,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    },
+    {
+      "game_id": 10,
+      "success": false,
+      "moves": 9,
+      "completion_time": 0,
+      "move_efficiency": 0.7272727272727273,
+      "path_accuracy": 0.7272727272727273,
+      "board_size": 3,
+      "llm_provider": "gemini"
+    }
+  ]
+}

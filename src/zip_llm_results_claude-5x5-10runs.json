@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "runs": 10,
+    "successes": 0,
+    "success_rate": 0.0,
+    "avg_efficiency": 0.7162970775354676,
+    "avg_accuracy": 0.0792192018507808,
+    "board_size": 5,
+    "llm_provider": "claude"
+  },
+  "results": [
+    {
+      "game_id": 1,
+      "success": false,
+      "moves": 11,
+      "completion_time": 0,
+      "move_efficiency": 0.7692307692307693,
+      "path_accuracy": 0.0,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 2,
+      "success": false,
+      "moves": 16,
+      "completion_time": 0,
+      "move_efficiency": 0.7894736842105263,
+      "path_accuracy": 0.05263157894736842,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 3,
+      "success": false,
+      "moves": 24,
+      "completion_time": 0,
+      "move_efficiency": 0.8846153846153846,
+      "path_accuracy": 0.15384615384615385,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 4,
+      "success": false,
+      "moves": 13,
+      "completion_time": 0,
+      "move_efficiency": 0.8,
+      "path_accuracy": 0.0,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 5,
+      "success": false,
+      "moves": 18,
+      "completion_time": 0,
+      "move_efficiency": 0.85,
+      "path_accuracy": 0.0,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 6,
+      "success": false,
+      "moves": 14,
+      "completion_time": 0,
+      "move_efficiency": 0.7647058823529411,
+      "path_accuracy": 0.0,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 7,
+      "success": false,
+      "moves": 16,
+      "completion_time": 0,
+      "move_efficiency": 0.75,
+      "path_accuracy": 0.3,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 8,
+      "success": false,
+      "moves": 12,
+      "completion_time": 0,
+      "move_efficiency": 0.7857142857142857,
+      "path_accuracy": 0.2857142857142857,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 9,
+      "success": false,
+      "moves": 11,
+      "completion_time": 0,
+      "move_efficiency": 0.7692307692307693,
+      "path_accuracy": 0.0,
+      "board_size": 5,
+      "llm_provider": "claude"
+    },
+    {
+      "game_id": 10,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 5,
+      "llm_provider": "claude"
+    }
+  ]
+}

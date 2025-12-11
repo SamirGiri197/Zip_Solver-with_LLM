@@ -1,0 +1,141 @@
+2025-11-22 23:28:23,022 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+2025-11-22 23:28:23,025 - evaluation.eval - INFO - Game metrics started for 5x5 board
+2025-11-22 23:28:23,025 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-22 23:28:23,026 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-22 23:28:23,028 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-22 23:28:23,028 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 2:
+2025-11-22 23:28:23,029 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 25 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  .  .  .  .
+ .  .  .  .  .
+ 4  .  .  .  .
+ 3  .  .  .  .
+ .  .  .  .  2
+
+
+                VISUAL BOARD:
+                [P][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ]
+[ 4][ ][ ][ ][ ]
+[ 3][ ][ ][ ][ ]
+[ ][ ][ ][ ][ 2]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (0, 0)
+
+
+                CURRENT POSITION: (0, 0)
+                CELLS FILLED: 1/25
+                AVAILABLE NEXT MOVES:   (1, 0)
+  (0, 1)
+
+                What is your next move and why?
+2025-11-22 23:28:25,394 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-22 23:28:25,394 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 2):
+2025-11-22 23:28:25,402 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation and determine the best next move.
+
+*   **Objective:** We need to create a continuous path from clue 1 (our current position) towards clue 2, clue 3, and clue 4, eventually filling all 25 cells.
+
+*   **Constraints:**
+    *   We can only move up, down, left, or right.
+    *   We cannot revisit cells.
+    *   We must visit the clues in order.
+
+*   **Current State:** We're at (0, 0) which already has a 'P' marked on it. Clue 2 is at (4,4), clue 3 is at (3,0), and clue 4 is at (2,0).
+
+*   **Possible Moves:** We can move to (1, 0) or (0, 1).
+
+*   **Reasoning:**
+
+    *   Moving to (1, 0) might seem logical as it eventually leads us towards clue 3 and 4. However, the grid layout implies we need to wind all the way to the opposite corner (4,4) before hitting clues 3 and 4. If we proceed down towards clue 3 now, we will be backed into a corner.
+    *   Moving to (0, 1) takes us away from clues 3 and 4 for now, but it opens up more possibilities for creating a winding path that will eventually fill the entire grid and lead us to clue 2. This allows for a greater chance of success.
+
+**Decision:**
+
+Therefore, the best next move is to move to cell (0, 1).
+
+**ANSWER: (0, 1)**
+2025-11-22 23:28:25,404 - LLM_configuration.llm_manager - INFO - Parsed move from text: (1, 0)
+2025-11-22 23:28:25,405 - evaluation.eval - INFO - Move 1: (1, 0) - Valid: True, Latency: 2380ms, Confidence: 0.90
+2025-11-22 23:28:25,406 - UI.GUI - INFO - Move 1: (1, 0) - Valid
+2025-11-22 23:28:25,407 - UI.GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-22 23:28:25,408 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+2025-11-22 23:28:25,409 - LLM_configuration.llm_manager - INFO - Starting LLM solve with provider: gemini
+2025-11-22 23:28:25,410 - LLM_configuration.llm_manager - INFO - Calling Gemini API with model {'enabled': True, 'name': 'Google Gemini', 'api_key_env': 'GEMINI_API_KEY', 'model': 'gemini-2.0-flash'}
+2025-11-22 23:28:25,412 - LLM_configuration.llm_manager - INFO - PROMPT FOR MOVE 3:
+2025-11-22 23:28:25,413 - LLM_configuration.llm_manager - INFO - ZIP PUZZLE RULES:
+                1. Fill ALL 25 cells in a continuous path
+                2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue
+                3. Move only to adjacent cells (up, down, left, right), diagonal move are not allowed
+                4. Cannot revisit cells
+                5. Between clues, fill any empty cells
+
+                GRID ARRAY (P=path, .=empty, #=clue):
+ P  .  .  .  .
+ P  .  .  .  .
+ 4  .  .  .  .
+ 3  .  .  .  .
+ .  .  .  .  2
+
+
+                VISUAL BOARD:
+                [P][ ][ ][ ][ ]
+[P][ ][ ][ ][ ]
+[ 4][ ][ ][ ][ ]
+[ 3][ ][ ][ ][ ]
+[ ][ ][ ][ ][ 2]
+
+                CLUES TO VISIT IN ORDER:
+                CLUES TO VISIT IN ORDER:
+  ✓ Clue 1: (0, 0)
+
+
+                CURRENT POSITION: (1, 0)
+                CELLS FILLED: 2/25
+                AVAILABLE NEXT MOVES:   (2, 0)
+  (1, 1)
+
+                What is your next move and why?
+2025-11-22 23:28:27,092 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-11-22 23:28:27,094 - LLM_configuration.llm_manager - INFO - LLM RESPONSE (Move 3):
+2025-11-22 23:28:27,096 - LLM_configuration.llm_manager - INFO - Okay, let's analyze the situation to determine the best next move.
+
+*   **Current Constraints:** We're at (1, 0), have visited 2 cells, and need to reach clue 2 at (4, 4) *without* revisiting any cells. We also have the other clues on the board to visit at (2,0) and (3,0).
+*   **Analyzing available moves:** The available moves are (2,0) and (1,1)
+
+    *   Moving to (2, 0) will lead us directly to Clue 4. This is desirable.
+
+    *   Moving to (1, 1) will make reaching clue 4 and 3 harder.
+
+**Decision:** Therefore, the best move is to go to (2, 0).
+
+**ANSWER: (2, 0)**
+2025-11-22 23:28:27,099 - LLM_configuration.llm_manager - INFO - Parsed move (fallback): (4, 4)
+2025-11-22 23:28:27,101 - evaluation.eval - INFO - Move 2: (4, 4) - Valid: False, Latency: 1692ms, Confidence: 0.90
+2025-11-22 23:28:27,102 - UI.GUI - WARNING - Invalid move: (4, 4) (stuck: 2/3)
+2025-11-22 23:28:27,104 - UI.GUI - ERROR - LLM auto-solve error: display Surface quit
+2025-11-22 23:28:27,105 - evaluation.eval - INFO - Game ended - Success: False, Time: 4.1s
+2025-11-22 23:28:27,108 - evaluation.eval - INFO - Metrics logged to wandb successfully
+2025-11-22 23:28:27,109 - UI.GUI - INFO - Game ended
+
+=== GAME SUMMARY ===
+Board Size: 5x5
+Total Moves: 2
+Completion: FAILED ✗
+Time: 4.1s
+
+=== METRICS ===
+Valid Moves: 1/2
+Bad Moves: 1
+Clue Hits: 1
+Move Efficiency: 50.0%
+Clue Accuracy: 100.0%
+Avg Latency: 2036ms
+Success Ratio: 0.0%

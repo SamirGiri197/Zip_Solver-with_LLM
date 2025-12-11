@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "runs": 10,
+    "successes": 0,
+    "success_rate": 0.0,
+    "avg_efficiency": 0.0,
+    "avg_accuracy": 0.0,
+    "board_size": 3,
+    "llm_provider": "openai"
+  },
+  "results": [
+    {
+      "game_id": 1,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 2,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 3,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 4,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 5,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 6,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 7,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 8,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 9,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    },
+    {
+      "game_id": 10,
+      "success": false,
+      "moves": 1,
+      "completion_time": 0,
+      "move_efficiency": 0.0,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "openai"
+    }
+  ]
+}

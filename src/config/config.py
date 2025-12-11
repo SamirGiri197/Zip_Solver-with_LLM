@@ -1,5 +1,5 @@
 # =============================
-# config.py (updated)
+# config.py (updated with minimum window sizes)
 # =============================
 
 
@@ -8,6 +8,10 @@ CELL_SIZE = 80
 GRID_MARGIN = 24
 FPS = 60
 FONT_NAME = "arial"
+
+# --- Window sizing ---
+MIN_WINDOW_WIDTH = 600   # Minimum width for buttons to fit
+MIN_WINDOW_HEIGHT = 500  # Minimum height for UI elements
 
 
 # --- Adjacency ---

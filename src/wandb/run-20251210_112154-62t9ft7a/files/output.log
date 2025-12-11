@@ -1,0 +1,45 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 11:21:59,883 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+✅ llm_manager imported
+✅ evaluation.eval imported
+✅ All imports successful!
+
+Testing LLM configuration...
+✅ Enabled providers: ['gemini', 'openai', 'claude', 'ollama']
+  gemini: Google Gemini - gemini-2.0-flash
+    ✅ API key found for GEMINI_API_KEY
+  openai: OpenAI ChatGPT - gpt-4
+    ⚠️  API key missing for OPENAI_API_KEY
+  claude: Claude - claude-sonnet-4-5
+    ✅ API key found for CLAUDE_API_KEY
+  ollama: Ollama (Local) - llama3.1:8b
+
+Testing puzzle generation...
+✅ Generated 3x3 puzzle with 1 clues
+✅ Solution path length: 9
+
+Testing LLM connection...
+Testing provider: gemini
+2025-12-10 11:21:59,891 - LLM_configuration.llm_manager - INFO - LLM provider set to: gemini (model: gemini-2.0-flash)
+✅ LLM provider gemini set successfully
+
+Testing Wandb...
+✅ Wandb available
+✅ Wandb enabled in config
+
+==================================================
+VALIDATION SUMMARY
+==================================================
+✅ PASS Module Imports
+✅ PASS LLM Configuration
+✅ PASS Puzzle Generation
+✅ PASS LLM Connection
+✅ PASS Wandb Setup
+
+🎉 All tests passed! Ready to run ZIP LLM tests.
+
+Next steps:
+1. Set missing API keys if any
+2. Run: python zip_llm_tests.py --num-runs 1 --board-size 3

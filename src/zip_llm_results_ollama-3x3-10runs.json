@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "runs": 10,
+    "successes": 0,
+    "success_rate": 0.0,
+    "avg_efficiency": 0.5112054612054612,
+    "avg_accuracy": 0.05726495726495726,
+    "board_size": 3,
+    "llm_provider": "ollama"
+  },
+  "results": [
+    {
+      "game_id": 1,
+      "success": false,
+      "moves": 5,
+      "completion_time": 0,
+      "move_efficiency": 0.5714285714285714,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 2,
+      "success": false,
+      "moves": 2,
+      "completion_time": 0,
+      "move_efficiency": 0.25,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 3,
+      "success": false,
+      "moves": 5,
+      "completion_time": 0,
+      "move_efficiency": 0.5714285714285714,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 4,
+      "success": false,
+      "moves": 6,
+      "completion_time": 0,
+      "move_efficiency": 0.5555555555555556,
+      "path_accuracy": 0.1111111111111111,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 5,
+      "success": false,
+      "moves": 9,
+      "completion_time": 0,
+      "move_efficiency": 0.5714285714285714,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 6,
+      "success": false,
+      "moves": 8,
+      "completion_time": 0,
+      "move_efficiency": 0.5384615384615384,
+      "path_accuracy": 0.46153846153846156,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 7,
+      "success": false,
+      "moves": 8,
+      "completion_time": 0,
+      "move_efficiency": 0.5833333333333334,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 8,
+      "success": false,
+      "moves": 6,
+      "completion_time": 0,
+      "move_efficiency": 0.45454545454545453,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 9,
+      "success": false,
+      "moves": 5,
+      "completion_time": 0,
+      "move_efficiency": 0.5714285714285714,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    },
+    {
+      "game_id": 10,
+      "success": false,
+      "moves": 5,
+      "completion_time": 0,
+      "move_efficiency": 0.4444444444444444,
+      "path_accuracy": 0.0,
+      "board_size": 3,
+      "llm_provider": "ollama"
+    }
+  ]
+}

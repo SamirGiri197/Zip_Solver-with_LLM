@@ -1,0 +1,1708 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 11:42:34,564 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\pygame\pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[34m[1mwandb[0m: wandb.init() called while a run is active and reinit is set to 'default', so returning the previous run.
+2025-12-10 11:42:34,653 - ZIP-LLM-TESTS - INFO - === GAME 1 — GUI MODE — ollama ===
+2025-12-10 11:42:35,642 - ZIP-LLM-TESTS - INFO - Starting LLM auto-solver inside GUI...
+2025-12-10 11:42:35,644 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:42:35,644 - UI.GUI - WARNING - Could not generate solver path for evaluation
+2025-12-10 11:42:35,644 - evaluation.eval - INFO - LLM evaluation started for 5x5 board
+2025-12-10 11:42:35,644 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:42:35,645 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:42:35,645 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:42:35,645 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:42:35,645 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (4,0)
+Path Taken: (4,0)
+
+Visual Board State:
+  .    2    3    .    .
+  .    .    .    4    .
+  .    .    .    .    .
+  .    6    .    .    .
+[ 1]   .    .    .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (3,0), (4,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:42:35,646 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:42:45,323 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:42:45,324 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:42:45,324 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:45,325 - LLM_configuration.llm_manager - INFO - THINKING:
+
+**ANALYSIS:** I am currently at position (4,0), and my current situation is that I have filled only 1 out of 25 cells. The starting point, clue number 1, is already visited.
+
+**STRATEGY:** My next goal is to visit the second clue, which is located at position (3,1). To get there efficiently, I need to plan a path from my current position to this location while considering the constraints of the puzzle.
+
+**EVALUATION:**
+
+- **Move 1: (3,0)**: This move would bring me closer to the desired clue (2), but it does not contribute directly towards reaching the second clue in an optimal manner. It might limit future options slightly by moving away from the right-hand side of the board where higher clues are located.
+
+- **Move 2: (4,1)**: Moving diagonally up and right would bring me into position to potentially visit other clues more efficiently but does not directly address the necessity of visiting clue number 2 first. It might create a somewhat inefficient path if I need to backtrack later on.
+
+**DECISION:** Considering the goal is to reach clue number 2 at (3,1) in an efficient manner while also respecting the puzzle's constraints, moving diagonally up one space to **(4,1)** initially seems like a reasonable choice. This move prepares me for reaching higher clues and does not immediately block any paths that might be needed later on.
+
+MOVE: (4,1)
+2025-12-10 11:42:45,326 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:45,326 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:42:45,326 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 2
+2025-12-10 11:42:45,327 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:42:45,327 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:42:45,327 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:42:45,328 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:45,329 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:42:45,330 - LLM_configuration.llm_manager - INFO - **ANALYSIS:** I am currently at position (4,0), and my current situation is that I have filled only 1 out of 25 cells. The starting point, clue number 1, is already visited.
+
+**STRATEGY:** My next goal is to visit the second clue, which is located at position (3,1). To get there efficiently, I need to plan a path from my current position to this location while considering the constraints of the puzzle.
+
+**EVALUATION:**
+
+- **Move 1: (3,0)**: This move would bring me closer to the desired clue (2), but it does not contribute directly towards reaching the second clue in an optimal manner. It might limit future options slightly by moving away from the right-hand side of the board where higher clues are located.
+
+- **Move 2: (4,1)**: Moving diagonally up and right would bring me into position to potentially visit other clues more efficiently but does not directly address the necessity of visiting clue number 2 first. It might create a somewhat inefficient path if I need to backtrack later on.
+
+**DECISION:** Considering the goal is to reach clue number 2 at (3,1) in an efficient manner while also respecting the puzzle's constraints, moving diagonally up one space to **(4,1)** initially seems like a reasonable choice. This move prepares me for reaching higher clues and does not immediately block any paths that might be needed later on.
+2025-12-10 11:42:45,330 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:45,330 - LLM_configuration.llm_manager - INFO - DECISION: Move to (4, 1)
+2025-12-10 11:42:45,331 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+🧠 OLLAMA THINKING (Move 2):
+--------------------------------------------------
+**ANALYSIS:** I am currently at position (4,0), and my current situation is that I have filled only 1 out of 25 cells. The starting point, clue number 1, is already visited.
+
+**STRATEGY:** My next goal is to visit the second clue, which is located at position (3,1). To get there efficiently, I need to plan a path from my current position to this location while considering the constraints of the puzzle.
+
+**EVALUATION:**
+
+- **Move 1: (3,0)**: This move would bring me closer to the desired clue (2), but it does not contribute directly towards reaching the second clue in an optimal manner. It might limit future options slightly by moving away from the right-hand side of the board where higher clues are located.
+
+- **Move 2: (4,1)**: Moving diagonally up and right would bring me into position to potentially visit other clues more efficiently but does not directly address the necessity of visiting clue number 2 first. It might create a somewhat inefficient path if I need to backtrack later on.
+
+**DECISION:** Considering the goal is to reach clue number 2 at (3,1) in an efficient manner while also respecting the puzzle's constraints, moving diagonally up one space to **(4,1)** initially seems like a reasonable choice. This move prepares me for reaching higher clues and does not immediately block any paths that might be needed later on.
+--------------------------------------------------
+💡 DECISION: (4, 1)
+2025-12-10 11:42:45,333 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (4, 1)
+2025-12-10 11:42:45,333 - evaluation.eval - INFO - Move 1: (4, 1) - Valid: True, Correct: False, Latency: 9688ms
+2025-12-10 11:42:45,334 - UI.GUI - INFO - Move 1: (4, 1) - Valid
+2025-12-10 11:42:46,348 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:42:46,348 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 3 with ollama
+2025-12-10 11:42:46,348 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 3:
+2025-12-10 11:42:46,349 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:42:46,349 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 2/25 cells filled
+Current Position: (4,1)
+Path Taken: (4,0) -> (4,1)
+
+Visual Board State:
+  .    2    3    .    .
+  .    .    .    4    .
+  .    .    .    .    .
+  .    6    .    .    .
+[ 1] [ 2]   .    .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (3,1), (4,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:42:46,353 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:42:54,535 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:42:54,537 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:42:54,538 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:54,538 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (4,1), having just visited clue 2 located at (3,1). I have filled 2 out of 25 cells. My goal is to visit all clues in ascending order. The next clue I need to visit is clue 3. However, there are no clue locations given for the board, so we must assume that the clue numbers already filled on the board indicate their respective positions.
+
+Looking at the visual board state, I see that clue 1 (at position (4,0)) has been visited and clue 2 (at position (3,1)) is also marked. The next available clue number is 3, but it's not yet marked on the board. My goal now is to reach clue 3.
+
+STRATEGY:
+To find clue 3, I need to visit the cell that will be marked as "3" in the visual board state. Since there are no other clues mentioned, we can deduce that any empty cells between visited clues should be filled by moving horizontally or vertically.
+
+EVALUATION:
+
+Available Next Moves: (3,1), (4,2)
+
+For each available move:
+- Moving to (3,1) seems counterintuitive since I've just come from there and visited clue 2. This move doesn't seem to advance me towards finding clue 3 or furthering my path.
+- Moving to (4,2) gets me closer to reaching the area where we can mark a new clue number on the board without revisiting any previously marked cells.
+
+DECISION:
+Considering the goal of moving towards unvisited areas and marking new clues in ascending order, I should choose the move that brings me closer to an empty cell. Therefore:
+
+MOVE: (4,2)
+2025-12-10 11:42:54,538 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:54,538 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:42:54,539 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 3
+2025-12-10 11:42:54,539 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:42:54,539 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:42:54,539 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:42:54,540 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:54,540 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:42:54,540 - LLM_configuration.llm_manager - INFO - I am currently at position (4,1), having just visited clue 2 located at (3,1). I have filled 2 out of 25 cells. My goal is to visit all clues in ascending order. The next clue I need to visit is clue 3. However, there are no clue locations given for the board, so we must assume that the clue numbers already filled on the board indicate their respective positions.
+
+Looking at the visual board state, I see that clue 1 (at position (4,0)) has been visited and clue 2 (at position (3,1)) is also marked. The next available clue number is 3, but it's not yet marked on the board. My goal now is to reach clue 3.
+
+STRATEGY:
+To find clue 3, I need to visit the cell that will be marked as "3" in the visual board state. Since there are no other clues mentioned, we can deduce that any empty cells between visited clues should be filled by moving horizontally or vertically.
+
+EVALUATION:
+
+Available Next Moves: (3,1), (4,2)
+
+For each available
+2025-12-10 11:42:54,540 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:42:54,541 - LLM_configuration.llm_manager - INFO - DECISION: Move to (4, 2)
+2025-12-10 11:42:54,541 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 3):
+--------------------------------------------------
+I am currently at position (4,1), having just visited clue 2 located at (3,1). I have filled 2 out of 25 cells. My goal is to visit all clues in ascending order. The next clue I need to visit is clue 3. However, there are no clue locations given for the board, so we must assume that the clue numbers already filled on the board indicate their respective positions.
+
+Looking at the visual board state, I see that clue 1 (at position (4,0)) has been visited and clue 2 (at position (3,1)) is also marked. The next available clue number is 3, but it's not yet marked on the board. My goal now is to reach clue 3.
+
+STRATEGY:
+To find clue 3, I need to visit the cell that will be marked as "3" in the visual board state. Since there are no other clues mentioned, we can deduce that any empty cells between visited clues should be filled by moving horizontally or vertically.
+
+EVALUATION:
+
+Available Next Moves: (3,1), (4,2)
+
+For each available
+--------------------------------------------------
+💡 DECISION: (4, 2)
+2025-12-10 11:42:54,544 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (4, 2)
+2025-12-10 11:42:54,545 - evaluation.eval - INFO - Move 2: (4, 2) - Valid: True, Correct: False, Latency: 8197ms
+2025-12-10 11:42:54,545 - UI.GUI - INFO - Move 2: (4, 2) - Valid
+2025-12-10 11:42:55,534 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:42:55,535 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 4 with ollama
+2025-12-10 11:42:55,540 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 4:
+2025-12-10 11:42:55,543 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:42:55,544 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 3/25 cells filled
+Current Position: (4,2)
+Path Taken: (4,0) -> (4,1) -> (4,2)
+
+Visual Board State:
+  .    2    3    .    .
+  .    .    .    4    .
+  .    .    .    .    .
+  .    6    .    .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (3,2), (4,3)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:42:55,547 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:10,498 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:43:10,499 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:43:10,499 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:10,500 - LLM_configuration.llm_manager - INFO - THINKING:
+
+1. ANALYSIS:
+I am currently at position (4,2), and I have filled 3 out of 25 cells in my path so far. The current state of the board shows that I've visited clue numbers 1, 2, and 3 in ascending order.
+
+2. STRATEGY:
+Since I need to visit all 5 clues, I should aim to find the next one on the list, which is Clue #4. Unfortunately, its location isn't provided, but I can try to deduce it or look for a lead to get closer to it. However, given the available information and current board state, my primary goal should be to move towards Clue #3, as we have not explicitly moved past it yet.
+
+However, upon reviewing the clue numbers already visited, we realize that Clue #4's location isn't directly relevant at this moment since we're focusing on where to go next after visiting Clue #3. We actually need to think about moving towards our next visit in order which is indeed Clue #4 but given the available information and current state of the board, my primary goal should be to figure out how to get closer or position ourselves for future moves towards higher clues.
+
+However, considering that we visited Clue 1 at (4,0) and then moved rightward, visiting Clue 2 at (3,1), I should aim to get closer to a position where I can potentially access higher numbered clues efficiently. Since the next clue in order is indeed #4 but it's unclear where it is, my main goal should be to navigate towards a spot that allows easier access or potential leads to Clue #4.
+
+Given this situation and looking at the available moves which are (3,2) and (4,3), I will evaluate both options.
+
+3. EVALUATION:
+- **Move: (3,2)**
+Pros: This move doesn't block any future paths significantly and could be a step towards potentially reaching higher numbered clues if Clue #4 is nearby or in a more accessible direction.
+Cons: It doesn't directly contribute to visiting the next clue number (#4) since its location isn't specified.
+
+- **Move: (4,3)**
+Pros: It moves closer to the right edge of the board and gives a broader view of the paths available for future moves. However, without knowing Clue #4's position, it might not be directly beneficial.
+Cons: Similar to (3,2), this move doesn't guarantee movement towards a specific clue, especially since Clue #4 is unknown.
+
+Given these considerations and looking at the goal of progressing in ascending order but lacking information about Clue #4's location, my best option would be to consider moves that do not block future paths and keep options open for accessing higher clues efficiently.
+
+Considering this analysis and focusing on moving towards a position from where I can potentially find or get closer to clue numbers more effectively without blocking future paths, the move that allows me to maintain flexibility and access is:
+
+DECISION:
+MOVE: (4,3)
+
+This choice aims to keep my path open for potential future moves and doesn't specifically target Clue #4 but allows me to be positioned better for navigating through the board efficiently.
+2025-12-10 11:43:10,500 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:10,501 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:10,501 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 4
+2025-12-10 11:43:10,502 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:10,502 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:43:10,502 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:43:10,502 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:10,503 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:43:10,503 - LLM_configuration.llm_manager - INFO - 1. ANALYSIS:
+I am currently at position (4,2), and I have filled 3 out of 25 cells in my path so far. The current state of the board shows that I've visited clue numbers 1, 2, and 3 in ascending order.
+
+2. STRATEGY:
+Since I need to visit all 5 clues, I should aim to find the next one on the list, which is Clue #4. Unfortunately, its location isn't provided, but I can try to deduce it or look for a lead to get closer to it. However, given the available information and current board state, my primary goal should be to move towards Clue #3, as we have not explicitly moved past it yet.
+
+However, upon reviewing the clue numbers already visited, we realize that Clue #4's location isn't directly relevant at this moment since we're focusing on where to go next after visiting Clue #3. We actually need to think about moving towards our next visit in order which is indeed Clue #4 but given the available information and current state of the board, my primary goal should be to figure out how to get closer or position ourselves for future moves towards higher clues.
+
+However, considering that we visited Clue 1 at (4,0) and then moved rightward, visiting Clue 2 at (3,1), I should aim to get closer to a position where I can potentially access higher numbered clues efficiently. Since the next clue in order is indeed #4 but it's unclear where it is, my main goal should be to navigate towards a spot that allows easier access or potential leads to Clue #4.
+
+Given this situation and looking at the available moves which are (3,2) and (4,3), I will evaluate both options.
+
+3. EVALUATION:
+- **
+2025-12-10 11:43:10,503 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:10,504 - LLM_configuration.llm_manager - INFO - DECISION: Move to (3, 2)
+2025-12-10 11:43:10,506 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 4):
+--------------------------------------------------
+1. ANALYSIS:
+I am currently at position (4,2), and I have filled 3 out of 25 cells in my path so far. The current state of the board shows that I've visited clue numbers 1, 2, and 3 in ascending order.
+
+2. STRATEGY:
+Since I need to visit all 5 clues, I should aim to find the next one on the list, which is Clue #4. Unfortunately, its location isn't provided, but I can try to deduce it or look for a lead to get closer to it. However, given the available information and current board state, my primary goal should be to move towards Clue #3, as we have not explicitly moved past it yet.
+
+However, upon reviewing the clue numbers already visited, we realize that Clue #4's location isn't directly relevant at this moment since we're focusing on where to go next after visiting Clue #3. We actually need to think about moving towards our next visit in order which is indeed Clue #4 but given the available information and current state of the board, my primary goal should be to figure out how to get closer or position ourselves for future moves towards higher clues.
+
+However, considering that we visited Clue 1 at (4,0) and then moved rightward, visiting Clue 2 at (3,1), I should aim to get closer to a position where I can potentially access higher numbered clues efficiently. Since the next clue in order is indeed #4 but it's unclear where it is, my main goal should be to navigate towards a spot that allows easier access or potential leads to Clue #4.
+
+Given this situation and looking at the available moves which are (3,2) and (4,3), I will evaluate both options.
+
+3. EVALUATION:
+- **
+--------------------------------------------------
+💡 DECISION: (3, 2)
+2025-12-10 11:43:10,509 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (3, 2)
+2025-12-10 11:43:10,510 - evaluation.eval - INFO - Move 3: (3, 2) - Valid: True, Correct: False, Latency: 14975ms
+2025-12-10 11:43:10,510 - UI.GUI - INFO - Move 3: (3, 2) - Valid
+2025-12-10 11:43:11,505 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:43:11,506 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 5 with ollama
+2025-12-10 11:43:11,507 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 5:
+2025-12-10 11:43:11,508 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:11,508 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 4/25 cells filled
+Current Position: (3,2)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2)
+
+Visual Board State:
+  .    2    3    .    .
+  .    .    .    4    .
+  .    .    .    .    .
+  .    6  [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,2), (3,1), (3,3)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:43:11,509 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:19,843 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:43:19,844 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:43:19,844 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:19,845 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (3,2), which means I'm in the third row and second column of the grid. According to the current game state, I have filled 4 out of 25 cells. My goal is to visit all clue numbers in ascending order, starting from 1. The next clue number I need to visit is 3, but it's already marked on the board as being at position (2,3). However, since I'm currently two rows away and one column away from clue 3, I should consider visiting it soon.
+
+However, my priority is to choose a move that doesn't block any future paths or create dead ends. Given this constraint, I need to think about the available next moves: (2,2), (3,1), and (3,3).
+
+EVALUATION:
+- Move to (2,2): This would put me one row below my current position and two columns away from clue 3. It's a viable option but might limit future path options.
+
+- Move to (3,1): This move takes me directly towards the second clue number, which is at position (3,1). However, it's not yet marked on the board as being visited.
+
+- Move to (3,3): This move would take me away from my current position and might create a dead end for future moves.
+
+STRATEGY:
+Based on the game state, my next priority is visiting clue 3 at position (2,3). Considering this, I should choose a move that sets me up to visit clue 3 soon.
+
+DECISION:
+Given these factors, the best option appears to be moving to (3,1) and then following the order of clues.
+
+MOVE: (3,1)
+2025-12-10 11:43:19,846 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:19,846 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:19,846 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 5
+2025-12-10 11:43:19,846 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:19,847 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:43:19,847 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:43:19,847 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:19,848 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:43:19,848 - LLM_configuration.llm_manager - INFO - I am currently at position (3,2), which means I'm in the third row and second column of the grid. According to the current game state, I have filled 4 out of 25 cells. My goal is to visit all clue numbers in ascending order, starting from 1. The next clue number I need to visit is 3, but it's already marked on the board as being at position (2,3). However, since I'm currently two rows away and one column away from clue 3, I should consider visiting it soon.
+
+However, my priority is to choose a move that doesn't block any future paths or create dead ends. Given this constraint, I need to think about the available next moves: (2,2), (3,1), and (3,3).
+
+EVALUATION:
+- Move to (2,2): This would put me one row below my current position and two columns away from clue 3. It's a viable option but might limit future path options.
+
+- Move to (3,1): This move takes me directly towards the second clue number, which is at position (3,1). However, it's not yet marked on the board as being visited.
+
+- Move to (3,3): This move would take me away from my current position and might create a dead end for future moves.
+
+STRATEGY:
+Based on the game state, my next priority is visiting clue 3 at position (2,3). Considering this, I should choose a move that sets me up to visit clue 3 soon.
+
+DECISION:
+Given these factors, the best option appears to be moving to (3,1) and then following the order of clues.
+2025-12-10 11:43:19,848 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:19,848 - LLM_configuration.llm_manager - INFO - DECISION: Move to (3, 1)
+2025-12-10 11:43:19,849 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 5):
+--------------------------------------------------
+I am currently at position (3,2), which means I'm in the third row and second column of the grid. According to the current game state, I have filled 4 out of 25 cells. My goal is to visit all clue numbers in ascending order, starting from 1. The next clue number I need to visit is 3, but it's already marked on the board as being at position (2,3). However, since I'm currently two rows away and one column away from clue 3, I should consider visiting it soon.
+
+However, my priority is to choose a move that doesn't block any future paths or create dead ends. Given this constraint, I need to think about the available next moves: (2,2), (3,1), and (3,3).
+
+EVALUATION:
+- Move to (2,2): This would put me one row below my current position and two columns away from clue 3. It's a viable option but might limit future path options.
+
+- Move to (3,1): This move takes me directly towards the second clue number, which is at position (3,1). However, it's not yet marked on the board as being visited.
+
+- Move to (3,3): This move would take me away from my current position and might create a dead end for future moves.
+
+STRATEGY:
+Based on the game state, my next priority is visiting clue 3 at position (2,3). Considering this, I should choose a move that sets me up to visit clue 3 soon.
+
+DECISION:
+Given these factors, the best option appears to be moving to (3,1) and then following the order of clues.
+--------------------------------------------------
+💡 DECISION: (3, 1)
+2025-12-10 11:43:19,852 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (3, 1)
+2025-12-10 11:43:19,853 - evaluation.eval - INFO - Move 4: (3, 1) - Valid: True, Correct: False, Latency: 8347ms
+2025-12-10 11:43:19,853 - UI.GUI - INFO - Move 4: (3, 1) - Valid
+2025-12-10 11:43:20,858 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:43:20,859 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 6 with ollama
+2025-12-10 11:43:20,860 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 6:
+2025-12-10 11:43:20,864 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:20,864 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 5/25 cells filled
+Current Position: (3,1)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1)
+
+Visual Board State:
+  .    2    3    .    .
+  .    .    .    4    .
+  .    .    .    .    .
+  .  [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,1), (3,0)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:43:20,864 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:28,347 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:43:28,348 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:43:28,349 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:28,349 - LLM_configuration.llm_manager - INFO - THINKING:
+
+**ANALYSIS**: I am currently at position (3,1), which is where Clue 2 is located. This means I've already visited Clue 2 and filled in its corresponding cell. According to the rules, I must now visit all clue numbers in ascending order, so my next target should be Clue 3.
+
+**STRATEGY**: Since I need to visit Clue 3 next, I'll look for it on the board. The visual board state shows that Clue 3 is located at position (2,2). My task now is to plan a path from my current location (3,1) to (2,2).
+
+**EVALUATION**: For each available move:
+
+* **Move (2,1)**: This move would take me diagonally up and left, but the puzzle rules prohibit diagonal moves. So, I can't choose this option.
+* **Move (3,0)**: If I move down to position (3,0), I'll be closer to Clue 4 and other empty cells that might help me reach Clue 3 more easily.
+
+**DECISION**: Since moving diagonally is not allowed, my best option is to move down to position (3,0). This will allow me to explore the lower part of the board and get closer to Clue 4, which is located at position (2,3), just one row above Clue 3. By moving down first, I'm preparing a potential path for visiting Clue 3 in subsequent moves.
+
+MOVE: (3,0)
+2025-12-10 11:43:28,349 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:28,350 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:28,350 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 6
+2025-12-10 11:43:28,350 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:28,350 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:43:28,351 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:43:28,351 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:28,352 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:43:28,352 - LLM_configuration.llm_manager - INFO - **ANALYSIS**: I am currently at position (3,1), which is where Clue 2 is located. This means I've already visited Clue 2 and filled in its corresponding cell. According to the rules, I must now visit all clue numbers in ascending order, so my next target should be Clue 3.
+
+**STRATEGY**: Since I need to visit Clue 3 next, I'll look for it on the board. The visual board state shows that Clue 3 is located at position (2,2). My task now is to plan a path from my current location (3,1) to (2,2).
+
+**EVALUATION**: For each available
+2025-12-10 11:43:28,352 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:28,353 - LLM_configuration.llm_manager - INFO - DECISION: Move to (3, 0)
+2025-12-10 11:43:28,353 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 6):
+--------------------------------------------------
+**ANALYSIS**: I am currently at position (3,1), which is where Clue 2 is located. This means I've already visited Clue 2 and filled in its corresponding cell. According to the rules, I must now visit all clue numbers in ascending order, so my next target should be Clue 3.
+
+**STRATEGY**: Since I need to visit Clue 3 next, I'll look for it on the board. The visual board state shows that Clue 3 is located at position (2,2). My task now is to plan a path from my current location (3,1) to (2,2).
+
+**EVALUATION**: For each available
+--------------------------------------------------
+💡 DECISION: (3, 0)
+2025-12-10 11:43:28,354 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (3, 0)
+2025-12-10 11:43:28,354 - evaluation.eval - INFO - Move 5: (3, 0) - Valid: True, Correct: False, Latency: 7496ms
+2025-12-10 11:43:28,354 - UI.GUI - INFO - Move 5: (3, 0) - Valid
+2025-12-10 11:43:29,358 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:43:29,358 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 7 with ollama
+2025-12-10 11:43:29,359 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 7:
+2025-12-10 11:43:29,360 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:29,360 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 6/25 cells filled
+Current Position: (3,0)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1) -> (3,0)
+
+Visual Board State:
+  .    2    3    .    .
+  .    .    .    4    .
+  .    .    .    .    .
+[ 6] [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,0)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:43:29,360 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:36,102 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:43:36,105 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:43:36,105 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:36,106 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (3,0) and have filled 6 out of 25 cells. I need to visit all clues in ascending order, and so far, I've visited clue 2 at position (3,1). The next clue number is 3, but it's not directly adjacent to my current location. However, I notice that the path taken so far has been mostly along the bottom row of the board.
+
+STRATEGY:
+The next clue number to visit should be 3. Looking at the board, it seems like a good idea to move upward from my current position to find its location. Clue 3 is located at (2,3), which is within reach if I move correctly.
+
+EVALUATION: For each available move:
+- Moving to (4,0) isn't viable since we've already visited that cell and clue 1.
+- Moving to (2,0) would not only get me closer to the north but also potentially block any future paths to the top right part of the board if I need to backtrack.
+
+DECISION:
+Given my goal is to visit all clues in ascending order and considering the available next moves, moving to (2,0) is a strategic choice. It gets me closer to clue 3 at position (2,3), avoids revisiting cells already visited, and maintains flexibility for future path planning.
+
+MOVE: (2,0)
+2025-12-10 11:43:36,106 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:36,106 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:36,107 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 7
+2025-12-10 11:43:36,107 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:36,107 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:43:36,107 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:43:36,107 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:36,108 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:43:36,108 - LLM_configuration.llm_manager - INFO - I am currently at position (3,0) and have filled 6 out of 25 cells. I need to visit all clues in ascending order, and so far, I've visited clue 2 at position (3,1). The next clue number is 3, but it's not directly adjacent to my current location. However, I notice that the path taken so far has been mostly along the bottom row of the board.
+
+STRATEGY:
+The next clue number to visit should be 3. Looking at the board, it seems like a good idea to move upward from my current position to find its location. Clue 3 is located at (2,3), which is within reach if I move correctly.
+
+EVALUATION: For each available
+2025-12-10 11:43:36,109 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:36,109 - LLM_configuration.llm_manager - INFO - DECISION: Move to (2, 0)
+2025-12-10 11:43:36,109 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 7):
+--------------------------------------------------
+I am currently at position (3,0) and have filled 6 out of 25 cells. I need to visit all clues in ascending order, and so far, I've visited clue 2 at position (3,1). The next clue number is 3, but it's not directly adjacent to my current location. However, I notice that the path taken so far has been mostly along the bottom row of the board.
+
+STRATEGY:
+The next clue number to visit should be 3. Looking at the board, it seems like a good idea to move upward from my current position to find its location. Clue 3 is located at (2,3), which is within reach if I move correctly.
+
+EVALUATION: For each available
+--------------------------------------------------
+💡 DECISION: (2, 0)
+2025-12-10 11:43:36,115 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (2, 0)
+2025-12-10 11:43:36,118 - evaluation.eval - INFO - Move 6: (2, 0) - Valid: True, Correct: False, Latency: 6760ms
+2025-12-10 11:43:36,121 - UI.GUI - INFO - Move 6: (2, 0) - Valid
+2025-12-10 11:43:37,117 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:43:37,118 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 8 with ollama
+2025-12-10 11:43:37,120 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 8:
+2025-12-10 11:43:37,120 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:37,120 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 7/25 cells filled
+Current Position: (2,0)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1) -> (3,0) -> (2,0)
+
+Visual Board State:
+  .    2    3    .    .
+  .    .    .    4    .
+[ 7]   .    .    .    .
+[ 6] [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (2,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:43:37,121 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:44,623 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:43:44,624 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:43:44,625 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:44,625 - LLM_configuration.llm_manager - INFO - THINKING:
+1. ANALYSIS: I am currently at position (2,0), which is indicated by the [7] in the visual board state. I have filled 7 out of 25 cells so far and need to visit all clue numbers in ascending order.
+
+2. STRATEGY: The next clue number to visit is Clue 3, which is located at position (4,1). However, since we can't move diagonally, the shortest path would be to get as close to (4,0) or (4,1) first. We already have Clue 2 at position (3,1), so visiting Clue 2 next is a good intermediate step.
+
+3. EVALUATION:
+   - Available Move: (1,0)
+     Pros: This move doesn't block any future paths and allows us to get closer to the left edge of the board.
+     Cons: It does not directly contribute to getting closer to Clue 2 or Clue 3.
+
+   - Available Move: (2,1)
+     Pros: This move gets us closer to the position where we can visit Clue 2 next. It doesn't block any future paths and keeps our path relatively straight.
+
+4. DECISION:
+Considering that we want to keep moving towards the right edge of the board and also towards Clue 2 (which is at (3,1)), the move to (2,1) seems more beneficial as it puts us in a better position to visit Clue 2 next while not blocking any future paths.
+
+MOVE: (2,1)
+2025-12-10 11:43:44,629 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:44,630 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:44,632 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 8
+2025-12-10 11:43:44,632 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:44,632 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:43:44,632 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:43:44,633 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:44,633 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:43:44,633 - LLM_configuration.llm_manager - INFO - 1. ANALYSIS: I am currently at position (2,0), which is indicated by the [7] in the visual board state. I have filled 7 out of 25 cells so far and need to visit all clue numbers in ascending order.
+
+2. STRATEGY: The next clue number to visit is Clue 3, which is located at position (4,1). However, since we can't move diagonally, the shortest path would be to get as close to (4,0) or (4,1) first. We already have Clue 2 at position (3,1), so visiting Clue 2 next is a good intermediate step.
+
+3. EVALUATION:
+   - Available
+2025-12-10 11:43:44,633 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:44,634 - LLM_configuration.llm_manager - INFO - DECISION: Move to (1, 0)
+2025-12-10 11:43:44,634 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 8):
+--------------------------------------------------
+1. ANALYSIS: I am currently at position (2,0), which is indicated by the [7] in the visual board state. I have filled 7 out of 25 cells so far and need to visit all clue numbers in ascending order.
+
+2. STRATEGY: The next clue number to visit is Clue 3, which is located at position (4,1). However, since we can't move diagonally, the shortest path would be to get as close to (4,0) or (4,1) first. We already have Clue 2 at position (3,1), so visiting Clue 2 next is a good intermediate step.
+
+3. EVALUATION:
+   - Available
+--------------------------------------------------
+💡 DECISION: (1, 0)
+2025-12-10 11:43:44,636 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (1, 0)
+2025-12-10 11:43:44,637 - evaluation.eval - INFO - Move 7: (1, 0) - Valid: True, Correct: False, Latency: 7519ms
+2025-12-10 11:43:44,637 - UI.GUI - INFO - Move 7: (1, 0) - Valid
+2025-12-10 11:43:45,642 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:43:45,648 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 9 with ollama
+2025-12-10 11:43:45,654 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 9:
+2025-12-10 11:43:45,654 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:45,655 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 8/25 cells filled
+Current Position: (1,0)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1) -> (3,0) -> (2,0) -> (1,0)
+
+Visual Board State:
+  .    2    3    .    .
+[ 8]   .    .    4    .
+[ 7]   .    .    .    .
+[ 6] [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,0), (1,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:43:45,655 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:53,105 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:43:53,106 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:43:53,107 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:53,108 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (1,0), which means I'm in the first row and the leftmost column of the board. My goal is to visit all 25 cells exactly once and end at the highest numbered clue, which is located at position (4,3) or higher.
+
+Looking at the available moves, I have two options: (0,0) or (1,1). Since I'm already in the first row, moving to (0,0) doesn't seem like a good option because it would take me out of the path and potentially create an obstacle for future moves. On the other hand, moving to (1,1) gets me closer to the second clue at position (3,1), which is my next destination.
+
+STRATEGY:
+The next clue I need to visit is Clue 2 at position (3,1). This means that I should aim to move towards this location while keeping an eye on the overall path and avoiding revisiting any cells.
+
+EVALUATION:
+For each available move:
+
+* Moving to (0,0) would take me out of the current row and might create a problem for future moves.
+* Moving to (1,1) gets me closer to Clue 2 at position (3,1) and keeps the path open for further exploration.
+
+DECISION:
+Considering my current situation and the available options, I should move to (1,1). This choice allows me to make progress towards visiting all cells in ascending order while keeping an eye on the overall path.
+
+MOVE: (1,1)
+2025-12-10 11:43:53,108 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:53,108 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:53,109 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 9
+2025-12-10 11:43:53,109 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:43:53,109 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:43:53,109 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:43:53,110 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:53,110 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:43:53,111 - LLM_configuration.llm_manager - INFO - I am currently at position (1,0), which means I'm in the first row and the leftmost column of the board. My goal is to visit all 25 cells exactly once and end at the highest numbered clue, which is located at position (4,3) or higher.
+
+Looking at the available moves, I have two options: (0,0) or (1,1). Since I'm already in the first row, moving to (0,0) doesn't seem like a good option because it would take me out of the path and potentially create an obstacle for future moves. On the other hand, moving to (1,1) gets me closer to the second clue at position (3,1), which is my next destination.
+
+STRATEGY:
+The next clue I need to visit is Clue 2 at position (3,1). This means that I should aim to move towards this location while keeping an eye on the overall path and avoiding revisiting any cells.
+
+EVALUATION:
+For each available
+2025-12-10 11:43:53,111 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:43:53,111 - LLM_configuration.llm_manager - INFO - DECISION: Move to (1, 1)
+2025-12-10 11:43:53,111 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 9):
+--------------------------------------------------
+I am currently at position (1,0), which means I'm in the first row and the leftmost column of the board. My goal is to visit all 25 cells exactly once and end at the highest numbered clue, which is located at position (4,3) or higher.
+
+Looking at the available moves, I have two options: (0,0) or (1,1). Since I'm already in the first row, moving to (0,0) doesn't seem like a good option because it would take me out of the path and potentially create an obstacle for future moves. On the other hand, moving to (1,1) gets me closer to the second clue at position (3,1), which is my next destination.
+
+STRATEGY:
+The next clue I need to visit is Clue 2 at position (3,1). This means that I should aim to move towards this location while keeping an eye on the overall path and avoiding revisiting any cells.
+
+EVALUATION:
+For each available
+--------------------------------------------------
+💡 DECISION: (1, 1)
+2025-12-10 11:43:53,115 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (1, 1)
+2025-12-10 11:43:53,115 - evaluation.eval - INFO - Move 8: (1, 1) - Valid: True, Correct: False, Latency: 7467ms
+2025-12-10 11:43:53,115 - UI.GUI - INFO - Move 8: (1, 1) - Valid
+2025-12-10 11:43:54,121 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:43:54,121 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 10 with ollama
+2025-12-10 11:43:54,121 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 10:
+2025-12-10 11:43:54,122 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:43:54,123 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 9/25 cells filled
+Current Position: (1,1)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1) -> (3,0) -> (2,0) -> (1,0) -> (1,1)
+
+Visual Board State:
+  .    2    3    .    .
+[ 8] [ 9]   .    4    .
+[ 7]   .    .    .    .
+[ 6] [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,1), (2,1), (1,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:43:54,123 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:44:02,178 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:44:02,180 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:44:02,181 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:02,181 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (1,1) and have filled 9 out of 25 cells. Looking at the clues, I need to visit clue 3 next, which is at position (2,2). From my current position, I have three available moves: (0,1), (2,1), or (1,2).
+
+1. ANALYSIS: Where am I now and what's my current situation?
+I'm currently in the middle of the board, having visited the first two clues and filled some of the surrounding cells.
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+The next clue to visit is Clue 3, which is located at position (2,2). This requires me to move down from my current position.
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+* Move (0,1): Pros - gets closer to potential horizontal paths, Cons - might limit vertical movement options.
+* Move (2,1): Pros - directly moves towards Clue 3, Cons - could block potential future paths if I need to backtrack.
+* Move (1,2): Pros - keeps me in the middle and prepares for vertical movement, Cons - doesn't bring me closer to Clue 3.
+
+4. DECISION: Which move is best and why?
+Given my current position and the goal of visiting Clue 3, moving down to position (2,1) seems like the most efficient choice. It brings me directly towards the next clue without blocking potential future paths. This move sets up a clear path for visiting subsequent clues.
+
+MOVE: (2,1)
+2025-12-10 11:44:02,182 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:02,182 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:02,183 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 10
+2025-12-10 11:44:02,183 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:02,183 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:44:02,184 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:44:02,185 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:02,185 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:44:02,185 - LLM_configuration.llm_manager - INFO - I am currently at position (1,1) and have filled 9 out of 25 cells. Looking at the clues, I need to visit clue 3 next, which is at position (2,2). From my current position, I have three available moves: (0,1), (2,1), or (1,2).
+
+1. ANALYSIS: Where am I now and what's my current situation?
+I'm currently in the middle of the board, having visited the first two clues and filled some of the surrounding cells.
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+The next clue to visit is Clue 3, which is located at position (2,2). This requires me to move down from my current position.
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+* Move (0,1): Pros - gets closer to potential horizontal paths, Cons - might limit vertical movement options.
+* Move (2,1): Pros - directly moves towards Clue 3, Cons - could block potential future paths if I need to backtrack.
+* Move (1,2): Pros - keeps me in the middle and prepares for vertical movement, Cons - doesn't bring me closer to Clue 3.
+
+4. DECISION: Which move is best and why?
+Given my current position and the goal of visiting Clue 3, moving down to position (2,1) seems like the most efficient choice. It brings me directly towards the next clue without blocking potential future paths. This move sets up a clear path for visiting subsequent clues.
+2025-12-10 11:44:02,185 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:02,185 - LLM_configuration.llm_manager - INFO - DECISION: Move to (2, 1)
+2025-12-10 11:44:02,186 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 10):
+--------------------------------------------------
+I am currently at position (1,1) and have filled 9 out of 25 cells. Looking at the clues, I need to visit clue 3 next, which is at position (2,2). From my current position, I have three available moves: (0,1), (2,1), or (1,2).
+
+1. ANALYSIS: Where am I now and what's my current situation?
+I'm currently in the middle of the board, having visited the first two clues and filled some of the surrounding cells.
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+The next clue to visit is Clue 3, which is located at position (2,2). This requires me to move down from my current position.
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+* Move (0,1): Pros - gets closer to potential horizontal paths, Cons - might limit vertical movement options.
+* Move (2,1): Pros - directly moves towards Clue 3, Cons - could block potential future paths if I need to backtrack.
+* Move (1,2): Pros - keeps me in the middle and prepares for vertical movement, Cons - doesn't bring me closer to Clue 3.
+
+4. DECISION: Which move is best and why?
+Given my current position and the goal of visiting Clue 3, moving down to position (2,1) seems like the most efficient choice. It brings me directly towards the next clue without blocking potential future paths. This move sets up a clear path for visiting subsequent clues.
+--------------------------------------------------
+💡 DECISION: (2, 1)
+2025-12-10 11:44:02,188 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (2, 1)
+2025-12-10 11:44:02,188 - evaluation.eval - INFO - Move 9: (2, 1) - Valid: True, Correct: False, Latency: 8066ms
+2025-12-10 11:44:02,188 - UI.GUI - INFO - Move 9: (2, 1) - Valid
+2025-12-10 11:44:03,198 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:44:03,201 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 11 with ollama
+2025-12-10 11:44:03,203 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 11:
+2025-12-10 11:44:03,203 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:44:03,204 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 10/25 cells filled
+Current Position: (2,1)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1) -> (3,0) -> (2,0) -> (1,0) -> (1,1) -> (2,1)
+
+Visual Board State:
+  .    2    3    .    .
+[ 8] [ 9]   .    4    .
+[ 7] [10]   .    .    .
+[ 6] [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:44:03,205 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:44:09,766 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:44:09,768 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:44:09,769 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:09,769 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (2,1), having filled 10 out of 25 cells. The goal is to visit all clues in ascending order and fill all empty cells. Looking at the clues, I need to visit clue 3 next, which is located at position (4,3). However, before reaching clue 3, I must visit clue 2, which is at position (3,1) since my current path order is 1 -> 2.
+
+Considering available moves from (2,1), the options are (0,1), (3,1), or (2,2). The move to (3,1) takes me directly to clue 2, which is the next required visit. This also sets up a good path for visiting subsequent clues while keeping future paths open.
+
+EVALUATION:
+- Moving to (0,1): This would take too long and waste potential horizontal moves.
+- Moving to (2,2): Although this move doesn't block any paths, it's not the most efficient way to reach clue 2 since I'm already close to its location.
+
+DECISION:
+The best move is to directly go towards clue 2 at position (3,1) as it aligns with visiting all clues in ascending order and minimizes future path blockages.
+
+MOVE: (3,1)
+2025-12-10 11:44:09,769 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:09,769 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:09,770 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 11
+2025-12-10 11:44:09,770 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:09,770 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:44:09,771 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:44:09,771 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:09,771 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:44:09,771 - LLM_configuration.llm_manager - INFO - I am currently at position (2,1), having filled 10 out of 25 cells. The goal is to visit all clues in ascending order and fill all empty cells. Looking at the clues, I need to visit clue 3 next, which is located at position (4,3). However, before reaching clue 3, I must visit clue 2, which is at position (3,1) since my current path order is 1 -> 2.
+
+Considering available moves from (2,1), the options are (0,1), (3,1), or (2,2). The move to (3,1) takes me directly to clue 2, which is the next required visit. This also sets up a good path for visiting subsequent clues while keeping future paths open.
+
+EVALUATION:
+- Moving to (0,1): This would take too long and waste potential horizontal moves.
+- Moving to (2,2): Although this move doesn't block any paths, it's not the most efficient way to reach clue 2 since I'm already close to its location.
+
+DECISION:
+The best move is to directly go towards clue 2 at position (3,1) as it aligns with visiting all clues in ascending order and minimizes future path blockages.
+2025-12-10 11:44:09,772 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:09,772 - LLM_configuration.llm_manager - INFO - DECISION: Move to (3, 1)
+2025-12-10 11:44:09,772 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 11):
+--------------------------------------------------
+I am currently at position (2,1), having filled 10 out of 25 cells. The goal is to visit all clues in ascending order and fill all empty cells. Looking at the clues, I need to visit clue 3 next, which is located at position (4,3). However, before reaching clue 3, I must visit clue 2, which is at position (3,1) since my current path order is 1 -> 2.
+
+Considering available moves from (2,1), the options are (0,1), (3,1), or (2,2). The move to (3,1) takes me directly to clue 2, which is the next required visit. This also sets up a good path for visiting subsequent clues while keeping future paths open.
+
+EVALUATION:
+- Moving to (0,1): This would take too long and waste potential horizontal moves.
+- Moving to (2,2): Although this move doesn't block any paths, it's not the most efficient way to reach clue 2 since I'm already close to its location.
+
+DECISION:
+The best move is to directly go towards clue 2 at position (3,1) as it aligns with visiting all clues in ascending order and minimizes future path blockages.
+--------------------------------------------------
+💡 DECISION: (3, 1)
+2025-12-10 11:44:09,774 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (3, 1)
+2025-12-10 11:44:09,775 - evaluation.eval - INFO - Move 10: (3, 1) - Valid: False, Correct: False, Latency: 6574ms
+2025-12-10 11:44:09,775 - UI.GUI - WARNING - Invalid move: (3, 1) (stuck: 1/3)
+2025-12-10 11:44:10,783 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:44:10,783 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 11 with ollama
+2025-12-10 11:44:10,785 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 11:
+2025-12-10 11:44:10,787 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:44:10,788 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 10/25 cells filled
+Current Position: (2,1)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1) -> (3,0) -> (2,0) -> (1,0) -> (1,1) -> (2,1)
+
+Visual Board State:
+  .    2    3    .    .
+[ 8] [ 9]   .    4    .
+[ 7] [10]   .    .    .
+[ 6] [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:44:10,789 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:44:20,414 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:44:20,415 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:44:20,415 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:20,416 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (2,1), which means I'm already on a path that leads to one of the clues, and I've filled in some cells between them. The current situation shows that I need to continue filling in cells while visiting all clue numbers in ascending order.
+
+My goal is to visit clue 3 next. According to the puzzle rules, I should move to the next higher numbered clue, which means going from Clue 2 (3,1) to Clue 3. However, since Clue 3's location is not explicitly given in the current state of the board, we must look at the overall path and available next moves.
+
+From my current position (2,1), I have the following available next moves: moving up to (1,1) or (0,1), or staying put. But since there are no higher numbered clues between us and Clue 3, we will move towards an empty cell first before deciding which direction is best.
+
+Now considering the available move of (2,2) as our starting point:
+
+Evaluation:
+
+* Moving up to (1,1): This would be a valid next move since it takes me closer to visiting all clue numbers in ascending order. However, this option requires further investigation.
+* Moving to (0,1) is not an option with the current board state.
+
+Given that there are no other available moves or clues that can help us decide on the optimal path at this point and our main goal of reaching Clue 3 soon, we will make a strategic decision based on what’s possible from the given position.
+
+DECISION:
+With these options in mind, it seems we should aim to fill more cells before moving up. As (2,1) is already occupied by me and I've filled in some nearby cells, going towards an empty cell near Clue 3 or starting a new path could be beneficial.
+
+Given the available moves from our current position and considering our overall goal of reaching all clue numbers, the best next move should allow for us to make progress while keeping future paths open.
+2025-12-10 11:44:20,416 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:20,422 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:20,423 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 11
+2025-12-10 11:44:20,424 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:20,425 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:44:20,425 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:44:20,426 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:20,426 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:44:20,426 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position , which means I'm already on a path that leads to one of the clues, and I've filled in some cells between them. The current situation shows that I need to continue filling in cells while visiting all clue numbers in ascending order.
+
+My goal is to visit clue 3 next. According to the puzzle rules, I should move to the next higher numbered clue, which means going from Clue 2  to Clue 3. However, since Clue 3's location is not explicitly given in the current state of the board, we must look at the overall path and available next moves.
+
+From my current position , I have the following available next moves: moving up to  or , or staying put. But since there are no higher numbered clues between us and Clue 3, we will move towards an empty cell first before deciding which direction is best.
+
+Now considering the available move of  as our starting point:
+
+Evaluation:
+
+* Moving up to : This would be a valid next move since it takes me closer to visiting all clue numbers in ascending order. However, this option requires further investigation.
+* Moving to  is not an option with the current board state.
+
+Given that there are no other available moves or clues that can help us decide on the optimal path at this point and our main goal of reaching Clue 3 soon, we will make a strategic decision based on what’s possible from the given position.
+
+DECISION:
+With these options in mind, it seems we should aim to fill more cells before moving up. As  is already occupied by me and I've filled in some nearby cells, going towards an empty cell near Clue 3 or starting a new path could be beneficial.
+
+Given the available moves from our current position and considering our overall goal of reaching all clue numbers, the best next move should allow for us to make progress while keeping future paths open.
+2025-12-10 11:44:20,426 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:20,426 - LLM_configuration.llm_manager - INFO - DECISION: Move to (2, 1)
+2025-12-10 11:44:20,427 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 11):
+--------------------------------------------------
+THINKING:
+I am currently at position , which means I'm already on a path that leads to one of the clues, and I've filled in some cells between them. The current situation shows that I need to continue filling in cells while visiting all clue numbers in ascending order.
+
+My goal is to visit clue 3 next. According to the puzzle rules, I should move to the next higher numbered clue, which means going from Clue 2  to Clue 3. However, since Clue 3's location is not explicitly given in the current state of the board, we must look at the overall path and available next moves.
+
+From my current position , I have the following available next moves: moving up to  or , or staying put. But since there are no higher numbered clues between us and Clue 3, we will move towards an empty cell first before deciding which direction is best.
+
+Now considering the available move of  as our starting point:
+
+Evaluation:
+
+* Moving up to : This would be a valid next move since it takes me closer to visiting all clue numbers in ascending order. However, this option requires further investigation.
+* Moving to  is not an option with the current board state.
+
+Given that there are no other available moves or clues that can help us decide on the optimal path at this point and our main goal of reaching Clue 3 soon, we will make a strategic decision based on what’s possible from the given position.
+
+DECISION:
+With these options in mind, it seems we should aim to fill more cells before moving up. As  is already occupied by me and I've filled in some nearby cells, going towards an empty cell near Clue 3 or starting a new path could be beneficial.
+
+Given the available moves from our current position and considering our overall goal of reaching all clue numbers, the best next move should allow for us to make progress while keeping future paths open.
+--------------------------------------------------
+💡 DECISION: (2, 1)
+2025-12-10 11:44:20,429 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (2, 1)
+2025-12-10 11:44:20,430 - evaluation.eval - INFO - Move 11: (2, 1) - Valid: False, Correct: False, Latency: 9647ms
+2025-12-10 11:44:20,430 - UI.GUI - WARNING - Invalid move: (2, 1) (stuck: 2/3)
+2025-12-10 11:44:21,436 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:44:21,436 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 11 with ollama
+2025-12-10 11:44:21,437 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 11:
+2025-12-10 11:44:21,437 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:44:21,437 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (4,0)
+Clue 2: position (3,1)
+
+=== CURRENT GAME STATE ===
+Progress: 10/25 cells filled
+Current Position: (2,1)
+Path Taken: (4,0) -> (4,1) -> (4,2) -> (3,2) -> (3,1) -> (3,0) -> (2,0) -> (1,0) -> (1,1) -> (2,1)
+
+Visual Board State:
+  .    2    3    .    .
+[ 8] [ 9]   .    4    .
+[ 7] [10]   .    .    .
+[ 6] [ 5] [ 4]   .    .
+[ 1] [ 2] [ 3]   .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:44:21,438 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:44:33,657 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-10 11:44:33,657 - LLM_configuration.llm_manager - INFO - 📝 LLM RAW RESPONSE (Attempt 1):
+2025-12-10 11:44:33,658 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:33,658 - LLM_configuration.llm_manager - INFO - THINKING:
+I am currently at position (2,1) and have filled 10 out of 25 cells. My current situation is that I need to visit all clue numbers in ascending order, starting from the highest one already visited (which is Clue 3). Looking at the clues, my next goal should be to find and visit Clue 4, which would mean visiting a position with the number 4. According to the board state, there are two possible positions for the next clue: either (1,2), (2,2), or (3,2) because these are the only empty cells that can contain the number 4.
+
+However, since I'm evaluating available moves, and considering I have a choice between (2,2) and other potential locations, my immediate priority is to choose the next move from (2,1). I notice that there are indeed two options: (3,0), (2,0), or (1,0) as possible destinations. These would get me closer to Clue 4's position but don't necessarily lead directly to it.
+
+EVALUATION:
+- Moving to (3,0): This move puts me in a potential path towards Clue 4 but could also block further movements if I need to backtrack.
+- Moving to (2,0) or (1,0) would get me closer to the top of the board but doesn't directly lead to Clue 4's location without potentially backtracking.
+
+DECISION:
+Since my immediate next step is not directly towards Clue 4 but rather evaluating moves from (2,1), I need to choose between these options based on their immediate utility and potential for future movements. The move to (3,0) seems most promising because it places me closer to the top of the board and potentially along a path that could lead to Clue 4 without immediately blocking further movement.
+
+However, upon re-evaluation considering the available next moves provided specifically at step 1, the immediate decision is between moving in different directions. Given that I was given options and must make a choice based on those directly stated for the next move (2,2), my task simplifies to evaluating the best use of this specific position.
+
+Considering only the movement directly stated as available next moves ((2,2)), it seems I have not evaluated all possible paths efficiently in my initial reasoning. The most direct and logical step given the constraints and clue numbers visited so far is actually focusing on moving towards Clue 4, which would be at a lower numbered position than what I've described.
+
+Therefore, considering the available next moves specifically provided for evaluation:
+
+MOVE: (2,3)
+2025-12-10 11:44:33,658 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:33,658 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:33,659 - LLM_configuration.llm_manager - INFO - 🧠 LLM THINKING PROCESS - Move 11
+2025-12-10 11:44:33,660 - LLM_configuration.llm_manager - INFO - ================================================================================
+2025-12-10 11:44:33,660 - LLM_configuration.llm_manager - INFO - Provider: ollama
+2025-12-10 11:44:33,660 - LLM_configuration.llm_manager - INFO - Model: llama3.1:8b
+2025-12-10 11:44:33,660 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:33,660 - LLM_configuration.llm_manager - INFO - REASONING:
+2025-12-10 11:44:33,660 - LLM_configuration.llm_manager - INFO - I am currently at position (2,1) and have filled 10 out of 25 cells. My current situation is that I need to visit all clue numbers in ascending order, starting from the highest one already visited (which is Clue 3). Looking at the clues, my next goal should be to find and visit Clue 4, which would mean visiting a position with the number 4. According to the board state, there are two possible positions for the next clue: either (1,2), (2,2), or (3,2) because these are the only empty cells that can contain the number 4.
+
+However, since I'm evaluating available moves, and considering I have a choice between (2,2) and other potential locations, my immediate priority is to choose the next move from (2,1). I notice that there are indeed two options: (3,0), (2,0), or (1,0) as possible destinations. These would get me closer to Clue 4's position but don't necessarily lead directly to it.
+
+EVALUATION:
+- Moving to (3,0): This move puts me in a potential path towards Clue 4 but could also block further movements if I need to backtrack.
+- Moving to (2,0) or (1,0) would get me closer to the top of the board but doesn't directly lead to Clue 4's location without potentially backtracking.
+
+DECISION:
+Since my immediate next step is not directly towards Clue 4 but rather evaluating moves from (2,1), I need to choose between these options based on their immediate utility and potential for future movements. The move to (3,0) seems most promising because it places me closer to the top of the board and potentially along a path that could lead to Clue 4 without immediately blocking further movement.
+
+However, upon re-evaluation considering the available next moves provided specifically at step 1, the immediate decision is between moving in different directions. Given that I was given options and must make a choice based on those directly stated for the next move (2,2), my task simplifies to evaluating the best use of this specific position.
+
+Considering only the movement directly stated as available next moves ((2,2)), it seems I have not evaluated all possible paths efficiently in my initial reasoning. The most direct and logical step given the constraints and clue numbers visited so far is actually focusing on moving towards Clue 4, which would be at a lower numbered position than what I've described.
+
+Therefore, considering the available next moves specifically provided for evaluation:
+2025-12-10 11:44:33,666 - LLM_configuration.llm_manager - INFO - ----------------------------------------
+2025-12-10 11:44:33,668 - LLM_configuration.llm_manager - INFO - DECISION: Move to (2, 3)
+2025-12-10 11:44:33,669 - LLM_configuration.llm_manager - INFO - ================================================================================
+
+
+🧠 OLLAMA THINKING (Move 11):
+--------------------------------------------------
+I am currently at position (2,1) and have filled 10 out of 25 cells. My current situation is that I need to visit all clue numbers in ascending order, starting from the highest one already visited (which is Clue 3). Looking at the clues, my next goal should be to find and visit Clue 4, which would mean visiting a position with the number 4. According to the board state, there are two possible positions for the next clue: either (1,2), (2,2), or (3,2) because these are the only empty cells that can contain the number 4.
+
+However, since I'm evaluating available moves, and considering I have a choice between (2,2) and other potential locations, my immediate priority is to choose the next move from (2,1). I notice that there are indeed two options: (3,0), (2,0), or (1,0) as possible destinations. These would get me closer to Clue 4's position but don't necessarily lead directly to it.
+
+EVALUATION:
+- Moving to (3,0): This move puts me in a potential path towards Clue 4 but could also block further movements if I need to backtrack.
+- Moving to (2,0) or (1,0) would get me closer to the top of the board but doesn't directly lead to Clue 4's location without potentially backtracking.
+
+DECISION:
+Since my immediate next step is not directly towards Clue 4 but rather evaluating moves from (2,1), I need to choose between these options based on their immediate utility and potential for future movements. The move to (3,0) seems most promising because it places me closer to the top of the board and potentially along a path that could lead to Clue 4 without immediately blocking further movement.
+
+However, upon re-evaluation considering the available next moves provided specifically at step 1, the immediate decision is between moving in different directions. Given that I was given options and must make a choice based on those directly stated for the next move (2,2), my task simplifies to evaluating the best use of this specific position.
+
+Considering only the movement directly stated as available next moves ((2,2)), it seems I have not evaluated all possible paths efficiently in my initial reasoning. The most direct and logical step given the constraints and clue numbers visited so far is actually focusing on moving towards Clue 4, which would be at a lower numbered position than what I've described.
+
+Therefore, considering the available next moves specifically provided for evaluation:
+--------------------------------------------------
+💡 DECISION: (2, 3)
+2025-12-10 11:44:33,672 - LLM_configuration.llm_manager - INFO - ✅ SUCCESSFULLY PARSED MOVE: (2, 3)
+2025-12-10 11:44:33,672 - evaluation.eval - INFO - Move 12: (2, 3) - Valid: False, Correct: False, Latency: 12236ms
+2025-12-10 11:44:33,672 - UI.GUI - WARNING - Invalid move: (2, 3) (stuck: 3/3)
+2025-12-10 11:44:34,679 - evaluation.eval - INFO - Game ended - Success: False, Efficiency: 75.0%, Accuracy: 0.0%
+2025-12-10 11:44:34,680 - evaluation.eval - INFO - Comprehensive metrics logged to wandb
+2025-12-10 11:44:34,680 - UI.GUI - INFO - === GAME PERFORMANCE ANALYSIS ===
+2025-12-10 11:44:34,680 - UI.GUI - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 5x5 | Completion: FAILED ✗
+Time: 119.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 12
+Valid Moves: 9 (75.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 1
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 75.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 36.0% of puzzle filled
+Avg Latency: 8914ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 100 avg chars
+Move Consistency: 72.7%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Good efficiency but failed to complete
+
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 5x5 | Completion: FAILED ✗
+Time: 119.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 12
+Valid Moves: 9 (75.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 1
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 75.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 36.0% of puzzle filled
+Avg Latency: 8914ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 100.0% success rate
+Reasoning Quality: 100 avg chars
+Move Consistency: 72.7%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 100.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Good efficiency but failed to complete

@@ -1,0 +1,845 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 11:34:30,906 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+[34m[1mwandb[0m: wandb.init() called while a run is active and reinit is set to 'default', so returning the previous run.
+2025-12-10 11:34:30,912 - ZIP-LLM-TESTS - INFO - === GAME 1 — 5x5 — ollama ===
+2025-12-10 11:34:31,303 - evaluation.eval - INFO - LLM evaluation started for 5x5 board
+2025-12-10 11:34:31,303 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:34:31,303 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:34:31,306 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:34:31,306 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:31,307 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,0)
+Clue 2: position (1,0)
+Clue 3: position (4,1)
+Clue 4: position (0,4)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (0,0)
+Path Taken: (0,0)
+
+Visual Board State:
+[ 1]   .    .    .    6
+  2    .    .    .    .
+  .    .    .    .    .
+  3    .    .    .    .
+  .    4    .    .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:34:31,307 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:33,347 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:33,349 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:35,393 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:35,394 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:35,397 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 1/3
+2025-12-10 11:34:35,398 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:34:35,399 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:34:35,400 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:35,401 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,0)
+Clue 2: position (1,0)
+Clue 3: position (4,1)
+Clue 4: position (0,4)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (0,0)
+Path Taken: (0,0)
+
+Visual Board State:
+[ 1]   .    .    .    6
+  2    .    .    .    .
+  .    .    .    .    .
+  3    .    .    .    .
+  .    4    .    .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:34:35,403 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:37,424 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:37,426 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:39,450 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:39,450 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:39,453 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 2/3
+2025-12-10 11:34:39,454 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:34:39,456 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:34:39,457 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:39,457 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,0)
+Clue 2: position (1,0)
+Clue 3: position (4,1)
+Clue 4: position (0,4)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (0,0)
+Path Taken: (0,0)
+
+Visual Board State:
+[ 1]   .    .    .    6
+  2    .    .    .    .
+  .    .    .    .    .
+  3    .    .    .    .
+  .    4    .    .    5
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:34:39,460 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:41,484 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:41,484 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:43,507 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:43,510 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:43,511 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 3/3
+2025-12-10 11:34:43,512 - evaluation.eval - INFO - Game ended - Success: False, Efficiency: 0.0%, Accuracy: 0.0%
+2025-12-10 11:34:43,515 - evaluation.eval - INFO - Comprehensive metrics logged to wandb
+2025-12-10 11:34:43,515 - ZIP-LLM-TESTS - INFO - Progress: 1/10 — Success rate: 0.0%
+2025-12-10 11:34:43,817 - ZIP-LLM-TESTS - INFO - === GAME 2 — 5x5 — ollama ===
+2025-12-10 11:34:43,821 - evaluation.eval - INFO - LLM evaluation started for 5x5 board
+2025-12-10 11:34:43,824 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:34:43,825 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:34:43,826 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:34:43,827 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:43,829 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,3)
+Clue 2: position (3,4)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (3,3)
+Path Taken: (3,3)
+
+Visual Board State:
+  .    .    .    .    3
+  .    .    .    4    .
+  .    .    .    .    .
+  .    .    .  [ 1]   2
+  5    .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,3), (4,3), (3,2), (3,4)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:34:43,830 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:45,857 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:45,858 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:47,879 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:47,881 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:47,882 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 1/3
+2025-12-10 11:34:47,883 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:34:47,884 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:34:47,885 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:47,886 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,3)
+Clue 2: position (3,4)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (3,3)
+Path Taken: (3,3)
+
+Visual Board State:
+  .    .    .    .    3
+  .    .    .    4    .
+  .    .    .    .    .
+  .    .    .  [ 1]   2
+  5    .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,3), (4,3), (3,2), (3,4)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:34:47,889 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:49,921 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:49,921 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:51,941 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:51,941 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:51,943 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 2/3
+2025-12-10 11:34:51,944 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:34:51,946 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:34:51,946 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:51,947 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (3,3)
+Clue 2: position (3,4)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (3,3)
+Path Taken: (3,3)
+
+Visual Board State:
+  .    .    .    .    3
+  .    .    .    4    .
+  .    .    .    .    .
+  .    .    .  [ 1]   2
+  5    .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (2,3), (4,3), (3,2), (3,4)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:34:51,947 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:53,967 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:53,967 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:55,979 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:55,979 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:55,981 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 3/3
+2025-12-10 11:34:55,982 - evaluation.eval - INFO - Game ended - Success: False, Efficiency: 0.0%, Accuracy: 0.0%
+2025-12-10 11:34:55,984 - evaluation.eval - INFO - Comprehensive metrics logged to wandb
+2025-12-10 11:34:55,985 - ZIP-LLM-TESTS - INFO - Progress: 2/10 — Success rate: 0.0%
+2025-12-10 11:34:56,286 - ZIP-LLM-TESTS - INFO - === GAME 3 — 5x5 — ollama ===
+2025-12-10 11:34:56,487 - evaluation.eval - INFO - LLM evaluation started for 5x5 board
+2025-12-10 11:34:56,492 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:34:56,492 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:34:56,492 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:34:56,492 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:56,493 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,0)
+Clue 2: position (3,3)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (0,0)
+Path Taken: (0,0)
+
+Visual Board State:
+[ 1]   .    .    .    6
+  .    .    4    .    .
+  .    3    .    .    .
+  .    .    .    5    .
+  2    .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:34:56,494 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:34:58,524 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:34:58,524 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:00,538 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:00,538 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:00,542 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 1/3
+2025-12-10 11:35:00,543 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:35:00,543 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:35:00,545 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:35:00,546 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,0)
+Clue 2: position (3,3)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (0,0)
+Path Taken: (0,0)
+
+Visual Board State:
+[ 1]   .    .    .    6
+  .    .    4    .    .
+  .    3    .    .    .
+  .    .    .    5    .
+  2    .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:35:00,547 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:35:02,561 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:02,561 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:04,593 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:04,594 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:04,595 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 2/3
+2025-12-10 11:35:04,596 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:35:04,597 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:35:04,598 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:35:04,599 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,0)
+Clue 2: position (3,3)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (0,0)
+Path Taken: (0,0)
+
+Visual Board State:
+[ 1]   .    .    .    6
+  .    .    4    .    .
+  .    3    .    .    .
+  .    .    .    5    .
+  2    .    .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,0), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:35:04,599 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:35:06,628 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:06,629 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 1 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:08,663 - LLM_configuration.llm_manager - ERROR - API call failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:08,663 - LLM_configuration.llm_manager - ERROR - ❌ Attempt 2 failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-10 11:35:08,666 - ZIP-LLM-TESTS - WARNING - No move parsed — stuck 3/3
+2025-12-10 11:35:08,668 - evaluation.eval - INFO - Game ended - Success: False, Efficiency: 0.0%, Accuracy: 0.0%
+2025-12-10 11:35:08,669 - evaluation.eval - INFO - Comprehensive metrics logged to wandb
+2025-12-10 11:35:08,670 - ZIP-LLM-TESTS - INFO - Progress: 3/10 — Success rate: 0.0%
+2025-12-10 11:35:08,972 - ZIP-LLM-TESTS - INFO - === GAME 4 — 5x5 — ollama ===
+2025-12-10 11:35:08,978 - evaluation.eval - INFO - LLM evaluation started for 5x5 board
+2025-12-10 11:35:08,979 - LLM_configuration.llm_manager - INFO - LLM provider set to: ollama (model: llama3.1:8b)
+2025-12-10 11:35:08,981 - LLM_configuration.llm_manager - INFO - 🎯 Generating move 2 with ollama
+2025-12-10 11:35:08,981 - LLM_configuration.llm_manager - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 11:35:08,983 - LLM_configuration.llm_manager - INFO - ============================================================
+2025-12-10 11:35:08,983 - LLM_configuration.llm_manager - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 25 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 5x5
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,4)
+
+=== CURRENT GAME STATE ===
+Progress: 1/25 cells filled
+Current Position: (0,4)
+Path Taken: (0,4)
+
+Visual Board State:
+  .    .    .    .  [ 1]
+  .    .    .    .    .
+  3    .    5    .    .
+  .    .    .    .    .
+  4    .    .    2    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,4), (0,3)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 11:35:08,985 - LLM_configuration.llm_manager - INFO - ============================================================
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 361, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 335, in main
+    stats = run_batch_tests(
+            ^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 265, in run_batch_tests
+    res = run_single_game(i, board_size, provider, max_moves, timeout, logger)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 173, in run_single_game
+    result = llm_solver.solve(board, path, next_number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 314, in _call_llm_api
+    return self._call_ollama_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 257, in _call_ollama_api
+    response: ChatResponse = chat(model=model, messages=messages, stream=False)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\ollama\_client.py", line 351, in chat
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\ollama\_client.py", line 189, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\ollama\_client.py", line 129, in _request_raw
+    r = self._client.request(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\httpcore\_backends\sync.py", line 208, in connect_tcp
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\socket.py", line 857, in create_connection
+    exceptions.clear()  # raise only the last error
+    ^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

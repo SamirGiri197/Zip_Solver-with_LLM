@@ -1,0 +1,63 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            zxfxhy8at7uder5t5q4wjlag9o2tja4v:
+                args:
+                    - --num-runs
+                    - "10"
+                    - --llm-provider
+                    - openai
+                    - --board-size
+                    - "3"
+                    - --gui
+                    - "True"
+                codePath: src\zip_llm_tests.py
+                codePathLocal: zip_llm_tests.py
+                cpu_count: 24
+                cpu_count_logical: 32
+                cudaVersion: "12.6"
+                disk:
+                    /:
+                        total: "1021821579264"
+                        used: "860609060864"
+                email: thameshgiri197@gmail.com
+                executable: C:\Users\thame\miniconda3\envs\zip\python.exe
+                git:
+                    commit: ed072bcbb779ff31dc7805df786119e56acc0a59
+                    remote: https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
+                gpu: NVIDIA GeForce RTX 4070 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 4608
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4070 Laptop GPU
+                      uuid: GPU-9e7ed845-7e8b-4f44-3156-c71d31e22d7a
+                host: Samir-PC
+                memory:
+                    total: "34070192128"
+                os: Windows-11-10.0.26200-SP0
+                program: C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py
+                python: CPython 3.12.12
+                root: C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src
+                startedAt: "2025-12-10T20:33:56.969004Z"
+                writerId: zxfxhy8at7uder5t5q4wjlag9o2tja4v
+        m: []
+        python_version: 3.12.12
+        t:
+            "1":
+                - 95
+                - 97
+            "2":
+                - 95
+                - 97
+            "3":
+                - 13
+                - 24
+            "4": 3.12.12
+            "5": 0.22.3
+            "8":
+                - 3
+            "12": 0.22.3
+            "13": windows-amd64

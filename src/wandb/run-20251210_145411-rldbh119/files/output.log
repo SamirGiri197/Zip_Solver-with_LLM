@@ -1,0 +1,992 @@
+[34m[1mwandb[0m: Detected [anthropic, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-12-10 14:54:15,628 - LLM_configuration.llm_manager - INFO - wandb initialized successfully
+C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\pygame\pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[34m[1mwandb[0m: wandb.init() called while a run is active and reinit is set to 'default', so returning the previous run.
+
+==================================================
+▶ STARTING RUN 1 OF 10
+==================================================
+2025-12-10 14:54:15,719 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 14:54:15,719 - INFO - === GAME 1 — GUI MODE — openai ===
+2025-12-10 14:54:16,262 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+2025-12-10 14:54:16,263 - WARNING - Could not generate solver path for evaluation
+2025-12-10 14:54:16,264 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 14:54:16,264 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 14:54:16,264 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 14:54:16,271 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 14:54:16,276 - INFO - ============================================================
+2025-12-10 14:54:16,276 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,0)
+Clue 3: position (1,1)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  2    .  [ 1]
+  3    4    .
+  .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 14:54:16,277 - INFO - ============================================================
+2025-12-10 14:54:16,909 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:16,915 - INFO - Retrying request to /chat/completions in 0.482440 seconds
+2025-12-10 14:54:17,511 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:17,512 - INFO - Retrying request to /chat/completions in 0.841722 seconds
+2025-12-10 14:54:18,459 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:18,461 - ERROR - API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+Arguments: ()
+2025-12-10 14:54:18,462 - ERROR - ❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-10 14:54:18,924 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:18,926 - INFO - Retrying request to /chat/completions in 0.442741 seconds
+2025-12-10 14:54:19,491 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:19,493 - INFO - Retrying request to /chat/completions in 0.979913 seconds
+2025-12-10 14:54:20,604 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:20,607 - ERROR - API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+Arguments: ()
+2025-12-10 14:54:20,608 - ERROR - ❌ Attempt 2 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-10 14:54:20,628 - WARNING - No move from LLM (stuck: 1/3)
+2025-12-10 14:54:20,628 - INFO - Move 1: (-1, -1) - Valid: False, Correct: False, Latency: 4364ms
+2025-12-10 14:54:21,631 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 14:54:21,634 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 14:54:21,642 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 14:54:21,649 - INFO - ============================================================
+2025-12-10 14:54:21,650 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,0)
+Clue 3: position (1,1)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  2    .  [ 1]
+  3    4    .
+  .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 14:54:21,651 - INFO - ============================================================
+2025-12-10 14:54:21,982 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:21,986 - INFO - Retrying request to /chat/completions in 0.431139 seconds
+2025-12-10 14:54:22,542 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:22,544 - INFO - Retrying request to /chat/completions in 0.948168 seconds
+2025-12-10 14:54:23,612 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:23,614 - ERROR - API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+Arguments: ()
+2025-12-10 14:54:23,615 - ERROR - ❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-10 14:54:23,978 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:23,980 - INFO - Retrying request to /chat/completions in 0.412583 seconds
+2025-12-10 14:54:24,492 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:24,493 - INFO - Retrying request to /chat/completions in 0.799583 seconds
+2025-12-10 14:54:25,418 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:25,421 - ERROR - API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+Arguments: ()
+2025-12-10 14:54:25,422 - ERROR - ❌ Attempt 2 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-10 14:54:25,442 - WARNING - No move from LLM (stuck: 2/3)
+2025-12-10 14:54:25,442 - INFO - Move 2: (-1, -1) - Valid: False, Correct: False, Latency: 3808ms
+2025-12-10 14:54:26,430 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 14:54:26,430 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 14:54:26,441 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 14:54:26,450 - INFO - ============================================================
+2025-12-10 14:54:26,450 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (0,2)
+Clue 2: position (1,0)
+Clue 3: position (1,1)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (0,2)
+Path Taken: (0,2)
+
+Visual Board State:
+  2    .  [ 1]
+  3    4    .
+  .    .    .
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (1,2), (0,1)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 14:54:26,450 - INFO - ============================================================
+2025-12-10 14:54:26,785 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:26,789 - INFO - Retrying request to /chat/completions in 0.413086 seconds
+2025-12-10 14:54:27,316 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:27,318 - INFO - Retrying request to /chat/completions in 0.893221 seconds
+2025-12-10 14:54:28,322 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:28,324 - ERROR - API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+Arguments: ()
+2025-12-10 14:54:28,325 - ERROR - ❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-10 14:54:28,686 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:28,689 - INFO - Retrying request to /chat/completions in 0.401873 seconds
+2025-12-10 14:54:29,232 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:29,232 - INFO - Retrying request to /chat/completions in 0.854723 seconds
+2025-12-10 14:54:30,203 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:30,210 - ERROR - API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 2 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+Arguments: ()
+2025-12-10 14:54:30,211 - ERROR - ❌ Attempt 2 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-10 14:54:30,230 - WARNING - No move from LLM (stuck: 3/3)
+2025-12-10 14:54:30,231 - INFO - Move 3: (-1, -1) - Valid: False, Correct: False, Latency: 3801ms
+2025-12-10 14:54:31,220 - INFO - Game ended - Success: False, Efficiency: 0.0%, Accuracy: 0.0%
+2025-12-10 14:54:31,222 - INFO - Comprehensive metrics logged to wandb
+2025-12-10 14:54:31,224 - INFO - === GAME PERFORMANCE ANALYSIS ===
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 101: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 802, in solve_with_llm
+    logger.info(detailed_summary)
+Message: '\n=== LLM PERFORMANCE ANALYSIS ===\nBoard: 3x3 | Completion: FAILED ✗\nTime: 15.0s | Grade: F\n\n=== CORE METRICS ===\nTotal Moves: 3\nValid Moves: 0 (0.0%)\nBad Moves: 3\nCorrect Moves: 0 (0.0%)\nClue Hits: 0\n\n=== PERFORMANCE ANALYSIS ===\nMove Efficiency: 0.0% (valid moves / total moves)\nPath Accuracy: 0.0% (optimal path following)\nCompletion: 0.0% of puzzle filled\nAvg Latency: 3991ms per move\n\n=== QUALITY METRICS ===\nResponse Parsing: 0.0% success rate\nReasoning Quality: 14 avg chars\nMove Consistency: 0.0%\n\n=== ADVANCED ANALYSIS ===\nEarly Error Rate: 0.0% (first 25% of moves)\nLate Error Rate: 0.0% (last 25% of moves)\nRecovery Rate: 0.0% (bounce back from errors)\nOptimal Deviation: 0.00 avg distance from best path\n\n=== INSIGHTS ===\nStruggled with move selection\n'
+Arguments: ()
+2025-12-10 14:54:31,224 - INFO -
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 3x3 | Completion: FAILED ✗
+Time: 15.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 3991ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+=== LLM PERFORMANCE ANALYSIS ===
+Board: 3x3 | Completion: FAILED ✗
+Time: 15.0s | Grade: F
+
+=== CORE METRICS ===
+Total Moves: 3
+Valid Moves: 0 (0.0%)
+Bad Moves: 3
+Correct Moves: 0 (0.0%)
+Clue Hits: 0
+
+=== PERFORMANCE ANALYSIS ===
+Move Efficiency: 0.0% (valid moves / total moves)
+Path Accuracy: 0.0% (optimal path following)
+Completion: 0.0% of puzzle filled
+Avg Latency: 3991ms per move
+
+=== QUALITY METRICS ===
+Response Parsing: 0.0% success rate
+Reasoning Quality: 14 avg chars
+Move Consistency: 0.0%
+
+=== ADVANCED ANALYSIS ===
+Early Error Rate: 0.0% (first 25% of moves)
+Late Error Rate: 0.0% (last 25% of moves)
+Recovery Rate: 0.0% (bounce back from errors)
+Optimal Deviation: 0.00 avg distance from best path
+
+=== INSIGHTS ===
+Struggled with move selection
+
+
+📊 METRICS FOR RUN 1
+----------------------------------------
+board_size          : 3
+total_cells         : 9
+total_moves         : 3
+puzzle_completed    : False
+completion_time_seconds: 14.955257654190063
+valid_moves         : 0
+bad_moves           : 3
+correct_moves       : 0
+clue_hits           : 0
+move_efficiency_percent: 0.0
+path_accuracy_percent: 0.0
+completion_percent  : 0.0
+average_latency_ms  : 3991.0
+parsing_success_rate_percent: 0.0
+reasoning_quality_score: 14.0
+consistency_score_percent: 0.0
+early_error_rate_percent: 0.0
+late_error_rate_percent: 0.0
+recovery_rate_percent: 0.0
+optimal_deviation_avg: 0.0
+performance_grade   : F
+
+📈 AVERAGES AFTER 1 RUNS
+----------------------------------------
+Avg Move Efficiency: 0.000
+Avg Path Accuracy:   0.000
+Success Rate:        0.000
+
+2025-12-10 14:54:31,271 - INFO - [1/10] Current success rate=0.0%
+
+==================================================
+▶ STARTING RUN 2 OF 10
+==================================================
+2025-12-10 14:54:31,273 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 14:54:31,273 - INFO - === GAME 2 — GUI MODE — openai ===
+2025-12-10 14:54:31,276 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+2025-12-10 14:54:31,276 - WARNING - Could not generate solver path for evaluation
+2025-12-10 14:54:31,277 - INFO - LLM evaluation started for 3x3 board
+2025-12-10 14:54:31,277 - INFO - LLM provider set to: openai (model: gpt-5-nano)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 408, in solve
+    logger.info(f"🎯 Generating move {move_number} with {self.provider}")
+Message: '🎯 Generating move 2 with openai'
+Arguments: ()
+2025-12-10 14:54:31,277 - INFO - 🎯 Generating move 2 with openai
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 33: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 413, in solve
+    logger.info(f"📋 EXPERT PROMPT for Move {move_number}:")
+Message: '📋 EXPERT PROMPT for Move 2:'
+Arguments: ()
+2025-12-10 14:54:31,281 - INFO - 📋 EXPERT PROMPT for Move 2:
+2025-12-10 14:54:31,284 - INFO - ============================================================
+2025-12-10 14:54:31,285 - INFO - You are solving a ZIP PUZZLE. This is a path-finding puzzle where you must visit every cell exactly once.
+
+=== PUZZLE RULES ===
+1. Fill ALL 9 cells in one continuous path
+2. Start at clue number 1
+3. Visit ALL clue numbers in ascending order: 1 -> 2 -> 3 -> ... -> highest
+4. End your path at the highest numbered clue
+5. Move only horizontally or vertically (NO diagonal moves)
+6. Never revisit a cell you've already been to
+7. Fill empty cells between clues as needed
+
+=== BOARD INFORMATION ===
+Board Size: 3x3
+Coordinate System: Each position is (row, column) starting from (0,0)
+
+Coordinate Grid:
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+(2,0)  (2,1)  (2,2)
+
+=== CLUE LOCATIONS ===
+Clue 1: position (1,1)
+Clue 2: position (0,0)
+
+=== CURRENT GAME STATE ===
+Progress: 1/9 cells filled
+Current Position: (1,1)
+Path Taken: (1,1)
+
+Visual Board State:
+  3    .    2
+  .  [ 1]   .
+  .    .    4
+Legend: [1],[2],etc = your path order | 1,2,etc = clue numbers | . = empty cell
+
+=== YOUR TASK ===
+Available Next Moves: (0,1), (2,1), (1,0), (1,2)
+
+THINK STEP BY STEP AND EXPLAIN YOUR REASONING:
+
+1. ANALYSIS: Where am I now and what's my current situation?
+
+2. STRATEGY: What clue number should I visit next? Where is it located?
+
+3. EVALUATION: For each available move, what are the pros and cons?
+
+4. DECISION: Which move is best and why?
+
+Provide your reasoning in the following format:
+
+THINKING:
+[Your detailed analysis here]
+
+MOVE: (row,col)
+
+Example response:
+THINKING:
+I am currently at position (1,2) and have filled 3 out of 9 cells. Looking at the clues, I need to visit clue 2 next, which is at position (2,1). From my current position, I can move to (1,1), (1,3), (0,2), or (2,2). The move to (1,1) gets me closer to clue 2 and doesn't block any future paths. Moving to (1,3) would take me away from clue 2. Therefore, (1,1) is the optimal choice.
+
+MOVE: (1,1)
+
+Your turn:
+2025-12-10 14:54:31,286 - INFO - ============================================================
+2025-12-10 14:54:31,617 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:31,618 - INFO - Retrying request to /chat/completions in 0.446534 seconds
+2025-12-10 14:54:32,178 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:32,179 - INFO - Retrying request to /chat/completions in 0.838011 seconds
+2025-12-10 14:54:33,240 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-12-10 14:54:33,242 - ERROR - API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 422, in solve
+    response_text = self._call_llm_api(prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 316, in _call_llm_api
+    return self._call_openai_api(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 272, in _call_openai_api
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 34: character maps to <undefined>
+Call stack:
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\zip_llm_tests.py", line 177, in <lambda>
+    target=lambda: game.solve_with_llm(provider),
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\UI\GUI.py", line 712, in solve_with_llm
+    result = llm_solver.solve(self.board, self.path, next_number)
+  File "C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\LLM_configuration\llm_manager.py", line 462, in solve
+    logger.error(f"❌ Attempt {attempt + 1} failed: {e}")
+Message: "❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+Arguments: ()
+2025-12-10 14:54:33,243 - ERROR - ❌ Attempt 1 failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}

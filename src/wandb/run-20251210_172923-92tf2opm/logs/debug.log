@@ -1,0 +1,5 @@
+2025-12-10 17:29:23,524 INFO    MainThread:18716 [wandb_init.py:setup_run_log_directory():706] Logging user logs to C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\run-20251210_172923-92tf2opm\logs\debug.log
+2025-12-10 17:29:23,524 INFO    MainThread:18716 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\run-20251210_172923-92tf2opm\logs\debug-internal.log
+2025-12-10 17:29:23,524 INFO    MainThread:18716 [wandb_init.py:init():833] calling init triggers
+2025-12-10 17:29:23,524 INFO    MainThread:18716 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'board_size': 5, 'llm_provider': 'ollama', 'num_runs': 10, 'gui_mode': True, '_wandb': {}}

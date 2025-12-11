@@ -1,0 +1,36 @@
+2025-11-23 19:51:31,552 INFO    Thread-1  :35368 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2025-11-23 19:51:31,552 INFO    Thread-1  :35368 [wandb_setup.py:_flush():81] Configure stats pid to 35368
+2025-11-23 19:51:31,552 INFO    Thread-1  :35368 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\.config\wandb\settings
+2025-11-23 19:51:31,552 INFO    Thread-1  :35368 [wandb_setup.py:_flush():81] Loading settings from C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\settings
+2025-11-23 19:51:31,552 INFO    Thread-1  :35368 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-11-23 19:51:31,552 INFO    Thread-1  :35368 [wandb_init.py:setup_run_log_directory():706] Logging user logs to C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\run-20251123_195131-r1jwodmb\logs\debug.log
+2025-11-23 19:51:31,565 INFO    Thread-1  :35368 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to C:\Users\thame\Desktop\CS5900\zip\Zip_Solver-with_LLM\src\wandb\run-20251123_195131-r1jwodmb\logs\debug-internal.log
+2025-11-23 19:51:31,565 INFO    Thread-1  :35368 [wandb_init.py:init():833] calling init triggers
+2025-11-23 19:51:31,565 INFO    Thread-1  :35368 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-11-23 19:51:31,565 INFO    Thread-1  :35368 [wandb_init.py:init():881] starting backend
+2025-11-23 19:51:33,805 INFO    Thread-1  :35368 [wandb_init.py:init():884] sending inform_init request
+2025-11-23 19:51:33,837 INFO    Thread-1  :35368 [wandb_init.py:init():892] backend started and connected
+2025-11-23 19:51:33,838 INFO    Thread-1  :35368 [wandb_init.py:init():962] updated telemetry
+2025-11-23 19:51:33,867 INFO    Thread-1  :35368 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2025-11-23 19:51:35,830 INFO    Thread-1  :35368 [wandb_init.py:init():1033] starting run threads in backend
+2025-11-23 19:51:35,900 INFO    Thread-1  :35368 [wandb_run.py:_console_start():2506] atexit reg
+2025-11-23 19:51:35,900 INFO    Thread-1  :35368 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-11-23 19:51:35,900 INFO    Thread-1  :35368 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-11-23 19:51:35,900 INFO    Thread-1  :35368 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-11-23 19:51:35,902 INFO    Thread-1  :35368 [wandb_init.py:init():1073] run started, returning control to user process
+2025-11-23 19:51:57,117 INFO    wandb-AsyncioManager-main:35368 [service_client.py:_forward_responses():80] Reached EOF.
+2025-11-23 19:51:57,117 INFO    wandb-AsyncioManager-main:35368 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2025-11-23 19:51:57,727 ERROR   wandb-AsyncioManager-main:35368 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\asyncio\streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\thame\miniconda3\envs\zip\Lib\asyncio\streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
