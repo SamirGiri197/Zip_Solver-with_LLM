@@ -102,6 +102,8 @@ prompt = f"""ZIP PUZZLE RULES: <br>
 cd src
 python zip_llm_test.py --num-runs 10 --llm-provider llm_name --gui True/False --board-size 5 #or you can use defaults or chnage in zip_llm_test.py
 ```
+## Where to find logs
+Log files will be generated at src folder with LLM_name-Grid_size-Timestamp. It contains LLM responses. Or wandb logs can be seen at src/wandb/run_name/files/output.log.
 
 ## Project Structure
 
