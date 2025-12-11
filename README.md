@@ -92,11 +92,13 @@ prompt = f"""ZIP PUZZLE RULES: <br>
 ## How to Play a game manually
 
 1. Launch the game
-2. Examine the grid and identify all numbered cells
-3. Click or drag to create a path starting from 1
-4. Continue connecting each number in sequence
-5. Ensure your path fills every cell in the grid
-6. If you want to solve autonomously using LLM, click on LLM button then select the model you want to use.
+2. Select whether you want to play solely or want to use LLM
+3. Select the board grid, and then select LLM if play as LLM is selected.
+4. Examine the grid and identify all numbered cells
+5. Click or drag to create a path starting from 1
+6. Continue connecting each number in sequence
+7. Ensure your path fills every cell in the grid
+8. If you want to solve autonomously using LLM, click on LLM button then select the model you want to use.
 
 ## How to run Game in batch
 ```bash
