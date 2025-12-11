@@ -8,7 +8,7 @@ The game combines visual playability, AI reasoning, and analytics through **Weig
 ## 🚀 Features
 
 - 🎮 **Interactive PyGame GUI** with real-time grid drawing
-- 🧠 **AI-assisted solving** using LLMs (Gemini / Ollama)
+- 🧠 **AI-assisted solving** using LLMs (Gemini / Ollama/ OpenAI/ Claude)
 - 🧩 **Backtracking solver** for fallback and hints
 - 📈 **Game analytics** via [Weights & Biases (wandb.ai)](https://wandb.ai/)
 - 🧰 Adjustable board sizes (3x3 – 10x10+)
@@ -23,6 +23,7 @@ The game combines visual playability, AI reasoning, and analytics through **Weig
 ## Installation
 
 ```bash
+#clone the repo
 git clone https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
 
 # Install dependencies
@@ -41,9 +42,14 @@ npm install
 export LLM_API_KEY="your_api_key_here"
 # or on Windows:
 set LLM_API_KEY=your_api_key_here
+# or
+setx LLM_API_KEY your_api_key
 ```
 
-4. Alternatively, create a `.env` file in the project root:
+4. Alternatively, create a `.env` file in the project root and set LLM_API_KEY:
+```bash
+$env:LLM_API_KEY="your_api_key_here"
+```
 
 ## How to Run Program
 ```bash 
@@ -59,7 +65,7 @@ python main.py
 1. Goto src/llm_configuration/llm_manager.py
 2. Find Prompt = """ ............ """ and make changes as required.
 
-### Example Promompt
+### Example Prompt
 prompt = f"""ZIP PUZZLE RULES: <br>
                 1. Fill ALL {board.k} cells in a continuous path<br>
                 2. Start at clue 1, visit clues in order (1→2→3→...), end at highest clue<br>
@@ -83,16 +89,28 @@ prompt = f"""ZIP PUZZLE RULES: <br>
                 
   It passes the rules of the game, board state and asks for what is the next move and why?
 
-  Both the ollama and gemini been able to connect some numbers but failed to solve the puzzle correctly.
-
-## How to Play
+## How to Play a game manually
 
 1. Launch the game
-2. Examine the grid and identify all numbered cells
-3. Click or drag to create a path starting from 1
-4. Continue connecting each number in sequence
-5. Ensure your path fills every cell in the grid
-6. If you want to solve autonomously using LLM, click on LLM button then select the model you want to use.
+2. Select whether you want to play solely or want to use LLM
+3. Select the board grid, and then select LLM if play as LLM is selected.
+4. Examine the grid and identify all numbered cells
+5. Click or drag to create a path starting from 1
+6. Continue connecting each number in sequence
+7. Ensure your path fills every cell in the grid
+8. If you want to solve autonomously using LLM, click on LLM button then select the model you want to use.
+
+## How to run Game in batch
+```bash
+cd src
+
+#before running games in batch, we suggest to run the validation test to check whether all the requirement for batch run satisfies or not but running following command in src directory
+python validate_test.py
+
+python zip_llm_test.py --num-runs 10 --llm-provider llm_name --gui True/False --board-size 5 #or you can use defaults or chnage in zip_llm_test.py
+```
+## Where to find logs
+Log files will be generated at src folder with LLM_name-Grid_size-Timestamp. It contains LLM responses. Or wandb logs can be seen at src/wandb/run_name/files/output.log.
 
 ## Project Structure
 
