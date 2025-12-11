@@ -100,6 +100,10 @@ prompt = f"""ZIP PUZZLE RULES: <br>
 ## How to run Game in batch
 ```bash
 cd src
+
+#before running games in batch, we suggest to run the validation test to check whether all the requirement for batch run satisfies or not but running following command in src directory
+python validate_test.py
+
 python zip_llm_test.py --num-runs 10 --llm-provider llm_name --gui True/False --board-size 5 #or you can use defaults or chnage in zip_llm_test.py
 ```
 ## Where to find logs
