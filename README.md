@@ -8,7 +8,7 @@ The game combines visual playability, AI reasoning, and analytics through **Weig
 ## 🚀 Features
 
 - 🎮 **Interactive PyGame GUI** with real-time grid drawing
-- 🧠 **AI-assisted solving** using LLMs (Gemini / Ollama)
+- 🧠 **AI-assisted solving** using LLMs (Gemini / Ollama/ OpenAI/ Claude)
 - 🧩 **Backtracking solver** for fallback and hints
 - 📈 **Game analytics** via [Weights & Biases (wandb.ai)](https://wandb.ai/)
 - 🧰 Adjustable board sizes (3x3 – 10x10+)
@@ -41,9 +41,14 @@ npm install
 export LLM_API_KEY="your_api_key_here"
 # or on Windows:
 set LLM_API_KEY=your_api_key_here
+# or
+setx LLM_API_KEY your_api_key
 ```
 
-4. Alternatively, create a `.env` file in the project root:
+4. Alternatively, create a `.env` file in the project root and set LLM_API_KEY:
+```bash
+$env:LLM_API_KEY="your_api_key_here"
+```
 
 ## How to Run Program
 ```bash 
@@ -83,9 +88,7 @@ prompt = f"""ZIP PUZZLE RULES: <br>
                 
   It passes the rules of the game, board state and asks for what is the next move and why?
 
-  Both the ollama and gemini been able to connect some numbers but failed to solve the puzzle correctly.
-
-## How to Play
+## How to Play a game manually
 
 1. Launch the game
 2. Examine the grid and identify all numbered cells
@@ -93,6 +96,12 @@ prompt = f"""ZIP PUZZLE RULES: <br>
 4. Continue connecting each number in sequence
 5. Ensure your path fills every cell in the grid
 6. If you want to solve autonomously using LLM, click on LLM button then select the model you want to use.
+
+## How to run Game in batch
+```bash
+cd src
+python zip_llm_test.py --num-runs 10 --llm-provider llm_name --gui True/False --board-size 5 #or you can use defaults or chnage in zip_llm_test.py
+```
 
 ## Project Structure
 
