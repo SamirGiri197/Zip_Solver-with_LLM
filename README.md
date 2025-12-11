@@ -23,6 +23,7 @@ The game combines visual playability, AI reasoning, and analytics through **Weig
 ## Installation
 
 ```bash
+#clone the repo
 git clone https://github.com/SamirGiri197/Zip_Solver-with_LLM.git
 
 # Install dependencies
